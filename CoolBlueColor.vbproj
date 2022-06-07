@@ -13,9 +13,24 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -46,6 +61,12 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\network_9oI_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -72,6 +93,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DefaultIP.Designer.vb">
+      <DependentUpon>DefaultIP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultIP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +113,13 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Information.Designer.vb">
+      <DependentUpon>Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSComctlLib\ListItem.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -94,10 +135,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NetworkMap.Designer.vb">
+      <DependentUpon>NetworkMap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkMap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultIP.resx">
+      <DependentUpon>DefaultIP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information.resx">
+      <DependentUpon>Information.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -107,6 +164,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -116,8 +174,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
-    <EmbeddedResource Include="Resources\DS-DIGI.TTF" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="NetworkMap.resx">
+      <DependentUpon>NetworkMap.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Segoe mdl2 assets.ttf" />
     <EmbeddedResource Include="Resources\Segoe UI Bold Italic.ttf" />
     <EmbeddedResource Include="Resources\Segoe UI Bold.ttf" />
@@ -132,6 +194,91 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motion-sensor %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.cmd" />
+    <None Include="Resources\wifi2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi_disconnected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motion-sensor-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motion-sensor-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cctv-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi-green-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi-red-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\professor-lecture-about-graduation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\professor-about-graduation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="network_9oI_icon.ico" />
+    <None Include="Resources\synchronize.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\backup %282%29.png" />
+    <None Include="Resources\backup %281%29.png" />
+    <None Include="Resources\backup.png" />
+    <None Include="Resources\cloud_computing_0VD_icon.ico" />
+    <None Include="Resources\hnet.com-image %281%29.ico" />
+    <None Include="Resources\network_Twg_icon.ico" />
+    <None Include="Resources\network_H05_icon.ico" />
+    <None Include="Resources\network.png" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\silo.png" />
+    <None Include="Resources\mixer-truck_red.png" />
+    <None Include="Resources\mixer-truck-green.png" />
+    <None Include="Resources\server %281%29.png" />
+    <None Include="Resources\server.png" />
+    <None Include="Resources\vagueness.png" />
+    <None Include="Resources\servers.png" />
+    <None Include="Resources\red_new.gif" />
+    <None Include="Resources\green_new.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %282%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %281%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker.gif" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\Image1.png" />
+    <None Include="Resources\LoadBar.gif" />
+    <None Include="Resources\network_9oI_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
