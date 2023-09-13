@@ -68,8 +68,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""robocopy ""\\194.193.192.1\Backup (D)\2011"" ""D:\2011"" /s /im /XF file *.exe* & ro"& _ 
-            "bocopy ""\\194.193.192.1\Backup (D)\2002"" ""D:\2002"" /s /im /XF file *.exe*""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("robocopy ""\\194.193.192.1\Backup (D)\2011"" ""D:\RMS_Backup"" /s /im /XF file *.exe*"& _ 
+            "")>  _
         Public Property txtbackupedited2() As String
             Get
                 Return CType(Me("txtbackupedited2"),String)
@@ -81,14 +81,37 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("robocopy ""\\192.168.18.2\c\Program Files\QCAS"" ""D:\QC_LAB_BACKUP"" /s /im /XF file"& _ 
-            " *.crp*")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("robocopy ""\\192.168.18.2\QCAS"" ""D:\QC_LAB_BACKUP"" /s /im /XF file *.crp*")>  _
         Public Property txtbackupedited3() As String
             Get
                 Return CType(Me("txtbackupedited3"),String)
             End Get
             Set
                 Me("txtbackupedited3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("robocopy ""\\192.168.15.1\nic fms"" ""D:\Transport_backup"" /s /XF file *.fil*")>  _
+        Public Property txtbackupedited4() As String
+            Get
+                Return CType(Me("txtbackupedited4"),String)
+            End Get
+            Set
+                Me("txtbackupedited4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property setting() As String
+            Get
+                Return CType(Me("setting"),String)
+            End Get
+            Set
+                Me("setting") = value
             End Set
         End Property
     End Class

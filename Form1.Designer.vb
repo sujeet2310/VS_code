@@ -115,6 +115,9 @@ Partial Class coolBlue
         Me.lblCam2 = New System.Windows.Forms.Label()
         Me.lblCam1 = New System.Windows.Forms.Label()
         Me.pnlGeo = New System.Windows.Forms.Panel()
+        Me.btnCopy = New System.Windows.Forms.Button()
+        Me.btnCMDcheck = New System.Windows.Forms.Button()
+        Me.txtCMDtext = New System.Windows.Forms.TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblNotworking = New System.Windows.Forms.Label()
@@ -263,7 +266,11 @@ Partial Class coolBlue
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnHikTest2 = New System.Windows.Forms.Button()
         Me.lblHik1 = New System.Windows.Forms.Label()
+        Me.txtBackup4 = New System.Windows.Forms.TextBox()
+        Me.txtBackup3 = New System.Windows.Forms.TextBox()
         Me.pnlOther = New System.Windows.Forms.Panel()
+        Me.lblSpon = New System.Windows.Forms.Label()
+        Me.txtSpon = New System.Windows.Forms.TextBox()
         Me.grpPAC = New System.Windows.Forms.GroupBox()
         Me.picMeka1 = New System.Windows.Forms.PictureBox()
         Me.picMeka3 = New System.Windows.Forms.PictureBox()
@@ -324,10 +331,10 @@ Partial Class coolBlue
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.picHik34 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
+        Me.picHikv24 = New System.Windows.Forms.PictureBox()
+        Me.picHikv23 = New System.Windows.Forms.PictureBox()
+        Me.picHikv22 = New System.Windows.Forms.PictureBox()
+        Me.picHikv21 = New System.Windows.Forms.PictureBox()
         Me.picHikv20 = New System.Windows.Forms.PictureBox()
         Me.picHikv19 = New System.Windows.Forms.PictureBox()
         Me.picHikv18 = New System.Windows.Forms.PictureBox()
@@ -353,12 +360,12 @@ Partial Class coolBlue
         Me.lblHik34 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblHik23 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblHik24 = New System.Windows.Forms.Label()
         Me.lblHik20 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblHik22 = New System.Windows.Forms.Label()
+        Me.lblHik21 = New System.Windows.Forms.Label()
         Me.lblHik19 = New System.Windows.Forms.Label()
         Me.lblHik18 = New System.Windows.Forms.Label()
         Me.lblHik17 = New System.Windows.Forms.Label()
@@ -381,6 +388,9 @@ Partial Class coolBlue
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.picSetting = New System.Windows.Forms.PictureBox()
         Me.pnlBackup = New System.Windows.Forms.Panel()
+        Me.btnTransave = New System.Windows.Forms.Button()
+        Me.btnTans = New System.Windows.Forms.Button()
+        Me.lblTranBackup = New System.Windows.Forms.Label()
         Me.btnQcsave = New System.Windows.Forms.Button()
         Me.btnQcedit = New System.Windows.Forms.Button()
         Me.lblQC = New System.Windows.Forms.Label()
@@ -390,9 +400,9 @@ Partial Class coolBlue
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblRMSbackup = New System.Windows.Forms.Label()
         Me.lblDieselbackup = New System.Windows.Forms.Label()
-        Me.txtBackup3 = New System.Windows.Forms.TextBox()
         Me.txtBackup2 = New System.Windows.Forms.TextBox()
         Me.txtBackup1 = New System.Windows.Forms.TextBox()
+        Me.proBar = New System.Windows.Forms.ProgressBar()
         Me.pnlTitlebar.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlClosebar.SuspendLayout()
@@ -514,10 +524,10 @@ Partial Class coolBlue
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picHik34, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHikv24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHikv23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHikv22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHikv21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picHikv20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picHikv19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picHikv18, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -559,12 +569,12 @@ Partial Class coolBlue
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.CoolBlueColor.My.Resources.Resources.info
+        Me.PictureBox4.Image = Global.CoolBlueColor.My.Resources.Resources._656_person_sign_protest_lineal__6_
         Me.PictureBox4.Location = New System.Drawing.Point(529, 2)
         Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(33, 41)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox4.Size = New System.Drawing.Size(53, 53)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox4.TabIndex = 4
         Me.PictureBox4.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox4, "Appication Information ")
@@ -757,7 +767,7 @@ Partial Class coolBlue
         Me.btnBackup.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBackup.Name = "btnBackup"
         Me.btnBackup.Size = New System.Drawing.Size(40, 32)
-        Me.btnBackup.TabIndex = 11
+        Me.btnBackup.TabIndex = 7
         Me.ToolTip1.SetToolTip(Me.btnBackup, "RMS & Diesel Backup")
         Me.btnBackup.UseVisualStyleBackColor = False
         '
@@ -770,7 +780,7 @@ Partial Class coolBlue
         Me.chkBox.Margin = New System.Windows.Forms.Padding(2)
         Me.chkBox.Name = "chkBox"
         Me.chkBox.Size = New System.Drawing.Size(106, 23)
-        Me.chkBox.TabIndex = 10
+        Me.chkBox.TabIndex = 9
         Me.chkBox.Text = "Auto Refresh"
         Me.chkBox.UseVisualStyleBackColor = True
         '
@@ -786,7 +796,7 @@ Partial Class coolBlue
         Me.btnHik2.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHik2.Name = "btnHik2"
         Me.btnHik2.Size = New System.Drawing.Size(115, 32)
-        Me.btnHik2.TabIndex = 9
+        Me.btnHik2.TabIndex = 2
         Me.btnHik2.Text = " Hik Vision 2"
         Me.btnHik2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnHik2, "Click on this button for Hikvision Cam status")
@@ -802,7 +812,7 @@ Partial Class coolBlue
         Me.btnPac.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPac.Name = "btnPac"
         Me.btnPac.Size = New System.Drawing.Size(46, 32)
-        Me.btnPac.TabIndex = 7
+        Me.btnPac.TabIndex = 6
         Me.btnPac.Text = "PAC"
         Me.ToolTip1.SetToolTip(Me.btnPac, "PAC Status")
         Me.btnPac.UseVisualStyleBackColor = False
@@ -815,13 +825,14 @@ Partial Class coolBlue
         Me.btnWire.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnWire.ForeColor = System.Drawing.Color.Snow
         Me.btnWire.Image = CType(resources.GetObject("btnWire.Image"), System.Drawing.Image)
-        Me.btnWire.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnWire.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnWire.Location = New System.Drawing.Point(464, 5)
         Me.btnWire.Margin = New System.Windows.Forms.Padding(2)
         Me.btnWire.Name = "btnWire"
         Me.btnWire.Size = New System.Drawing.Size(104, 32)
-        Me.btnWire.TabIndex = 3
+        Me.btnWire.TabIndex = 5
         Me.btnWire.Text = "Wireless"
+        Me.btnWire.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnWire.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnWire, "Click on this button for wireless status")
         Me.btnWire.UseVisualStyleBackColor = True
@@ -839,7 +850,7 @@ Partial Class coolBlue
         Me.btnSensor.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSensor.Name = "btnSensor"
         Me.btnSensor.Size = New System.Drawing.Size(94, 32)
-        Me.btnSensor.TabIndex = 2
+        Me.btnSensor.TabIndex = 4
         Me.btnSensor.Text = " Sensor"
         Me.btnSensor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnSensor, "Click on this button for Sensor status")
@@ -858,7 +869,7 @@ Partial Class coolBlue
         Me.btnGeo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGeo.Name = "btnGeo"
         Me.btnGeo.Size = New System.Drawing.Size(121, 32)
-        Me.btnGeo.TabIndex = 1
+        Me.btnGeo.TabIndex = 3
         Me.btnGeo.Text = " Geo Vision"
         Me.btnGeo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnGeo, "Click on this button for Geovision Cam status")
@@ -876,7 +887,7 @@ Partial Class coolBlue
         Me.btnHik.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHik.Name = "btnHik"
         Me.btnHik.Size = New System.Drawing.Size(109, 32)
-        Me.btnHik.TabIndex = 0
+        Me.btnHik.TabIndex = 1
         Me.btnHik.Text = " Hik Vision"
         Me.btnHik.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnHik, "Click on this button for Hikvision Cam status")
@@ -955,7 +966,7 @@ Partial Class coolBlue
         Me.pnlHik.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlHik.Name = "pnlHik"
         Me.pnlHik.Size = New System.Drawing.Size(780, 396)
-        Me.pnlHik.TabIndex = 8
+        Me.pnlHik.TabIndex = 5
         '
         'picBox32
         '
@@ -1398,7 +1409,7 @@ Partial Class coolBlue
         Me.btnTestConnection.Margin = New System.Windows.Forms.Padding(2)
         Me.btnTestConnection.Name = "btnTestConnection"
         Me.btnTestConnection.Size = New System.Drawing.Size(129, 31)
-        Me.btnTestConnection.TabIndex = 71
+        Me.btnTestConnection.TabIndex = 1
         Me.btnTestConnection.Text = "Te&st Connection"
         Me.ToolTip1.SetToolTip(Me.btnTestConnection, "Click on this for Hik vision cam status")
         Me.btnTestConnection.UseVisualStyleBackColor = False
@@ -1652,6 +1663,9 @@ Partial Class coolBlue
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlGeo.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.pnlGeo.Controls.Add(Me.btnCopy)
+        Me.pnlGeo.Controls.Add(Me.btnCMDcheck)
+        Me.pnlGeo.Controls.Add(Me.txtCMDtext)
         Me.pnlGeo.Controls.Add(Me.PictureBox2)
         Me.pnlGeo.Controls.Add(Me.PictureBox1)
         Me.pnlGeo.Controls.Add(Me.lblNotworking)
@@ -1665,36 +1679,75 @@ Partial Class coolBlue
         Me.pnlGeo.Size = New System.Drawing.Size(780, 396)
         Me.pnlGeo.TabIndex = 9
         '
+        'btnCopy
+        '
+        Me.btnCopy.FlatAppearance.BorderSize = 0
+        Me.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCopy.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCopy.ForeColor = System.Drawing.Color.Orange
+        Me.btnCopy.Image = Global.CoolBlueColor.My.Resources.Resources.duplicate
+        Me.btnCopy.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnCopy.Location = New System.Drawing.Point(346, 223)
+        Me.btnCopy.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCopy.Name = "btnCopy"
+        Me.btnCopy.Size = New System.Drawing.Size(85, 37)
+        Me.btnCopy.TabIndex = 11
+        Me.btnCopy.Text = "Copy"
+        Me.btnCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.btnCopy, "Copy Selected camera from list")
+        Me.btnCopy.UseVisualStyleBackColor = True
+        '
+        'btnCMDcheck
+        '
+        Me.btnCMDcheck.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCMDcheck.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCMDcheck.Location = New System.Drawing.Point(360, 145)
+        Me.btnCMDcheck.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCMDcheck.Name = "btnCMDcheck"
+        Me.btnCMDcheck.Size = New System.Drawing.Size(55, 21)
+        Me.btnCMDcheck.TabIndex = 10
+        Me.btnCMDcheck.Text = "Test"
+        Me.btnCMDcheck.UseVisualStyleBackColor = True
+        '
+        'txtCMDtext
+        '
+        Me.txtCMDtext.Location = New System.Drawing.Point(346, 112)
+        Me.txtCMDtext.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtCMDtext.Name = "txtCMDtext"
+        Me.txtCMDtext.Size = New System.Drawing.Size(86, 20)
+        Me.txtCMDtext.TabIndex = 9
+        Me.txtCMDtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.CoolBlueColor.My.Resources.Resources.red_new
-        Me.PictureBox2.Location = New System.Drawing.Point(344, 332)
+        Me.PictureBox2.Location = New System.Drawing.Point(344, 347)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox2.TabIndex = 8
         Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Not Working Camera")
+        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Double click for not working camera list")
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.CoolBlueColor.My.Resources.Resources.green_new
-        Me.PictureBox1.Location = New System.Drawing.Point(342, 50)
+        Me.PictureBox1.Location = New System.Drawing.Point(342, 20)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Working Camera")
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Double Click for Working Camera")
         '
         'lblNotworking
         '
         Me.lblNotworking.AutoSize = True
         Me.lblNotworking.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold)
         Me.lblNotworking.ForeColor = System.Drawing.Color.White
-        Me.lblNotworking.Location = New System.Drawing.Point(399, 332)
+        Me.lblNotworking.Location = New System.Drawing.Point(399, 345)
         Me.lblNotworking.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNotworking.Name = "lblNotworking"
         Me.lblNotworking.Size = New System.Drawing.Size(0, 25)
@@ -1705,7 +1758,7 @@ Partial Class coolBlue
         Me.lblWorking.AutoSize = True
         Me.lblWorking.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWorking.ForeColor = System.Drawing.Color.White
-        Me.lblWorking.Location = New System.Drawing.Point(399, 51)
+        Me.lblWorking.Location = New System.Drawing.Point(399, 27)
         Me.lblWorking.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblWorking.Name = "lblWorking"
         Me.lblWorking.Size = New System.Drawing.Size(0, 25)
@@ -1716,7 +1769,7 @@ Partial Class coolBlue
         Me.btnckeck.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnckeck.ForeColor = System.Drawing.Color.ForestGreen
         Me.btnckeck.Image = CType(resources.GetObject("btnckeck.Image"), System.Drawing.Image)
-        Me.btnckeck.Location = New System.Drawing.Point(344, 181)
+        Me.btnckeck.Location = New System.Drawing.Point(346, 181)
         Me.btnckeck.Margin = New System.Windows.Forms.Padding(2)
         Me.btnckeck.Name = "btnckeck"
         Me.btnckeck.Size = New System.Drawing.Size(85, 35)
@@ -1736,7 +1789,7 @@ Partial Class coolBlue
         Me.ListView1.Location = New System.Drawing.Point(8, 3)
         Me.ListView1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(317, 390)
+        Me.ListView1.Size = New System.Drawing.Size(324, 390)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -1744,12 +1797,12 @@ Partial Class coolBlue
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Camera Name"
-        Me.ColumnHeader1.Width = 208
+        Me.ColumnHeader1.Width = 215
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "IP Address"
-        Me.ColumnHeader2.Width = 110
+        Me.ColumnHeader2.Width = 212
         '
         'ListView2
         '
@@ -3306,8 +3359,34 @@ Partial Class coolBlue
         Me.lblHik1.TabIndex = 126
         Me.ToolTip1.SetToolTip(Me.lblHik1, "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         '
+        'txtBackup4
+        '
+        Me.txtBackup4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited4", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtBackup4.Enabled = False
+        Me.txtBackup4.Location = New System.Drawing.Point(146, 183)
+        Me.txtBackup4.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBackup4.Name = "txtBackup4"
+        Me.txtBackup4.Size = New System.Drawing.Size(320, 20)
+        Me.txtBackup4.TabIndex = 84
+        Me.txtBackup4.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited4
+        Me.ToolTip1.SetToolTip(Me.txtBackup4, "Line of code for copy datababse")
+        '
+        'txtBackup3
+        '
+        Me.txtBackup3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtBackup3.Enabled = False
+        Me.txtBackup3.Location = New System.Drawing.Point(142, 137)
+        Me.txtBackup3.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBackup3.Name = "txtBackup3"
+        Me.txtBackup3.Size = New System.Drawing.Size(320, 20)
+        Me.txtBackup3.TabIndex = 80
+        Me.txtBackup3.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited3
+        Me.ToolTip1.SetToolTip(Me.txtBackup3, "Line of code for copy datababse")
+        '
         'pnlOther
         '
+        Me.pnlOther.Controls.Add(Me.lblSpon)
+        Me.pnlOther.Controls.Add(Me.txtSpon)
         Me.pnlOther.Controls.Add(Me.grpPAC)
         Me.pnlOther.Controls.Add(Me.txtMeena)
         Me.pnlOther.Controls.Add(Me.lblMeena)
@@ -3352,6 +3431,30 @@ Partial Class coolBlue
         Me.pnlOther.Name = "pnlOther"
         Me.pnlOther.Size = New System.Drawing.Size(780, 396)
         Me.pnlOther.TabIndex = 12
+        '
+        'lblSpon
+        '
+        Me.lblSpon.AutoSize = True
+        Me.lblSpon.Location = New System.Drawing.Point(556, 318)
+        Me.lblSpon.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSpon.Name = "lblSpon"
+        Me.lblSpon.Size = New System.Drawing.Size(84, 13)
+        Me.lblSpon.TabIndex = 51
+        Me.lblSpon.Tag = ""
+        Me.lblSpon.Text = "SPON SERVER"
+        '
+        'txtSpon
+        '
+        Me.txtSpon.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txtSpon.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSpon.ForeColor = System.Drawing.Color.LawnGreen
+        Me.txtSpon.Location = New System.Drawing.Point(638, 315)
+        Me.txtSpon.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtSpon.Name = "txtSpon"
+        Me.txtSpon.ReadOnly = True
+        Me.txtSpon.Size = New System.Drawing.Size(96, 23)
+        Me.txtSpon.TabIndex = 50
+        Me.txtSpon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'grpPAC
         '
@@ -3941,10 +4044,10 @@ Partial Class coolBlue
         Me.pnlHik2.Controls.Add(Me.PictureBox10)
         Me.pnlHik2.Controls.Add(Me.PictureBox11)
         Me.pnlHik2.Controls.Add(Me.picHik34)
-        Me.pnlHik2.Controls.Add(Me.PictureBox13)
-        Me.pnlHik2.Controls.Add(Me.PictureBox14)
-        Me.pnlHik2.Controls.Add(Me.PictureBox15)
-        Me.pnlHik2.Controls.Add(Me.PictureBox16)
+        Me.pnlHik2.Controls.Add(Me.picHikv24)
+        Me.pnlHik2.Controls.Add(Me.picHikv23)
+        Me.pnlHik2.Controls.Add(Me.picHikv22)
+        Me.pnlHik2.Controls.Add(Me.picHikv21)
         Me.pnlHik2.Controls.Add(Me.picHikv20)
         Me.pnlHik2.Controls.Add(Me.picHikv19)
         Me.pnlHik2.Controls.Add(Me.picHikv18)
@@ -3970,13 +4073,13 @@ Partial Class coolBlue
         Me.pnlHik2.Controls.Add(Me.lblHik34)
         Me.pnlHik2.Controls.Add(Me.Label8)
         Me.pnlHik2.Controls.Add(Me.Label9)
-        Me.pnlHik2.Controls.Add(Me.Label10)
+        Me.pnlHik2.Controls.Add(Me.lblHik23)
         Me.pnlHik2.Controls.Add(Me.Label11)
-        Me.pnlHik2.Controls.Add(Me.Label12)
+        Me.pnlHik2.Controls.Add(Me.lblHik24)
         Me.pnlHik2.Controls.Add(Me.btnHikTest2)
         Me.pnlHik2.Controls.Add(Me.lblHik20)
-        Me.pnlHik2.Controls.Add(Me.Label14)
-        Me.pnlHik2.Controls.Add(Me.Label15)
+        Me.pnlHik2.Controls.Add(Me.lblHik22)
+        Me.pnlHik2.Controls.Add(Me.lblHik21)
         Me.pnlHik2.Controls.Add(Me.lblHik19)
         Me.pnlHik2.Controls.Add(Me.lblHik18)
         Me.pnlHik2.Controls.Add(Me.lblHik17)
@@ -4104,49 +4207,49 @@ Partial Class coolBlue
         Me.picHik34.TabIndex = 181
         Me.picHik34.TabStop = False
         '
-        'PictureBox13
+        'picHikv24
         '
-        Me.PictureBox13.Location = New System.Drawing.Point(307, 341)
-        Me.PictureBox13.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(33, 29)
-        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox13.TabIndex = 180
-        Me.PictureBox13.TabStop = False
+        Me.picHikv24.Location = New System.Drawing.Point(301, 342)
+        Me.picHikv24.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv24.Name = "picHikv24"
+        Me.picHikv24.Size = New System.Drawing.Size(33, 29)
+        Me.picHikv24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picHikv24.TabIndex = 180
+        Me.picHikv24.TabStop = False
         '
-        'PictureBox14
+        'picHikv23
         '
-        Me.PictureBox14.Location = New System.Drawing.Point(307, 313)
-        Me.PictureBox14.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(33, 29)
-        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox14.TabIndex = 179
-        Me.PictureBox14.TabStop = False
+        Me.picHikv23.Location = New System.Drawing.Point(301, 314)
+        Me.picHikv23.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv23.Name = "picHikv23"
+        Me.picHikv23.Size = New System.Drawing.Size(33, 29)
+        Me.picHikv23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picHikv23.TabIndex = 179
+        Me.picHikv23.TabStop = False
         '
-        'PictureBox15
+        'picHikv22
         '
-        Me.PictureBox15.Location = New System.Drawing.Point(307, 284)
-        Me.PictureBox15.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox15.Name = "PictureBox15"
-        Me.PictureBox15.Size = New System.Drawing.Size(33, 29)
-        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox15.TabIndex = 178
-        Me.PictureBox15.TabStop = False
+        Me.picHikv22.Location = New System.Drawing.Point(301, 285)
+        Me.picHikv22.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv22.Name = "picHikv22"
+        Me.picHikv22.Size = New System.Drawing.Size(33, 29)
+        Me.picHikv22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picHikv22.TabIndex = 178
+        Me.picHikv22.TabStop = False
         '
-        'PictureBox16
+        'picHikv21
         '
-        Me.PictureBox16.Location = New System.Drawing.Point(307, 256)
-        Me.PictureBox16.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox16.Name = "PictureBox16"
-        Me.PictureBox16.Size = New System.Drawing.Size(33, 29)
-        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox16.TabIndex = 177
-        Me.PictureBox16.TabStop = False
+        Me.picHikv21.Location = New System.Drawing.Point(301, 257)
+        Me.picHikv21.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv21.Name = "picHikv21"
+        Me.picHikv21.Size = New System.Drawing.Size(33, 29)
+        Me.picHikv21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picHikv21.TabIndex = 177
+        Me.picHikv21.TabStop = False
         '
         'picHikv20
         '
-        Me.picHikv20.Location = New System.Drawing.Point(307, 227)
+        Me.picHikv20.Location = New System.Drawing.Point(301, 228)
         Me.picHikv20.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv20.Name = "picHikv20"
         Me.picHikv20.Size = New System.Drawing.Size(33, 29)
@@ -4156,7 +4259,7 @@ Partial Class coolBlue
         '
         'picHikv19
         '
-        Me.picHikv19.Location = New System.Drawing.Point(307, 198)
+        Me.picHikv19.Location = New System.Drawing.Point(301, 199)
         Me.picHikv19.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv19.Name = "picHikv19"
         Me.picHikv19.Size = New System.Drawing.Size(33, 29)
@@ -4166,7 +4269,7 @@ Partial Class coolBlue
         '
         'picHikv18
         '
-        Me.picHikv18.Location = New System.Drawing.Point(307, 169)
+        Me.picHikv18.Location = New System.Drawing.Point(301, 170)
         Me.picHikv18.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv18.Name = "picHikv18"
         Me.picHikv18.Size = New System.Drawing.Size(33, 29)
@@ -4176,7 +4279,7 @@ Partial Class coolBlue
         '
         'picHikv17
         '
-        Me.picHikv17.Location = New System.Drawing.Point(307, 140)
+        Me.picHikv17.Location = New System.Drawing.Point(301, 141)
         Me.picHikv17.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv17.Name = "picHikv17"
         Me.picHikv17.Size = New System.Drawing.Size(33, 29)
@@ -4186,7 +4289,7 @@ Partial Class coolBlue
         '
         'picHikv16
         '
-        Me.picHikv16.Location = New System.Drawing.Point(307, 110)
+        Me.picHikv16.Location = New System.Drawing.Point(301, 110)
         Me.picHikv16.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv16.Name = "picHikv16"
         Me.picHikv16.Size = New System.Drawing.Size(33, 29)
@@ -4196,7 +4299,7 @@ Partial Class coolBlue
         '
         'picHikv15
         '
-        Me.picHikv15.Location = New System.Drawing.Point(307, 81)
+        Me.picHikv15.Location = New System.Drawing.Point(301, 82)
         Me.picHikv15.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv15.Name = "picHikv15"
         Me.picHikv15.Size = New System.Drawing.Size(33, 29)
@@ -4206,7 +4309,7 @@ Partial Class coolBlue
         '
         'picHikv14
         '
-        Me.picHikv14.Location = New System.Drawing.Point(307, 54)
+        Me.picHikv14.Location = New System.Drawing.Point(301, 54)
         Me.picHikv14.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv14.Name = "picHikv14"
         Me.picHikv14.Size = New System.Drawing.Size(33, 29)
@@ -4216,7 +4319,7 @@ Partial Class coolBlue
         '
         'picHikv13
         '
-        Me.picHikv13.Location = New System.Drawing.Point(307, 26)
+        Me.picHikv13.Location = New System.Drawing.Point(301, 26)
         Me.picHikv13.Margin = New System.Windows.Forms.Padding(2)
         Me.picHikv13.Name = "picHikv13"
         Me.picHikv13.Size = New System.Drawing.Size(33, 29)
@@ -4399,16 +4502,16 @@ Partial Class coolBlue
         Me.Label9.Size = New System.Drawing.Size(0, 21)
         Me.Label9.TabIndex = 152
         '
-        'Label10
+        'lblHik23
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(340, 315)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(0, 21)
-        Me.Label10.TabIndex = 151
+        Me.lblHik23.AutoSize = True
+        Me.lblHik23.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHik23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblHik23.Location = New System.Drawing.Point(340, 315)
+        Me.lblHik23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik23.Name = "lblHik23"
+        Me.lblHik23.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik23.TabIndex = 151
         '
         'Label11
         '
@@ -4421,16 +4524,16 @@ Partial Class coolBlue
         Me.Label11.Size = New System.Drawing.Size(0, 21)
         Me.Label11.TabIndex = 150
         '
-        'Label12
+        'lblHik24
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(340, 344)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(0, 21)
-        Me.Label12.TabIndex = 149
+        Me.lblHik24.AutoSize = True
+        Me.lblHik24.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHik24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblHik24.Location = New System.Drawing.Point(340, 344)
+        Me.lblHik24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik24.Name = "lblHik24"
+        Me.lblHik24.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik24.TabIndex = 149
         '
         'lblHik20
         '
@@ -4443,27 +4546,27 @@ Partial Class coolBlue
         Me.lblHik20.Size = New System.Drawing.Size(0, 21)
         Me.lblHik20.TabIndex = 148
         '
-        'Label14
+        'lblHik22
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(340, 286)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(0, 21)
-        Me.Label14.TabIndex = 147
+        Me.lblHik22.AutoSize = True
+        Me.lblHik22.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHik22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblHik22.Location = New System.Drawing.Point(340, 286)
+        Me.lblHik22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik22.Name = "lblHik22"
+        Me.lblHik22.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik22.TabIndex = 147
         '
-        'Label15
+        'lblHik21
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label15.Location = New System.Drawing.Point(340, 257)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(0, 21)
-        Me.Label15.TabIndex = 146
+        Me.lblHik21.AutoSize = True
+        Me.lblHik21.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHik21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblHik21.Location = New System.Drawing.Point(340, 257)
+        Me.lblHik21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik21.Name = "lblHik21"
+        Me.lblHik21.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik21.TabIndex = 146
         '
         'lblHik19
         '
@@ -4670,7 +4773,7 @@ Partial Class coolBlue
         'picLogo
         '
         Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
-        Me.picLogo.Location = New System.Drawing.Point(32, 77)
+        Me.picLogo.Location = New System.Drawing.Point(30, 77)
         Me.picLogo.Margin = New System.Windows.Forms.Padding(2)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(104, 67)
@@ -4680,11 +4783,11 @@ Partial Class coolBlue
         '
         'picSetting
         '
-        Me.picSetting.Image = Global.CoolBlueColor.My.Resources.Resources.gear
-        Me.picSetting.Location = New System.Drawing.Point(34, 97)
+        Me.picSetting.Image = Global.CoolBlueColor.My.Resources.Resources._409_tool_lineal__4_
+        Me.picSetting.Location = New System.Drawing.Point(38, 84)
         Me.picSetting.Margin = New System.Windows.Forms.Padding(2)
         Me.picSetting.Name = "picSetting"
-        Me.picSetting.Size = New System.Drawing.Size(32, 32)
+        Me.picSetting.Size = New System.Drawing.Size(50, 50)
         Me.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.picSetting.TabIndex = 128
         Me.picSetting.TabStop = False
@@ -4692,6 +4795,10 @@ Partial Class coolBlue
         'pnlBackup
         '
         Me.pnlBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.pnlBackup.Controls.Add(Me.btnTransave)
+        Me.pnlBackup.Controls.Add(Me.btnTans)
+        Me.pnlBackup.Controls.Add(Me.lblTranBackup)
+        Me.pnlBackup.Controls.Add(Me.txtBackup4)
         Me.pnlBackup.Controls.Add(Me.btnQcsave)
         Me.pnlBackup.Controls.Add(Me.btnQcedit)
         Me.pnlBackup.Controls.Add(Me.lblQC)
@@ -4710,6 +4817,41 @@ Partial Class coolBlue
         Me.pnlBackup.Name = "pnlBackup"
         Me.pnlBackup.Size = New System.Drawing.Size(780, 396)
         Me.pnlBackup.TabIndex = 126
+        '
+        'btnTransave
+        '
+        Me.btnTransave.BackColor = System.Drawing.Color.ForestGreen
+        Me.btnTransave.ForeColor = System.Drawing.Color.Ivory
+        Me.btnTransave.Location = New System.Drawing.Point(565, 176)
+        Me.btnTransave.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnTransave.Name = "btnTransave"
+        Me.btnTransave.Size = New System.Drawing.Size(57, 28)
+        Me.btnTransave.TabIndex = 87
+        Me.btnTransave.Text = "Save"
+        Me.btnTransave.UseVisualStyleBackColor = False
+        '
+        'btnTans
+        '
+        Me.btnTans.BackColor = System.Drawing.Color.ForestGreen
+        Me.btnTans.ForeColor = System.Drawing.Color.Ivory
+        Me.btnTans.Location = New System.Drawing.Point(481, 177)
+        Me.btnTans.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnTans.Name = "btnTans"
+        Me.btnTans.Size = New System.Drawing.Size(57, 28)
+        Me.btnTans.TabIndex = 86
+        Me.btnTans.Text = "Edit"
+        Me.btnTans.UseVisualStyleBackColor = False
+        '
+        'lblTranBackup
+        '
+        Me.lblTranBackup.AutoSize = True
+        Me.lblTranBackup.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranBackup.Location = New System.Drawing.Point(31, 185)
+        Me.lblTranBackup.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTranBackup.Name = "lblTranBackup"
+        Me.lblTranBackup.Size = New System.Drawing.Size(114, 19)
+        Me.lblTranBackup.TabIndex = 85
+        Me.lblTranBackup.Text = "Transport Backup"
         '
         'btnQcsave
         '
@@ -4816,18 +4958,6 @@ Partial Class coolBlue
         Me.lblDieselbackup.TabIndex = 74
         Me.lblDieselbackup.Text = "Diesel Backup"
         '
-        'txtBackup3
-        '
-        Me.txtBackup3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.txtBackup3.Enabled = False
-        Me.txtBackup3.Location = New System.Drawing.Point(142, 137)
-        Me.txtBackup3.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtBackup3.Name = "txtBackup3"
-        Me.txtBackup3.Size = New System.Drawing.Size(320, 20)
-        Me.txtBackup3.TabIndex = 80
-        Me.txtBackup3.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited3
-        Me.ToolTip1.SetToolTip(Me.txtBackup3, "Line of code for copy datababse")
-        '
         'txtBackup2
         '
         Me.txtBackup2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
@@ -4850,6 +4980,14 @@ Partial Class coolBlue
         Me.txtBackup1.TabIndex = 72
         Me.txtBackup1.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited
         '
+        'proBar
+        '
+        Me.proBar.Location = New System.Drawing.Point(17, 176)
+        Me.proBar.Margin = New System.Windows.Forms.Padding(2)
+        Me.proBar.Name = "proBar"
+        Me.proBar.Size = New System.Drawing.Size(772, 8)
+        Me.proBar.TabIndex = 9
+        '
         'coolBlue
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4857,7 +4995,7 @@ Partial Class coolBlue
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(801, 661)
         Me.Controls.Add(Me.picLogo)
-        Me.Controls.Add(Me.picSetting)
+        Me.Controls.Add(Me.proBar)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtIp)
@@ -4866,6 +5004,7 @@ Partial Class coolBlue
         Me.Controls.Add(Me.lblTile)
         Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.pnlTitlebar)
+        Me.Controls.Add(Me.picSetting)
         Me.Controls.Add(Me.pnlHik)
         Me.Controls.Add(Me.pnlWire)
         Me.Controls.Add(Me.pnlGeo)
@@ -5012,10 +5151,10 @@ Partial Class coolBlue
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picHik34, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHikv24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHikv23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHikv22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHikv21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picHikv20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picHikv19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picHikv18, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5295,10 +5434,10 @@ Partial Class coolBlue
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents picHik34 As PictureBox
-    Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents PictureBox14 As PictureBox
-    Friend WithEvents PictureBox15 As PictureBox
-    Friend WithEvents PictureBox16 As PictureBox
+    Friend WithEvents picHikv24 As PictureBox
+    Friend WithEvents picHikv23 As PictureBox
+    Friend WithEvents picHikv22 As PictureBox
+    Friend WithEvents picHikv21 As PictureBox
     Friend WithEvents picHikv20 As PictureBox
     Friend WithEvents picHikv19 As PictureBox
     Friend WithEvents picHikv18 As PictureBox
@@ -5324,13 +5463,13 @@ Partial Class coolBlue
     Friend WithEvents lblHik34 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblHik23 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents lblHik24 As Label
     Friend WithEvents btnHikTest2 As Button
     Friend WithEvents lblHik20 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
+    Friend WithEvents lblHik22 As Label
+    Friend WithEvents lblHik21 As Label
     Friend WithEvents lblHik19 As Label
     Friend WithEvents lblHik18 As Label
     Friend WithEvents lblHik17 As Label
@@ -5413,4 +5552,14 @@ Partial Class coolBlue
     Friend WithEvents btnQcedit As Button
     Friend WithEvents lblQC As Label
     Friend WithEvents txtBackup3 As TextBox
+    Friend WithEvents proBar As ProgressBar
+    Friend WithEvents btnCMDcheck As Button
+    Friend WithEvents btnCopy As Button
+    Friend WithEvents txtCMDtext As TextBox
+    Friend WithEvents lblSpon As Label
+    Friend WithEvents txtSpon As TextBox
+    Friend WithEvents btnTransave As Button
+    Friend WithEvents btnTans As Button
+    Friend WithEvents lblTranBackup As Label
+    Friend WithEvents txtBackup4 As TextBox
 End Class

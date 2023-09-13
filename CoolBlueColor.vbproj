@@ -62,10 +62,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\network_9oI_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -119,6 +119,12 @@
     <Compile Include="Information.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="login_setting.Designer.vb">
+      <DependentUpon>login_setting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login_setting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MSComctlLib\ListItem.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -156,6 +162,9 @@
     <EmbeddedResource Include="Information.resx">
       <DependentUpon>Information.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="login_setting.resx">
+      <DependentUpon>login_setting.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -164,6 +173,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.manifest" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -240,6 +250,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="network_9oI_icon.ico" />
+    <None Include="Resources\duplicate.png" />
+    <None Include="Resources\656-person-sign-protest-lineal %289%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %288%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %287%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %286%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %285%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %284%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %283%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %282%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal %281%29.gif" />
+    <None Include="Resources\656-person-sign-protest-lineal.gif" />
+    <None Include="Resources\favicon.ico" />
+    <None Include="Resources\favicon %281%29.ico" />
+    <None Include="Resources\726-wireless-connection-lineal %282%29.gif" />
+    <None Include="Resources\409-tool-lineal %284%29.gif" />
+    <None Include="Resources\409-tool-lineal %283%29.gif" />
+    <None Include="Resources\409-tool-lineal %281%29.gif" />
+    <None Include="Resources\726-wireless-connection-lineal %281%29.gif" />
+    <None Include="Resources\680-it-developer-linel.gif" />
+    <None Include="Resources\680-it-developer-lil.gif" />
+    <None Include="Resources\680-it-developer-lineal.gif" />
+    <None Include="Resources\680-it-developer-lineal %281%29.gif" />
     <None Include="Resources\synchronize.png" />
     <None Include="Resources\gear.png" />
     <None Include="Resources\backup %282%29.png" />

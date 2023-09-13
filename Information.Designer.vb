@@ -40,10 +40,10 @@ Partial Class Information
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.CoolBlueColor.My.Resources.Resources.info
-        Me.PictureBox1.Location = New System.Drawing.Point(165, 20)
+        Me.PictureBox1.Image = Global.CoolBlueColor.My.Resources.Resources._656_person_sign_protest_lineal__6_
+        Me.PictureBox1.Location = New System.Drawing.Point(137, 16)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox1.Size = New System.Drawing.Size(53, 53)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False

@@ -5,6 +5,7 @@ Imports System.Threading
 Imports System.Configuration
 
 Public Class coolBlue
+#Region "Timer"
     Private Sub coolBlue_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
         Timer1.Start()
@@ -13,6 +14,7 @@ Public Class coolBlue
         Timer2.Interval = 50 '10 times a second
         lblTile.BackColor = Color.FromArgb(0, 0, 0)
         My.Settings.Save()
+        proBar.Hide()
     End Sub
     Private Function pingIPcamera(ByVal IPAddress As String) As String
         Dim camIpAddress As String
@@ -38,27 +40,8 @@ Public Class coolBlue
 
         End If
     End Sub
-
-    'close button
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.Close()
-    End Sub
-    'Maximise button
-    Private Sub btnMaximise_Click(sender As Object, e As EventArgs)
-        If Me.WindowState = FormWindowState.Normal Then
-            WindowState = FormWindowState.Maximized
-        ElseIf Me.WindowState = FormWindowState.Maximized Then
-            WindowState = FormWindowState.Normal
-        End If
-    End Sub
-    'Minimize button
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btmMinimize.Click
-        If Me.WindowState = FormWindowState.Maximized Then
-            WindowState = FormWindowState.Minimized
-        ElseIf Me.WindowState = FormWindowState.Normal Then
-            WindowState = FormWindowState.Minimized
-        End If
-    End Sub
+#End Region
+#Region "Mouse Drag and Drop"
     'Title bar mouse movement and drag and drop 
     Dim drag As Boolean
     Dim mousex As Integer
@@ -116,35 +99,9 @@ Public Class coolBlue
     Private Sub Panel2_MouseUp(sender As Object, e As MouseEventArgs) Handles pnlClosebar.MouseUp
         drag = False
     End Sub
-    'Title label color opacity change on form load
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        Static aa As Integer
-        lblTile.BackColor = Color.FromArgb(aa, 240, 240, 243)
-        lblTile.ForeColor = Color.FromArgb(aa, 19, 149, 181)
-        aa += 5 'amount of opacity change for each timer tick
-        If aa > 255 Then Timer2.Enabled = False 'finished fade-in
-    End Sub
-    'Status change value get and set
-    Public Property StatusText() As String
-        Get
-            Return sslStatus.Text
-        End Get
-        Set(value As String)
-            sslStatus.Text = value
-        End Set
-    End Property
-    'Status change value get and set
-    Public Property StatusText1() As String
-        Get
-            Return sslStatus2.Text
-        End Get
-        Set(value As String)
-            sslStatus2.Text = value
-        End Set
-    End Property
-    'Title change when click on tabs
-
-    'Ping camera From lblCam 1 to 28 
+#End Region
+#Region "NVR-1 Ping code"
+    'Ping camera From lblCam 1 to 32 Hikvision NVR-1 
     Dim intCount As Integer = 0
     Private Sub btnTestConnection_Click(sender As Object, e As EventArgs) Handles btnTestConnection.Click
         Try
@@ -475,7 +432,9 @@ Public Class coolBlue
             MessageBox.Show(ex.Message)
         End Try
     End Sub
-    'Ping camera From lblCam 1 to 28 Hikvision NVR-2
+#End Region
+#Region "NVR-2 Ping"
+    'Ping camera From lblCam 1 to 20 Hikvision NVR-2
     Private Sub btnHikTest2_Click(sender As Object, e As EventArgs) Handles btnHikTest2.Click
         Try
             intCount += 1
@@ -521,9 +480,8 @@ Public Class coolBlue
                 lblHik4.ForeColor = Color.White
                 picHikv4.Image = My.Resources.close__1_
             End If
-
+            gateCam = pingIPcamera("192.168.1.45")
             If gateCam = True Then
-                gateCam = pingIPcamera("192.168.1.45")
                 lblHik5.Text = "5. MEKA-3 Front"
                 lblHik5.ForeColor = Color.White
                 picHikv5.Image = My.Resources.confirm
@@ -682,130 +640,52 @@ Public Class coolBlue
                 lblHik20.ForeColor = Color.White
                 picHikv20.Image = My.Resources.close__1_
             End If
-            'gateCam = pingIPcamera("192.168.1.23")
-            ' If gateCam = True Then
-            'lblCam21.Text = "21. Transport Parking Area"
-            'lblCam21.ForeColor = Color.White
-            ' picBox21.Image = My.Resources.confirm
-            ' Else
-            'lblCam21.Text = "21. Transport Parking Area"
-            ' lblCam21.ForeColor = Color.White
-            '    picBox21.Image = My.Resources.close__1_
-            '  End If
-            'gateCam = pingIPcamera("192.168.1.24")
-            'If gateCam = True Then
-            'lblCam22.Text = "22. Transport Roadside"
-            'lblCam22.ForeColor = Color.White
-            'picBox22.Image = My.Resources.confirm
-            'Else
-            'lblCam22.Text = "22. Transport Roadside"
-            'lblCam22.ForeColor = Color.White
-            'picBox22.Image = My.Resources.close__1_
-            '   End If
-            ' gateCam = pingIPcamera("192.168.1.25")
-            ' If gateCam = True Then
-            ' lblCam23.Text = "23. Safety Office Side"
-            ' lblCam23.ForeColor = Color.White
-            ' picBox23.Image = My.Resources.confirm
-            ' Else
-            'lblCam23.Text = "23. Safety Office Side"
-            'lblCam23.ForeColor = Color.White
-            'picBox23.Image = My.Resources.close__1_
-            ' End If
-            ' gateCam = pingIPcamera("192.168.1.26")
-            'If gateCam = True Then
-            'lblCam24.Text = "24. Tarrace Admin Parking"
-            'lblCam24.ForeColor = Color.White
-            'picBox24.Image = My.Resources.confirm
-            ' Else
-            'lblCam24.Text = "24. Tarrace Admin Parking"
-            'lblCam24.ForeColor = Color.White
-            'picBox24.Image = My.Resources.close__1_
-            ' End If
-            '  gateCam = pingIPcamera("192.168.1.27")
-            ' If gateCam = True Then
-            ' lblCam25.Text = "25. Adming Parking"
-            'lblCam25.ForeColor = Color.White
-            'picBox25.Image = My.Resources.confirm
-            ' Else
-            'lblCam25.Text = "25. Admin Parking"
-            'lblCam25.ForeColor = Color.White
-            'picBox25.Image = My.Resources.close__1_
-            '  End If
-            '  gateCam = pingIPcamera("192.168.1.28")
-            ' If gateCam = True Then
-            ' lblCam26.Text = "26. Clinicside Admin Parking"
-            'lblCam26.ForeColor = Color.White
-            ' picBox26.Image = My.Resources.confirm
-            ' Else
-            'lblCam26.Text = "26. Clinicside Admin Parking"
-            'lblCam26.ForeColor = Color.White
-            'picBox26.Image = My.Resources.close__1_
-            ' End If
-            ' gateCam = pingIPcamera("192.168.1.29")
-            ' If gateCam = True Then
-            'lblCam27.Text = "27. Time Keeper Exit"
-            'lblCam27.ForeColor = Color.White
-            'picBox27.Image = My.Resources.confirm
-            ' Else
-            'lblCam27.Text = "27. Time Keeper Exit"
-            'lblCam27.ForeColor = Color.White
-            'picBox27.Image = My.Resources.close__1_
-            '  End If
-            'gateCam = pingIPcamera("192.168.1.30")
-            '  If gateCam = True Then
-            'lblCam28.Text = "28. Gate-1 Roadside"
-            'lblCam28.ForeColor = Color.White
-            '  picBox28.Image = My.Resources.confirm
-            'Else
-            ' lblCam28.Text = "28. Gate-1 Roadside"
-            ' lblCam28.ForeColor = Color.White
-            'picBox28.Image = My.Resources.close__1_
-            ' End If
-            '  gateCam = pingIPcamera("192.168.1.31")
-            '  If gateCam = True Then
-            ' lblCam29.Text = "29. Gate-3 Outside Parking-A"
-            ' lblCam29.ForeColor = Color.White
-            ' picBox29.Image = My.Resources.confirm
-            ' Else
-            'lblCam29.Text = "29. Gate-3 Outside Parking-A"
-            'lblCam29.ForeColor = Color.White
-            'picBox29.Image = My.Resources.close__1_
-            ' End If
-            ' gateCam = pingIPcamera("192.168.1.32")
-            ' If gateCam = True Then
-            'lblCam30.Text = "30. Gate-3 Outside Parking-B"
-            'lblCam30.ForeColor = Color.White
-            '   picBox30.Image = My.Resources.confirm
-            ' Else
-            'lblCam30.Text = "30. Gate-3 Outside Parking-B"
-            'lblCam30.ForeColor = Color.White
-            'picBox30.Image = My.Resources.close__1_
-            'End If
-            ' gateCam = pingIPcamera("192.168.1.33")
-            ' If gateCam = True Then
-            'lblCam31.Text = "31. Car Parking-A"
-            'lblCam31.ForeColor = Color.White
-            'picBox31.Image = My.Resources.confirm
-            'Else
-            'lblCam31.Text = "31. Car Parking-A"
-            'lblCam31.ForeColor = Color.White
-            'picBox31.Image = My.Resources.close__1_
-            'End If
-            ' gateCam = pingIPcamera("192.168.1.34")
-            'If gateCam = True Then
-            'lblCam32.Text = "32. Car Parking-B"
-            'lblCam32.ForeColor = Color.White
-            ' picBox32.Image = My.Resources.confirm
-            ' Else
-            'lblCam32.Text = "32. Car Parking-B"
-            'lblCam32.ForeColor = Color.White
-            'picBox32.Image = My.Resources.close__1_
-            ' End If
+            gateCam = pingIPcamera("192.168.1.61")
+            If gateCam = True Then
+                lblHik21.Text = "21. Ready Mix At Meka 1"
+                lblHik21.ForeColor = Color.White
+                picHikv21.Image = My.Resources.confirm
+            Else
+                lblHik21.Text = "21. Ready Mix At Meka 1"
+                lblHik21.ForeColor = Color.White
+                picHikv21.Image = My.Resources.close__1_
+            End If
+            gateCam = pingIPcamera("192.168.1.62")
+            If gateCam = True Then
+                lblHik22.Text = "22. ReadyMix Office Outside"
+                lblHik22.ForeColor = Color.White
+                picHikv22.Image = My.Resources.confirm
+            Else
+                lblHik22.Text = "22. ReadyMix Office Outside"
+                lblHik22.ForeColor = Color.White
+                picHikv22.Image = My.Resources.close__1_
+            End If
+            gateCam = pingIPcamera("192.168.1.63")
+            If gateCam = True Then
+                lblHik23.Text = "23. ReadyMix Office down"
+                lblHik23.ForeColor = Color.White
+                picHikv23.Image = My.Resources.confirm
+            Else
+                lblHik23.Text = "23. ReadyMix Office down"
+                lblHik23.ForeColor = Color.White
+                picHikv23.Image = My.Resources.close__1_
+            End If
+            gateCam = pingIPcamera("192.168.1.65")
+            If gateCam = True Then
+                lblHik24.Text = "24. ReadyMix Office UP"
+                lblHik24.ForeColor = Color.White
+                picHikv24.Image = My.Resources.confirm
+            Else
+                lblHik24.Text = "24. ReadyMix Office UP"
+                lblHik24.ForeColor = Color.White
+                picHikv24.Image = My.Resources.close__1_
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+#End Region
+#Region "IP Status"
     'This can display status of ip address of selected cam
 
     Private Sub pnlHik2_MouseEnter(sender As Object, e As EventArgs) Handles pnlHik2.MouseEnter
@@ -912,6 +792,27 @@ Public Class coolBlue
         StatusText = "Cam IP : 192.168.1.60"
         txtIp.Text = "192.168.1.60"
     End Sub
+    Private Sub lblHik21_MouseHover(sender As Object, e As EventArgs) Handles lblHik21.MouseHover
+        StatusText = "Cam IP : 192.168.1.61"
+        txtIp.Text = "192.168.1.61"
+    End Sub
+    Private Sub lblHik22_MouseHover(sender As Object, e As EventArgs) Handles lblHik22.MouseHover
+        StatusText = "Cam IP : 192.168.1.62"
+        txtIp.Text = "192.168.1.62"
+    End Sub
+    Private Sub lblHik23_MouseHover(sender As Object, e As EventArgs) Handles lblHik23.MouseHover
+        StatusText = "Cam IP : 192.168.1.63"
+        txtIp.Text = "192.168.1.63"
+    End Sub
+    Private Sub lblHik24_MouseHover(sender As Object, e As EventArgs) Handles lblHik24.MouseHover
+        StatusText = "Cam IP : 192.168.1.65"
+        txtIp.Text = "192.168.1.65"
+    End Sub
+
+
+#End Region
+#Region "CMDStatus-Hik2"
+
     'This code is for check running status in CMD seperate window (Hik-vision NVR-2)
 
     Private Sub picHikv1_DoubleClick(sender As Object, e As EventArgs) Handles picHikv1.DoubleClick
@@ -993,7 +894,18 @@ Public Class coolBlue
     Private Sub picHikv20_DoubleClick(sender As Object, e As EventArgs) Handles picHikv20.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.1.60")
     End Sub
-
+    Private Sub picHikv21_DoubleClick(sender As Object, e As EventArgs) Handles picHikv21.DoubleClick
+        Process.Start("cmd", "/k ping -t 192.168.1.61")
+    End Sub
+    Private Sub picHikv22_DoubleClick(sender As Object, e As EventArgs) Handles picHikv22.DoubleClick
+        Process.Start("cmd", "/k ping -t 192.168.1.62")
+    End Sub
+    Private Sub picHikv23_DoubleClick(sender As Object, e As EventArgs) Handles picHikv23.DoubleClick
+        Process.Start("cmd", "/k ping -t 192.168.1.63")
+    End Sub
+    Private Sub picHikv24_DoubleClick(sender As Object, e As EventArgs) Handles picHikv24.DoubleClick
+        Process.Start("cmd", "/k ping -t 192.168.1.65")
+    End Sub
     'This code is for check running status in CMD seperate window (Hik-vision)
     Private Sub picBox_DoubleClick(sender As Object, e As EventArgs) Handles picBox.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.1.3")
@@ -1121,7 +1033,8 @@ Public Class coolBlue
     Private Sub picBox32_DoubleClick(sender As Object, e As EventArgs) Handles picBox32.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.1.34")
     End Sub
-
+#End Region
+#Region "HIK-1 IP- hover"
     'Camera ip address on hover hikvision camera name at status bar 
     Private Sub pnlHik_MouseEnter(sender As Object, e As EventArgs) Handles pnlHik.MouseEnter
         sslStatus.Text = "Ready"
@@ -1286,6 +1199,8 @@ Public Class coolBlue
     Private Sub btnTestConnection_MouseLeave(sender As Object, e As EventArgs) Handles btnTestConnection.MouseLeave
         StatusText = "Ready"
     End Sub
+#End Region
+#Region "Hide and show panels"
     'When click in these button other associated panel hide and show
     Private Sub btnHik_Click(sender As Object, e As EventArgs) Handles btnHik.Click
         pnlHik.Visible = True
@@ -1339,23 +1254,32 @@ Public Class coolBlue
         pnlOther.Visible = False
         pnlBackup.Visible = False
         lblTile.Text = "NIC WIRELESS DEVICE"
-
-
     End Sub
+    Private Sub btnPac_Click(sender As Object, e As EventArgs) Handles btnPac.Click
+        pnlOther.Visible = True
+        pnlSen.Visible = False
+        pnlHik.Visible = False
+        pnlGeo.Visible = False
+        pnlWire.Visible = False
+        pnlBackup.Visible = False
+        lblTile.Text = "NIC MEKA PAC"
+    End Sub
+#End Region
+#Region "Geo ping code"
     'Geo vision camera listing codes
     Private Sub btnckeck_Click(sender As Object, e As EventArgs) Handles btnckeck.Click
-
         Try
             sslStatus.Text = "Checking"
             Dim geoCam As String
             ListView1.Items.Clear()
             ListView2.Items.Clear()
-
+            proBar.Show()
             ListView1.ForeColor = Color.Green
             ListView2.ForeColor = Color.OrangeRed
             Dim lvitem As ListViewItem
             Dim lvitem2 As ListViewItem
             geoCam = pingIPcamera("192.168.100.21")
+            proBar.Value = 1
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("1. TKF Entrance")
                 lvitem.SubItems.Add("192.168.100.21")
@@ -1364,6 +1288,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.21")
             End If
             geoCam = pingIPcamera("192.168.100.22")
+            proBar.Value = 2
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("2. TKF-2")
                 lvitem.SubItems.Add("192.168.100.22")
@@ -1372,6 +1297,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.22")
             End If
             geoCam = pingIPcamera("192.168.100.23")
+            proBar.Value = 2
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("3. TKF Masa")
                 lvitem.SubItems.Add("192.168.100.23")
@@ -1380,6 +1306,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.23")
             End If
             geoCam = pingIPcamera("192.168.100.24")
+            proBar.Value = 3
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("4. TKF Back Steam Room")
                 lvitem.SubItems.Add("192.168.100.24")
@@ -1388,6 +1315,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.24")
             End If
             geoCam = pingIPcamera("192.168.100.27")
+            proBar.Value = 4
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("5. TKF FingerCar")
                 lvitem.SubItems.Add("192.168.100.27")
@@ -1396,6 +1324,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.27")
             End If
             geoCam = pingIPcamera("192.168.100.28")
+            proBar.Value = 5
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("6. TKF Inside Room")
                 lvitem.SubItems.Add("192.168.100.28")
@@ -1404,6 +1333,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.28")
             End If
             geoCam = pingIPcamera("192.168.100.25")
+            proBar.Value = 6
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("7. Readymix Vehicle Cleaning Area")
                 lvitem.SubItems.Add("192.168.100.25")
@@ -1412,6 +1342,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.25")
             End If
             geoCam = pingIPcamera("192.168.100.76")
+            proBar.Value = 7
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("8. TKF Block Filling Area")
                 lvitem.SubItems.Add("192.168.100.76")
@@ -1420,6 +1351,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.76")
             End If
             geoCam = pingIPcamera("192.168.100.33")
+            proBar.Value = 8
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("9. IBF/TKF Office Building UP")
                 lvitem.SubItems.Add("192.168.100.33")
@@ -1428,6 +1360,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.33")
             End If
             geoCam = pingIPcamera("192.168.100.34")
+            proBar.Value = 9
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("10. TKF Fielding 3&4")
                 lvitem.SubItems.Add("192.168.100.34")
@@ -1436,6 +1369,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.34")
             End If
             geoCam = pingIPcamera("192.168.100.35")
+            proBar.Value = 10
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("11. TKF_2")
                 lvitem.SubItems.Add("192.168.100.35")
@@ -1444,6 +1378,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.35")
             End If
             geoCam = pingIPcamera("192.168.100.36")
+            proBar.Value = 11
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("12. TKF_3")
                 lvitem.SubItems.Add("192.168.100.36")
@@ -1452,6 +1387,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.36")
             End If
             geoCam = pingIPcamera("192.168.100.37")
+            proBar.Value = 12
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("13. TKF_4")
                 lvitem.SubItems.Add("192.168.100.37")
@@ -1460,6 +1396,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.37")
             End If
             geoCam = pingIPcamera("192.168.100.38")
+            proBar.Value = 13
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("14. TKF_5")
                 lvitem.SubItems.Add("192.168.100.38")
@@ -1468,6 +1405,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.38")
             End If
             geoCam = pingIPcamera("192.168.100.39")
+            proBar.Value = 14
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("15. TKF Fielding 1&2")
                 lvitem.SubItems.Add("192.168.100.39")
@@ -1476,6 +1414,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.39")
             End If
             geoCam = pingIPcamera("192.168.100.40")
+            proBar.Value = 15
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("16. TKF 7")
                 lvitem.SubItems.Add("192.168.100.40")
@@ -1484,6 +1423,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.40")
             End If
             geoCam = pingIPcamera("192.168.100.41")
+            proBar.Value = 16
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("17. TKF_8")
                 lvitem.SubItems.Add("192.168.100.41")
@@ -1492,6 +1432,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.41")
             End If
             geoCam = pingIPcamera("192.168.100.42")
+            proBar.Value = 17
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("18. TKF_9")
                 lvitem.SubItems.Add("192.168.100.42")
@@ -1500,6 +1441,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.42")
             End If
             geoCam = pingIPcamera("192.168.100.43")
+            proBar.Value = 18
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("19. TKF_10")
                 lvitem.SubItems.Add("192.168.100.43")
@@ -1508,6 +1450,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.43")
             End If
             geoCam = pingIPcamera("192.168.100.44")
+            proBar.Value = 19
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("20. TKF Backside A")
                 lvitem.SubItems.Add("192.168.100.44")
@@ -1516,6 +1459,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.44")
             End If
             geoCam = pingIPcamera("192.168.100.45")
+            proBar.Value = 20
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("21. TKF Backside B")
                 lvitem.SubItems.Add("192.168.100.45")
@@ -1524,6 +1468,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.45")
             End If
             geoCam = pingIPcamera("192.168.100.48")
+            proBar.Value = 21
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("22. Air Station Inside")
                 lvitem.SubItems.Add("192.168.100.48")
@@ -1548,6 +1493,7 @@ Public Class coolBlue
             'lvitem2.SubItems.Add("192.168.100.50")
             'End If
             geoCam = pingIPcamera("192.168.100.51")
+            proBar.Value = 22
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("25. Lab. Inside The Room")
                 lvitem.SubItems.Add("192.168.100.51")
@@ -1556,6 +1502,7 @@ Public Class coolBlue
                 'lvitem2.SubItems.Add("192.168.100.51")
             End If
             geoCam = pingIPcamera("192.168.100.52")
+            proBar.Value = 23
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("26. Technical Store UP On Gate")
                 lvitem.SubItems.Add("192.168.100.52")
@@ -1564,6 +1511,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.52")
             End If
             geoCam = pingIPcamera("192.168.100.53")
+            proBar.Value = 24
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("27. Technical Store 2nd Floor")
                 lvitem.SubItems.Add("192.168.100.53")
@@ -1572,6 +1520,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.53")
             End If
             geoCam = pingIPcamera("192.168.100.54")
+            proBar.Value = 25
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("28. Technical Store Near Office")
                 lvitem.SubItems.Add("192.168.100.54")
@@ -1580,6 +1529,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.54")
             End If
             geoCam = pingIPcamera("192.168.100.55")
+            proBar.Value = 26
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("29. Workshop Leth Machine Up")
                 lvitem.SubItems.Add("192.168.100.55")
@@ -1588,6 +1538,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.55")
             End If
             geoCam = pingIPcamera("192.168.100.56")
+            proBar.Value = 27
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("30. Workshop Diesel Up")
                 lvitem.SubItems.Add("192.168.100.56")
@@ -1596,6 +1547,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.56")
             End If
             geoCam = pingIPcamera("192.168.100.57")
+            proBar.Value = 28
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("31. Vehicle Maintenance Inside")
                 lvitem.SubItems.Add("192.168.100.57")
@@ -1604,6 +1556,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.57")
             End If
             geoCam = pingIPcamera("192.168.100.58")
+            proBar.Value = 29
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("32. Back Diesel Workshop")
                 lvitem.SubItems.Add("192.168.100.58")
@@ -1612,6 +1565,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.58")
             End If
             geoCam = pingIPcamera("192.168.100.59")
+            proBar.Value = 30
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("33. Inside Vehicle")
                 lvitem.SubItems.Add("192.168.100.59")
@@ -1620,6 +1574,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.59")
             End If
             geoCam = pingIPcamera("192.168.100.64")
+            proBar.Value = 31
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("34. Infornt Of Vehicle Maintenance")
                 lvitem.SubItems.Add("192.168.100.64")
@@ -1628,6 +1583,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.64")
             End If
             geoCam = pingIPcamera("192.168.100.65")
+            proBar.Value = 32
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("35. Raw Material Store Room 1")
                 lvitem.SubItems.Add("192.168.100.65")
@@ -1636,6 +1592,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.65")
             End If
             geoCam = pingIPcamera("192.168.100.66")
+            proBar.Value = 33
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("36. Raw Material Store 3")
                 lvitem.SubItems.Add("192.168.100.66")
@@ -1644,6 +1601,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.66")
             End If
             geoCam = pingIPcamera("192.168.100.67")
+            proBar.Value = 34
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("37. RAW MATERIAL STORE ROOM 2")
                 lvitem.SubItems.Add("192.168.100.67")
@@ -1652,6 +1610,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.67")
             End If
             geoCam = pingIPcamera("192.168.100.68")
+            proBar.Value = 35
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("38. Up Fleet Office")
                 lvitem.SubItems.Add("192.168.100.68")
@@ -1660,6 +1619,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.68")
             End If
             geoCam = pingIPcamera("192.168.100.126")
+            proBar.Value = 36
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("39. TKF Block Yard")
                 lvitem.SubItems.Add("192.168.100.126")
@@ -1668,6 +1628,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.126")
             End If
             geoCam = pingIPcamera("192.168.100.71")
+            proBar.Value = 37
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("40. Transport Road side PTZ")
                 lvitem.SubItems.Add("192.168.100.71")
@@ -1676,6 +1637,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.71")
             End If
             geoCam = pingIPcamera("192.168.100.29")
+            proBar.Value = 38
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("41. TKF Block Yard Long View")
                 lvitem.SubItems.Add("192.168.100.29")
@@ -1684,6 +1646,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.29")
             End If
             geoCam = pingIPcamera("192.168.100.77")
+            proBar.Value = 39
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("42. TREATMENT PLANT BOUNDARY")
                 lvitem.SubItems.Add("192.168.100.77")
@@ -1692,6 +1655,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.77")
             End If
             geoCam = pingIPcamera("192.168.100.26")
+            proBar.Value = 40
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("43. Gate-3 Up")
                 lvitem.SubItems.Add("192.168.100.26")
@@ -1700,6 +1664,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.26")
             End If
             geoCam = pingIPcamera("192.168.100.79")
+            proBar.Value = 41
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("44. Washing Station Mizzan UP")
                 lvitem.SubItems.Add("192.168.100.79")
@@ -1708,6 +1673,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.79")
             End If
             geoCam = pingIPcamera("192.168.100.80")
+            proBar.Value = 43
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("45. Washing Station Backside RM")
                 lvitem.SubItems.Add("192.168.100.80")
@@ -1722,7 +1688,7 @@ Public Class coolBlue
             'Else
             'lvitem2 = Me.ListView2.Items.Add("46. Ready Mix At Silo A")
             'lvitem2.SubItems.Add("192.168.100.81")
-            ' End If
+            ' End If--------------------------------------------------------------------------------------
             ' geoCam = pingIPcamera("192.168.100.82")
             ' If geoCam = True Then
             'lvitem = Me.ListView1.Items.Add("47. Ready Mix At Silo B")
@@ -1731,15 +1697,17 @@ Public Class coolBlue
             'lvitem2 = Me.ListView2.Items.Add("47. Ready Mix At Silo B")
             'lvitem2.SubItems.Add("192.168.100.82")
             '  End If --------------------------------------------------------------------------
-            geoCam = pingIPcamera("192.168.100.83")
-            If geoCam = True Then
-                lvitem = Me.ListView1.Items.Add("48. Ready Mix At Meka 1")
-                lvitem.SubItems.Add("192.168.100.83")
-            Else
-                lvitem2 = Me.ListView2.Items.Add("48. Ready Mix At Meka 1")
-                lvitem2.SubItems.Add("192.168.100.83")
-            End If
+            'geoCam = pingIPcamera("192.168.100.83")
+            'proBar.Value = 44
+            'If geoCam = True Then
+            '    lvitem = Me.ListView1.Items.Add("48. Ready Mix At Meka 1")
+            '    lvitem.SubItems.Add("192.168.100.83")
+            'Else
+            '    lvitem2 = Me.ListView2.Items.Add("48. Ready Mix At Meka 1")
+            '    lvitem2.SubItems.Add("192.168.100.83")
+            'End If---------------------------------------------------------------------
             geoCam = pingIPcamera("192.168.100.124")
+            proBar.Value = 45
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("49. Scrap_Yard_Parking")
                 lvitem.SubItems.Add("192.168.100.124")
@@ -1748,6 +1716,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.124")
             End If
             geoCam = pingIPcamera("192.168.100.101")
+            proBar.Value = 46
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("50. Infront Of Pipe Factory")
                 lvitem.SubItems.Add("192.168.100.101")
@@ -1756,6 +1725,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.101")
             End If
             geoCam = pingIPcamera("192.168.100.103")
+            proBar.Value = 47
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("51. Pipe Factory Fleximatic")
                 lvitem.SubItems.Add("192.168.100.103")
@@ -1764,6 +1734,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.103")
             End If
             geoCam = pingIPcamera("192.168.100.104")
+            proBar.Value = 48
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("52. Pipe Factory Supermatic")
                 lvitem.SubItems.Add("192.168.100.104")
@@ -1772,6 +1743,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.104")
             End If
             geoCam = pingIPcamera("192.168.100.105")
+            proBar.Value = 49
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("53. Pipe Factory Module 360")
                 lvitem.SubItems.Add("192.168.100.105")
@@ -1780,6 +1752,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.105")
             End If
             geoCam = pingIPcamera("192.168.100.106")
+            proBar.Value = 50
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("54. Pipe Factory 160 Module")
                 lvitem.SubItems.Add("192.168.100.106")
@@ -1788,6 +1761,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.106")
             End If
             geoCam = pingIPcamera("192.168.100.107")
+            proBar.Value = 51
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("55. Pipe Wire Drwaing Machine")
                 lvitem.SubItems.Add("192.168.100.107")
@@ -1796,6 +1770,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.107")
             End If
             geoCam = pingIPcamera("192.168.100.108")
+            proBar.Value = 52
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("56. Pipe Factory Zublin 2")
                 lvitem.SubItems.Add("192.168.100.108")
@@ -1804,6 +1779,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.108")
             End If
             geoCam = pingIPcamera("192.168.100.109")
+            proBar.Value = 53
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("57. Pipe Factory Zublin 1")
                 lvitem.SubItems.Add("192.168.100.109")
@@ -1812,6 +1788,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.109")
             End If
             geoCam = pingIPcamera("192.168.100.110")
+            proBar.Value = 54
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("58. Pipe Scrap Block Area")
                 lvitem.SubItems.Add("192.168.100.110")
@@ -1820,6 +1797,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.110")
             End If
             geoCam = pingIPcamera("192.168.100.111")
+            proBar.Value = 55
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("59. Pipe Scrap Block Area")
                 lvitem.SubItems.Add("192.168.100.111")
@@ -1828,6 +1806,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.111")
             End If
             geoCam = pingIPcamera("192.168.100.112")
+            proBar.Value = 56
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("60. Pipe Scrap Block Area")
                 lvitem.SubItems.Add("192.168.100.112")
@@ -1836,6 +1815,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.112")
             End If
             geoCam = pingIPcamera("192.168.100.113")
+            proBar.Value = 57
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("61. IBF Boundary Near ACICO")
                 lvitem.SubItems.Add("192.168.100.113")
@@ -1861,6 +1841,7 @@ Public Class coolBlue
             ' End If --------------------------------------------------------
 
             geoCam = pingIPcamera("192.168.100.116")
+            proBar.Value = 58
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("64. Interblock Masjid")
                 lvitem.SubItems.Add("192.168.100.116")
@@ -1869,6 +1850,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.116")
             End If
             geoCam = pingIPcamera("192.168.100.117")
+            proBar.Value = 59
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("65. Interblock Inside")
                 lvitem.SubItems.Add("192.168.100.117")
@@ -1877,6 +1859,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.117")
             End If
             geoCam = pingIPcamera("192.168.100.118")
+            proBar.Value = 60
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("66. Interblock Henke")
                 lvitem.SubItems.Add("192.168.100.118")
@@ -1885,6 +1868,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.118")
             End If
             geoCam = pingIPcamera("192.168.100.119")
+            proBar.Value = 61
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("67. IBF Henke Modules and Pallates")
                 lvitem.SubItems.Add("192.168.100.119")
@@ -1893,6 +1877,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.119")
             End If
             geoCam = pingIPcamera("192.168.100.120")
+            proBar.Value = 62
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("68. IBF MASA")
                 lvitem.SubItems.Add("192.168.100.120")
@@ -1901,6 +1886,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.120")
             End If
             geoCam = pingIPcamera("192.168.100.121")
+            proBar.Value = 63
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("69. IBF Masa Steam Room Beside")
                 lvitem.SubItems.Add("192.168.100.121")
@@ -1909,6 +1895,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.121")
             End If
             geoCam = pingIPcamera("192.168.100.122")
+            proBar.Value = 64
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("70. IBF Masa Corner Side")
                 lvitem.SubItems.Add("192.168.100.122")
@@ -1917,6 +1904,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.122")
             End If
             geoCam = pingIPcamera("192.168.100.123")
+            proBar.Value = 65
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("71. IBF Masa Modules and Pallates")
                 lvitem.SubItems.Add("192.168.100.123")
@@ -1925,6 +1913,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.123")
             End If
             geoCam = pingIPcamera("192.168.100.125")
+            proBar.Value = 66
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("72. IBF Factory Finishing Goods")
                 lvitem.SubItems.Add("192.168.100.125")
@@ -1933,6 +1922,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.125")
             End If
             geoCam = pingIPcamera("192.168.100.127")
+            proBar.Value = 67
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("73. Gate-2 Inside")
                 lvitem.SubItems.Add("192.168.100.127")
@@ -1941,6 +1931,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.127")
             End If
             geoCam = pingIPcamera("192.168.100.128")
+            proBar.Value = 68
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("74. Gate-3 Inside")
                 lvitem.SubItems.Add("192.168.100.128")
@@ -1949,6 +1940,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.128")
             End If
             geoCam = pingIPcamera("192.168.100.46")
+            proBar.Value = 69
             If geoCam = True Then
 
                 lvitem = Me.ListView1.Items.Add("75. QC Back Side")
@@ -1958,6 +1950,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.46")
             End If
             geoCam = pingIPcamera("192.168.100.47")
+            proBar.Value = 70
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("76. Back At Tech. Store")
                 lvitem.SubItems.Add("192.168.100.47")
@@ -1966,6 +1959,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.47")
             End If
             geoCam = pingIPcamera("192.168.100.90")
+            proBar.Value = 71
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("77. Pipe Factory Terrace")
                 lvitem.SubItems.Add("192.168.100.90")
@@ -1974,6 +1968,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.90")
             End If
             geoCam = pingIPcamera("192.168.100.91")
+            proBar.Value = 72
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("78. Transport_Panchar_Area")
                 lvitem.SubItems.Add("192.168.100.91")
@@ -1982,6 +1977,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.91")
             End If
             geoCam = pingIPcamera("192.168.100.93")
+            proBar.Value = 73
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("79. Carpenter_block")
                 lvitem.SubItems.Add("192.168.100.93")
@@ -1990,6 +1986,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.93")
             End If
             geoCam = pingIPcamera("192.168.100.131")
+            proBar.Value = 74
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("80. Clinic_Area")
                 lvitem.SubItems.Add("192.168.100.131")
@@ -1998,6 +1995,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.131")
             End If
             geoCam = pingIPcamera("192.168.100.132")
+            proBar.Value = 75
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("81. Admin_Reception_Area")
                 lvitem.SubItems.Add("192.168.100.132")
@@ -2006,6 +2004,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.132")
             End If
             geoCam = pingIPcamera("192.168.100.133")
+            proBar.Value = 76
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("82. Admin_Entrance")
                 lvitem.SubItems.Add("192.168.100.133")
@@ -2014,6 +2013,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.133")
             End If
             geoCam = pingIPcamera("192.168.100.134")
+            proBar.Value = 77
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("83. Accounts_Section")
                 lvitem.SubItems.Add("192.168.100.134")
@@ -2022,6 +2022,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.134")
             End If
             geoCam = pingIPcamera("192.168.100.135")
+            proBar.Value = 78
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("84. Admin_Upstair")
                 lvitem.SubItems.Add("192.168.100.135")
@@ -2030,6 +2031,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.135")
             End If
             geoCam = pingIPcamera("192.168.100.137")
+            proBar.Value = 79
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("85. security room")
                 lvitem.SubItems.Add("192.168.100.137")
@@ -2038,6 +2040,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.137")
             End If
             geoCam = pingIPcamera("192.168.100.138")
+            proBar.Value = 80
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("86. IT_Department_Entrance")
                 lvitem.SubItems.Add("192.168.100.138")
@@ -2046,6 +2049,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.138")
             End If
             geoCam = pingIPcamera("192.168.100.92")
+            proBar.Value = 81
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("87. Painting_Area")
                 lvitem.SubItems.Add("192.168.100.92")
@@ -2054,6 +2058,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.92")
             End If
             geoCam = pingIPcamera("192.168.100.85")
+            proBar.Value = 82
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("88. RM_Mixer_Clean_Area")
                 lvitem.SubItems.Add("192.168.100.85")
@@ -2062,6 +2067,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.85")
             End If
             geoCam = pingIPcamera("192.168.100.96")
+            proBar.Value = 83
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("89. TECHNICAL OIL STORE")
                 lvitem.SubItems.Add("192.168.100.96")
@@ -2070,6 +2076,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.96")
             End If
             geoCam = pingIPcamera("192.168.100.95")
+            proBar.Value = 84
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("90. Workshop_Section")
                 lvitem.SubItems.Add("192.168.100.95")
@@ -2078,6 +2085,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.95")
             End If
             geoCam = pingIPcamera("192.168.100.88")
+            proBar.Value = 85
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("91. Ready_Mix_Store A")
                 lvitem.SubItems.Add("192.168.100.88")
@@ -2086,6 +2094,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.88")
             End If
             geoCam = pingIPcamera("192.168.100.87")
+            proBar.Value = 86
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("92. Ready_Mix_UP Electric_room")
                 lvitem.SubItems.Add("192.168.100.87")
@@ -2094,6 +2103,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.87")
             End If
             geoCam = pingIPcamera("192.168.100.89")
+            proBar.Value = 87
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("93. Ready_Mix_Store B")
                 lvitem.SubItems.Add("192.168.100.89")
@@ -2102,6 +2112,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.89")
             End If
             geoCam = pingIPcamera("192.168.100.139")
+            proBar.Value = 88
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("94. HR Department lobby")
                 lvitem.SubItems.Add("192.168.100.139")
@@ -2110,6 +2121,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.139")
             End If
             geoCam = pingIPcamera("192.168.100.94")
+            proBar.Value = 89
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("95. Workshop Welding A")
                 lvitem.SubItems.Add("192.168.100.94")
@@ -2118,6 +2130,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.94")
             End If
             geoCam = pingIPcamera("192.168.100.136")
+            proBar.Value = 90
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("96. Sales and Marketing Front")
                 lvitem.SubItems.Add("192.168.100.136")
@@ -2126,6 +2139,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.136")
             End If
             geoCam = pingIPcamera("192.168.100.140")
+            proBar.Value = 91
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("97. Sales Reception Area")
                 lvitem.SubItems.Add("192.168.100.140")
@@ -2134,6 +2148,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.140")
             End If
             geoCam = pingIPcamera("192.168.100.141")
+            proBar.Value = 92
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("98. Sales_Cashier")
                 lvitem.SubItems.Add("192.168.100.141")
@@ -2142,6 +2157,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.141")
             End If
             geoCam = pingIPcamera("192.168.100.142")
+            proBar.Value = 93
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("99. Cladding_1")
                 lvitem.SubItems.Add("192.168.100.142")
@@ -2150,6 +2166,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.142")
             End If
             geoCam = pingIPcamera("192.168.100.143")
+            proBar.Value = 94
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("100. Cladding_2")
                 lvitem.SubItems.Add("192.168.100.143")
@@ -2168,6 +2185,7 @@ Public Class coolBlue
             'End If
             '       -----------------------------------------------------------------------------------------
             geoCam = pingIPcamera("192.168.100.145")
+            proBar.Value = 95
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("102. Cladding_4")
                 lvitem.SubItems.Add("192.168.100.145")
@@ -2176,6 +2194,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.145")
             End If
             geoCam = pingIPcamera("192.168.100.146")
+            proBar.Value = 96
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("103. Cladding_5")
                 lvitem.SubItems.Add("192.168.100.146")
@@ -2184,6 +2203,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.146")
             End If
             geoCam = pingIPcamera("192.168.100.147")
+            proBar.Value = 97
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("104. Cladding_6")
                 lvitem.SubItems.Add("192.168.100.147")
@@ -2192,6 +2212,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.147")
             End If
             geoCam = pingIPcamera("192.168.100.148")
+            proBar.Value = 98
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("105. Cladding_7")
                 lvitem.SubItems.Add("192.168.100.148")
@@ -2200,6 +2221,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.148")
             End If
             geoCam = pingIPcamera("192.168.100.149")
+            proBar.Value = 99
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("106. Cladding_8")
                 lvitem.SubItems.Add("192.168.100.149")
@@ -2208,6 +2230,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.149")
             End If
             geoCam = pingIPcamera("192.168.100.150")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("107. Cladding_9")
                 lvitem.SubItems.Add("192.168.100.150")
@@ -2216,6 +2239,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.150")
             End If
             geoCam = pingIPcamera("192.168.100.151")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("108. Cladding_10")
                 lvitem.SubItems.Add("192.168.100.151")
@@ -2224,6 +2248,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.151")
             End If
             geoCam = pingIPcamera("192.168.100.152")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("109. Cladding_11")
                 lvitem.SubItems.Add("192.168.100.152")
@@ -2232,6 +2257,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.152")
             End If
             geoCam = pingIPcamera("192.168.100.153")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("110. Cladding_12")
                 lvitem.SubItems.Add("192.168.100.153")
@@ -2240,6 +2266,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.153")
             End If
             geoCam = pingIPcamera("192.168.100.154")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("111. Cladding_13")
                 lvitem.SubItems.Add("192.168.100.154")
@@ -2248,6 +2275,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.154")
             End If
             geoCam = pingIPcamera("192.168.100.155")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("112. Cladding_14")
                 lvitem.SubItems.Add("192.168.100.155")
@@ -2256,6 +2284,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.155")
             End If
             geoCam = pingIPcamera("192.168.100.156")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("113. Diesel_cam_1")
                 lvitem.SubItems.Add("192.168.100.156")
@@ -2264,6 +2293,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.156")
             End If
             geoCam = pingIPcamera("192.168.100.157")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("113. Diesel_cam_2")
                 lvitem.SubItems.Add("192.168.100.157")
@@ -2272,6 +2302,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.157")
             End If
             geoCam = pingIPcamera("192.168.100.158")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("115. Diesel_cam_3")
                 lvitem.SubItems.Add("192.168.100.158")
@@ -2280,6 +2311,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.158")
             End If
             geoCam = pingIPcamera("192.168.100.159")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("116. Diesel_cam_4")
                 lvitem.SubItems.Add("192.168.100.159")
@@ -2288,6 +2320,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.159")
             End If
             geoCam = pingIPcamera("192.168.100.144")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("117. Time keeper")
                 lvitem.SubItems.Add("192.168.100.144")
@@ -2296,6 +2329,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.144")
             End If
             geoCam = pingIPcamera("192.168.100.86")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("118. Readymix")
                 lvitem.SubItems.Add("192.168.100.86")
@@ -2304,6 +2338,7 @@ Public Class coolBlue
                 lvitem2.SubItems.Add("192.168.100.86")
             End If
             geoCam = pingIPcamera("192.168.100.161")
+            proBar.Value = 100
             If geoCam = True Then
                 lvitem = Me.ListView1.Items.Add("119. Restaurant Inside")
                 lvitem.SubItems.Add("192.168.100.161")
@@ -2313,6 +2348,8 @@ Public Class coolBlue
             End If
             intCount += 1
             StatusText = intCount & "  Times"
+            proBar.Value = 0
+            proBar.Hide()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -2320,6 +2357,8 @@ Public Class coolBlue
         lblNotworking.Text = ListView2.Items.Count
         sslStatus.Text = "Done"
     End Sub
+#End Region
+#Region "Sensor_ping_code"
     'Sensor devices coding
     Private Sub btnClkSen_Click(sender As Object, e As EventArgs) Handles btnClkSen.Click
         Try
@@ -2619,11 +2658,11 @@ Public Class coolBlue
             End If
             gateCam = pingIPcamera("192.168.101.32")
             If gateCam = True Then
-                lblSen30.Text = "30. CPF Room 4 Sec 2"
+                lblSen30.Text = "30. CPF Room 3 Sec 2"
                 lblSen30.ForeColor = Color.White
                 picSen30.Image = My.Resources.motion_sensor_green
             Else
-                lblSen30.Text = "30. CPF Room 4 Sec 2"
+                lblSen30.Text = "30. CPF Room 3 Sec 2"
                 lblSen30.ForeColor = Color.FromArgb(245, 54, 54)
                 picSen30.Image = My.Resources.motion_sensor_red
             End If
@@ -2659,11 +2698,11 @@ Public Class coolBlue
             End If
             gateCam = pingIPcamera("192.168.101.36")
             If gateCam = True Then
-                lblSen34.Text = "34. CPF Room 4 Sec 2"
+                lblSen34.Text = "34. CPF Room 4 Sec 3"
                 lblSen34.ForeColor = Color.White
                 picSen34.Image = My.Resources.motion_sensor_green
             Else
-                lblSen34.Text = "34. CPF Room 4 Sec 2"
+                lblSen34.Text = "34. CPF Room 4 Sec 3"
                 lblSen34.ForeColor = Color.FromArgb(245, 54, 54)
                 picSen34.Image = My.Resources.motion_sensor_red
             End If
@@ -2671,6 +2710,8 @@ Public Class coolBlue
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+#End Region
+#Region "CMDstatus HIK-1"
     'This code is for check running status in CMD seperate window (Hik-vision)
     Private Sub picSen1_DoubleClick(sender As Object, e As EventArgs) Handles picSen1.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.101.1")
@@ -2813,7 +2854,8 @@ Public Class coolBlue
         txtIp.Text = "192.168.101.1"
     End Sub
 
-
+#End Region
+#Region "Sensor_status_code"
     Private Sub pnlSen_MouseEnter(sender As Object, e As EventArgs) Handles pnlSen.MouseEnter
         StatusText = " "
         txtIp.Text = " "
@@ -2980,6 +3022,8 @@ Public Class coolBlue
         StatusText = "Sensor IP : 192.168.101.36"
         txtIp.Text = "192.168.101.36"
     End Sub
+#End Region
+#Region "Wireless _ping_Code"
     'wireless device coding
     Private Sub btnWireless_Click(sender As Object, e As EventArgs) Handles btnWireless.Click
         Try
@@ -3205,6 +3249,8 @@ Public Class coolBlue
         lblRemoved6.Text = "7. QA-QC LABORATORY INSIDE (REMOVED)"
         picWireRemove7.Image = My.Resources.wifi_disconnected
     End Sub
+#End Region
+#Region "CMDstatus_Wireless"
     'This code is for check running status in CMD seperate window (Wireless)
     Private Sub picWire1_DoubleClick(sender As Object, e As EventArgs) Handles picWire1.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.150.1")
@@ -3285,6 +3331,8 @@ Public Class coolBlue
     Private Sub picWire20_DoubleClick(sender As Object, e As EventArgs) Handles picWire20.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.150.28")
     End Sub
+#End Region
+#Region "Wireless Status_code"
     Private Sub btnckeck_MouseHover(sender As Object, e As EventArgs) Handles btnckeck.MouseHover
         sslStatus.Text = "Click to Check Camera Status"
     End Sub
@@ -3430,23 +3478,8 @@ Public Class coolBlue
         StatusText = "Wireless Device : 192.168.150.28"
         txtIp.Text = "192.168.150.28"
     End Sub
-    ' Default ip form fade background code
-    Private Sub btndefaultip_Click_1(sender As Object, e As EventArgs) Handles btndefaultip.Click
-        Dim bc As Color = BackColor
-        DefaultIP.ShowDialog()
-        BackColor = bc
-    End Sub
-    Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
-        Dim bc As Color = BackColor
-        About.ShowDialog()
-        BackColor = bc
-    End Sub
-
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Dim bc As Color = BackColor
-        Information.ShowDialog()
-        BackColor = bc
-    End Sub
+#End Region
+#Region "PAC_ping_code"
     'PAC panel coding
     Private Sub btnmekaping_Click(sender As Object, e As EventArgs) Handles btnmekaping.Click
         Dim PACmachine As String
@@ -3472,14 +3505,16 @@ Public Class coolBlue
             txtMeena.ForeColor = Color.Red
             txtMeena.BackColor = Color.Pink
         End If
-        ' PACmachine = pingIPcamera("192.168.12.1")
-        'If PACmachine = True Then
-        'txtIRMSserver.Text = "192.168.12.1"
-        'Else
-        'txtIRMSserver.Text = "192.168.12.1"
-        'txtIRMSserver.ForeColor = Color.Red
-        'txtIRMSserver.BackColor = Color.Pink
-        'End If
+        PACmachine = pingIPcamera("192.168.4.13")
+        If PACmachine = True Then
+            txtSpon.Text = "192.168.4.13"
+            txtSpon.ForeColor = Color.LawnGreen
+            txtSpon.BackColor = Color.Black
+        Else
+            txtSpon.Text = "192.168.4.13"
+            txtSpon.ForeColor = Color.Red
+            txtSpon.BackColor = Color.Pink
+        End If
         PACmachine = pingIPcamera("192.168.12.11")
         If PACmachine = True Then
             picMeka3.Image = My.Resources.mixer_truck_green
@@ -3527,6 +3562,7 @@ Public Class coolBlue
             txtTkf4.Text = "192.168.12.15"
             txtTkf4.ForeColor = Color.LawnGreen
             txtTkf4.BackColor = Color.Black
+
         Else
             txtTkf4.Text = "192.168.12.15"
             txtTkf4.ForeColor = Color.Red
@@ -3664,17 +3700,8 @@ Public Class coolBlue
         End If
 
     End Sub
-
-    Private Sub btnPac_Click(sender As Object, e As EventArgs) Handles btnPac.Click
-        pnlOther.Visible = True
-        pnlSen.Visible = False
-        pnlHik.Visible = False
-        pnlGeo.Visible = False
-        pnlWire.Visible = False
-        pnlBackup.Visible = False
-        lblTile.Text = "NIC MEKA PAC"
-    End Sub
-
+#End Region
+#Region "CMDstatus PAC"
     Private Sub picMeka1_DoubleClick(sender As Object, e As EventArgs) Handles picMeka1.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.12.12")
     End Sub
@@ -3760,8 +3787,12 @@ Public Class coolBlue
     Private Sub lblTkf9_DoubleClick(sender As Object, e As EventArgs) Handles lblTkf9.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.12.20")
     End Sub
-
-
+    Private Sub lblSpon_DoubleClick(sender As Object, e As EventArgs) Handles lblSpon.DoubleClick
+        Process.Start("cmd", "/k ping -t 192.168.4.13")
+    End Sub
+#End Region
+#Region "Auto_refresh"
+    'For auto refresh all windows
     Dim elapsedTime As Integer = 0
     Dim elapsedTimeSensor As Integer = 0
     Dim elapsedTimeGeo As Integer = 0
@@ -3778,7 +3809,6 @@ Public Class coolBlue
         elapsedTimeWire += 1
         elapsedTimePac += 1
         If chkBox.CheckState = CheckState.Checked AndAlso elapsedTime >= 300 Then
-
             btnTestConnection.PerformClick()
             elapsedTime = 0
         End If
@@ -3794,7 +3824,7 @@ Public Class coolBlue
             btnClkSen.PerformClick()
             elapsedTimeSensor = 0
         End If
-        If chkBox.CheckState = CheckState.Checked AndAlso elapsedTimeWire >= 348 Then
+        If chkBox.CheckState = CheckState.Checked AndAlso elapsedTimeWire >= 349 Then
             btnWireless.PerformClick()
             elapsedTimeWire = 0
         End If
@@ -3803,17 +3833,21 @@ Public Class coolBlue
             elapsedTimePac = 0
         End If
     End Sub
-    'this subroutine Is For rms backup And fms diesel backup
+#End Region
+#Region "Backup_RMS&QC"
+    'this subroutine Is For rms backup And fms diesel backup and Transport backup
     Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
         Dim result As DialogResult = MessageBox.Show("Do you want to Backup", "Backup process", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
             Shell("cmd.exe /C" + txtBackup1.Text)
             Shell("cmd.exe /C" + txtBackup2.Text)
             Shell("cmd.exe /C" + txtBackup3.Text)
+            Shell("cmd.exe /C" + txtBackup4.Text)
         Else
             result = DialogResult.No
         End If
     End Sub
+    'This is for Backup Tab settings
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         txtBackup1.Enabled = True
     End Sub
@@ -3825,7 +3859,9 @@ Public Class coolBlue
     Private Sub btnQcedit_Click(sender As Object, e As EventArgs) Handles btnQcedit.Click
         txtBackup3.Enabled = True
     End Sub
-
+    Private Sub btnTans_Click(sender As Object, e As EventArgs) Handles btnTans.Click
+        txtBackup4.Enabled = True
+    End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         txtBackup1.Enabled = False
     End Sub
@@ -3837,15 +3873,15 @@ Public Class coolBlue
     Private Sub btnQcsave_Click(sender As Object, e As EventArgs) Handles btnQcsave.Click
         txtBackup3.Enabled = False
     End Sub
+    Private Sub btnTransave_Click(sender As Object, e As EventArgs) Handles btnTransave.Click
+        txtBackup4.Enabled = False
+    End Sub
 
 
     Private Sub picLogo_DoubleClick(sender As Object, e As EventArgs) Handles picLogo.DoubleClick
         picLogo.Visible = False
-
     End Sub
-
-
-
+    'To Visibility of setting panel tab
     Private Sub picSetting_Click(sender As Object, e As EventArgs) Handles picSetting.Click
         pnlBackup.Visible = True
         pnlOther.Visible = False
@@ -3860,5 +3896,175 @@ Public Class coolBlue
     Private Sub picSetting_DoubleClick(sender As Object, e As EventArgs) Handles picSetting.DoubleClick
         picLogo.Visible = True
     End Sub
+#End Region
+#Region "other"
+
+    'Title label color opacity change on form load
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Static aa As Integer
+        lblTile.BackColor = Color.FromArgb(aa, 240, 240, 243)
+        lblTile.ForeColor = Color.FromArgb(aa, 19, 149, 181)
+        aa += 5 'amount of opacity change for each timer tick
+        If aa > 255 Then Timer2.Enabled = False 'finished fade-in
+    End Sub
+    'Status change value get and set
+    Public Property StatusText() As String
+        Get
+            Return sslStatus.Text
+        End Get
+        Set(value As String)
+            sslStatus.Text = value
+        End Set
+    End Property
+    'Status change value get and set
+    Public Property StatusText1() As String
+        Get
+            Return sslStatus2.Text
+        End Get
+        Set(value As String)
+            sslStatus2.Text = value
+        End Set
+    End Property
+    'close button
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
+    'Maximise button
+    Private Sub btnMaximise_Click(sender As Object, e As EventArgs)
+        If Me.WindowState = FormWindowState.Normal Then
+            WindowState = FormWindowState.Maximized
+        ElseIf Me.WindowState = FormWindowState.Maximized Then
+            WindowState = FormWindowState.Normal
+        End If
+    End Sub
+    'Minimize button
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btmMinimize.Click
+        If Me.WindowState = FormWindowState.Maximized Then
+            WindowState = FormWindowState.Minimized
+        ElseIf Me.WindowState = FormWindowState.Normal Then
+            WindowState = FormWindowState.Minimized
+        End If
+    End Sub
+    ' Default ip form fade background code
+    Private Sub btndefaultip_Click_1(sender As Object, e As EventArgs) Handles btndefaultip.Click
+        Dim bc As Color = BackColor
+        DefaultIP.ShowDialog()
+        BackColor = bc
+    End Sub
+    Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
+        Dim bc As Color = BackColor
+        About.ShowDialog()
+        BackColor = bc
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Dim bc As Color = BackColor
+        Information.ShowDialog()
+        BackColor = bc
+    End Sub
+#End Region
+
+    'For Display selected text in IPaddress textbox
+    Private Sub ListView1_MouseClick(sender As Object, e As MouseEventArgs) Handles ListView1.MouseClick
+
+        Dim info As ListViewHitTestInfo = ListView1.HitTest(e.X, e.Y)
+        'MsgBox(info.SubItem.Text)
+        txtCMDtext.Text = info.SubItem.Text
+    End Sub
+    Private Sub ListView2_MouseClick(sender As Object, e As MouseEventArgs) Handles ListView2.MouseClick
+        Dim info As ListViewHitTestInfo = ListView2.HitTest(e.X, e.Y)
+        'MsgBox(info.SubItem.Text)
+        txtCMDtext.Text = info.SubItem.Text
+    End Sub
+    'For check current status in cmd
+    Private Sub btnCMDcheck_Click(sender As Object, e As EventArgs) Handles btnCMDcheck.Click
+        Dim cmdcheck As String
+        cmdcheck = pingIPcamera(txtCMDtext.Text.Trim)
+        If cmdcheck = True Then
+            With txtCMDtext
+                .ForeColor = Color.ForestGreen
+                .BackColor = Color.GreenYellow
+            End With
+        Else
+            With txtCMDtext
+                .ForeColor = Color.Red
+                .BackColor = Color.Pink
+            End With
+        End If
+    End Sub
+
+    Private Sub btnCMDcheck_MouseLeave(sender As Object, e As EventArgs) Handles btnCMDcheck.MouseLeave
+        With txtCMDtext
+            .ForeColor = Color.Black
+            .BackColor = Color.White
+        End With
+    End Sub
+    'Copy text from list view data table 
+    Private Sub btnCopy_Click(sender As Object, e As EventArgs) Handles btnCopy.Click
+        Dim strValues As New System.Text.StringBuilder
+
+        If ListView1.SelectedItems.Count > 0 Then
+            For Each lv As ListViewItem In ListView1.SelectedItems
+                For i As Integer = 0 To lv.SubItems.Count - 1
+                    strValues.Append(lv.SubItems(i).Text & ControlChars.Tab)
+                Next
+
+                strValues.Append(ControlChars.CrLf)
+            Next
+        End If
+
+
+        Clipboard.SetDataObject(strValues.ToString)
+
+        If ListView2.SelectedItems.Count > 0 Then
+            For Each lv As ListViewItem In ListView2.SelectedItems
+                For i As Integer = 0 To lv.SubItems.Count - 1
+                    strValues.Append(lv.SubItems(i).Text & ControlChars.Tab)
+                Next
+
+                strValues.Append(ControlChars.CrLf)
+            Next
+        End If
+
+
+        Clipboard.SetDataObject(strValues.ToString)
+    End Sub
+    Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox1.DoubleClick
+        Dim headers = (From ch In ListView1.Columns
+                       Let header = DirectCast(ch, ColumnHeader)
+                       Select header.Text).ToArray()
+
+        Dim items = (From item In ListView1.Items
+                     Let lvi = DirectCast(item, ListViewItem)
+                     Select (From subitem In lvi.SubItems
+                             Let si = DirectCast(subitem, ListViewItem.ListViewSubItem)
+                             Select si.Text).ToArray()).ToArray()
+
+        Dim table As String = String.Join(vbTab, headers) & Environment.NewLine
+        For Each a In items
+            table &= String.Join(vbTab, a) & Environment.NewLine
+        Next
+        table = table.TrimEnd(CChar(Environment.NewLine))
+        Clipboard.SetText(table)
+    End Sub
+    Private Sub PictureBox2_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox2.DoubleClick
+        Dim headers = (From ch In ListView2.Columns
+                       Let header = DirectCast(ch, ColumnHeader)
+                       Select header.Text).ToArray()
+
+        Dim items = (From item In ListView2.Items
+                     Let lvi = DirectCast(item, ListViewItem)
+                     Select (From subitem In lvi.SubItems
+                             Let si = DirectCast(subitem, ListViewItem.ListViewSubItem)
+                             Select si.Text).ToArray()).ToArray()
+
+        Dim table As String = String.Join(vbTab, headers) & Environment.NewLine
+        For Each a In items
+            table &= String.Join(vbTab, a) & Environment.NewLine
+        Next
+        table = table.TrimEnd(CChar(Environment.NewLine))
+        Clipboard.SetText(table)
+    End Sub
+
 
 End Class

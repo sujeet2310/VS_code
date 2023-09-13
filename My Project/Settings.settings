@@ -6,10 +6,13 @@
       <Value Profile="(Default)">robocopy "\\192.168.16.1\fms diesel" "D:\diesel data" /s /XF file *.fil*</Value>
     </Setting>
     <Setting Name="txtbackupedited2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"robocopy "\\194.193.192.1\Backup (D)\2011" "D:\2011" /s /im /XF file *.exe* &amp; robocopy "\\194.193.192.1\Backup (D)\2002" "D:\2002" /s /im /XF file *.exe*"</Value>
+      <Value Profile="(Default)">robocopy "\\194.193.192.1\Backup (D)\2011" "D:\RMS_Backup" /s /im /XF file *.exe*</Value>
     </Setting>
     <Setting Name="txtbackupedited3" Type="System.String" Scope="User">
-      <Value Profile="(Default)">robocopy "\\192.168.18.2\c\Program Files\QCAS" "D:\QC_LAB_BACKUP" /s /im /XF file *.crp*</Value>
+      <Value Profile="(Default)">robocopy "\\192.168.18.2\QCAS" "D:\QC_LAB_BACKUP" /s /im /XF file *.crp*</Value>
+    </Setting>
+    <Setting Name="txtbackupedited4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">robocopy "\\192.168.15.1\nic fms" "D:\Transport_backup" /s /XF file *.fil*</Value>
     </Setting>
   </Settings>
 </SettingsFile>
