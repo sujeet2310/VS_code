@@ -63,6 +63,7 @@ Partial Class Information
         '
         Me.lblInformation.AutoSize = True
         Me.lblInformation.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInformation.ForeColor = System.Drawing.Color.White
         Me.lblInformation.Location = New System.Drawing.Point(12, 103)
         Me.lblInformation.Name = "lblInformation"
         Me.lblInformation.Size = New System.Drawing.Size(424, 46)
@@ -102,6 +103,10 @@ Partial Class Information
         '
         'btnInfoOk
         '
+        Me.btnInfoOk.FlatAppearance.BorderSize = 0
+        Me.btnInfoOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnInfoOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInfoOk.ForeColor = System.Drawing.Color.White
         Me.btnInfoOk.Location = New System.Drawing.Point(217, 327)
         Me.btnInfoOk.Name = "btnInfoOk"
         Me.btnInfoOk.Size = New System.Drawing.Size(75, 38)
@@ -113,6 +118,7 @@ Partial Class Information
         '
         Me.lbl2.AutoSize = True
         Me.lbl2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl2.ForeColor = System.Drawing.Color.White
         Me.lbl2.Location = New System.Drawing.Point(12, 166)
         Me.lbl2.Name = "lbl2"
         Me.lbl2.Size = New System.Drawing.Size(360, 23)
@@ -123,6 +129,7 @@ Partial Class Information
         '
         Me.lbl3.AutoSize = True
         Me.lbl3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl3.ForeColor = System.Drawing.Color.White
         Me.lbl3.Location = New System.Drawing.Point(12, 201)
         Me.lbl3.Name = "lbl3"
         Me.lbl3.Size = New System.Drawing.Size(454, 46)
@@ -134,7 +141,7 @@ Partial Class Information
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(554, 386)
         Me.Controls.Add(Me.lbl3)
         Me.Controls.Add(Me.lbl2)

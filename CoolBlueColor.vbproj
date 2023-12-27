@@ -125,6 +125,7 @@
     <Compile Include="login_setting.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MODCenter.vb" />
     <Compile Include="MSComctlLib\ListItem.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -250,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="network_9oI_icon.ico" />
+    <None Include="Resources\plug-in.png" />
+    <None Include="Resources\databases.png" />
+    <None Include="Resources\concrete-mixer.png" />
     <None Include="Resources\duplicate.png" />
     <None Include="Resources\656-person-sign-protest-lineal %289%29.gif" />
     <None Include="Resources\656-person-sign-protest-lineal %288%29.gif" />

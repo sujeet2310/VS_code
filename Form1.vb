@@ -3,8 +3,18 @@ Imports System.Net
 Imports System.Net.NetworkInformation
 Imports System.Threading
 Imports System.Configuration
+Imports System.IO
+Imports System.Data.OleDb
 
 Public Class coolBlue
+    'File Store app variables
+    Dim opFile As New OpenFileDialog
+    Dim filename As String
+    Dim subject As String
+    Dim username As String
+    Dim Description As String
+    Dim SelectedID As String = ""
+    Dim dirPathname As String
 #Region "Timer"
     Private Sub coolBlue_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
@@ -15,6 +25,38 @@ Public Class coolBlue
         lblTile.BackColor = Color.FromArgb(0, 0, 0)
         My.Settings.Save()
         proBar.Hide()
+
+
+        'File Store load data
+        ManageConnection()
+
+        'Dim login As Form = New loginForm
+        ' login.ShowDialog()
+        LoadData()
+        ShowPermission()
+
+    End Sub
+    Public Sub ShowPermission()
+        Dim PermissionDetail As String
+        If currentPermission.ToUpper() = "USER" Then
+
+            PermissionDetail = "  (Read only)."
+            PictureBox13.Enabled = False
+            btnDelete.Enabled = False
+            btnUpdate.Enabled = False
+
+        Else
+            PermissionDetail = " (Full Control)."
+
+        End If
+
+        Text = "Main Board " & currentPermission & " : " & currentUsername.ToUpper()
+        lblTile.Text = " Log-in as : " & currentPermission.ToUpper() & PermissionDetail
+        ' loginToolStripButton.Text = currentUsername
+        'Me.Text = String.Format("{0} {1} {2} {3} : {4} {5}", "Main Form :", strLang, strAnd,
+        '                        dbName, mainProjectName, SubProjectName)
+        'ToolStripStatusLabel2.Text = "APPLICATIN NAME"
+
     End Sub
     Private Function pingIPcamera(ByVal IPAddress As String) As String
         Dim camIpAddress As String
@@ -118,7 +160,7 @@ Public Class coolBlue
                 lblCam1.ForeColor = Color.White
                 picBox.Image = My.Resources.close__1_
             End If
-            gateCam = pingIPcamera("192.168.1.4")
+            gateCam = pingIPcamera("192.168.1.35")
             If gateCam = True Then
                 lblCam2.Text = "2. Gate-1 Exit"
                 lblCam2.ForeColor = Color.White
@@ -433,6 +475,35 @@ Public Class coolBlue
         End Try
     End Sub
 #End Region
+#Region "PAC_Status"
+    'This is for status of PAC mixer plants
+    Private Sub pnlOther_MouseEnter(sender As Object, e As EventArgs) Handles pnlOther.MouseEnter
+        sslStatus.Text = "Ready"
+        txtIp.Text = " "
+    End Sub
+    Private Sub grpPAC_MouseEnter(sender As Object, e As EventArgs) Handles grpPAC.MouseEnter
+        sslStatus.Text = "Ready"
+        txtIp.Text = " "
+    End Sub
+
+    Private Sub picMeka2_MouseHover(sender As Object, e As EventArgs) Handles picMeka2.MouseHover
+        sslStatus.Text = "192.168.11.21"
+        txtIp.Text = "192.168.11.21"
+    End Sub
+    Private Sub picMeka4_MouseHover(sender As Object, e As EventArgs) Handles picMeka4.MouseHover
+        sslStatus.Text = "192.168.11.22"
+        txtIp.Text = "192.168.11.22"
+    End Sub
+    Private Sub picMeka3_MouseHover(sender As Object, e As EventArgs) Handles picMeka3.MouseHover
+        sslStatus.Text = "192.168.12.11"
+        txtIp.Text = "192.168.12.11"
+    End Sub
+    Private Sub picMeka1_MouseHover(sender As Object, e As EventArgs) Handles picMeka1.MouseHover
+        sslStatus.Text = "192.168.12.12"
+        txtIp.Text = "192.168.12.12"
+    End Sub
+#End Region
+
 #Region "NVR-2 Ping"
     'Ping camera From lblCam 1 to 20 Hikvision NVR-2
     Private Sub btnHikTest2_Click(sender As Object, e As EventArgs) Handles btnHikTest2.Click
@@ -680,6 +751,16 @@ Public Class coolBlue
                 lblHik24.ForeColor = Color.White
                 picHikv24.Image = My.Resources.close__1_
             End If
+            gateCam = pingIPcamera("192.168.1.66")
+            If gateCam = True Then
+                lblHik25.Text = "25. IBF Boundary ACICO"
+                lblHik25.ForeColor = Color.White
+                picHikv25.Image = My.Resources.confirm
+            Else
+                lblHik25.Text = "25. IBF Boundary ACICO"
+                lblHik25.ForeColor = Color.White
+                picHikv25.Image = My.Resources.close__1_
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -808,6 +889,11 @@ Public Class coolBlue
         StatusText = "Cam IP : 192.168.1.65"
         txtIp.Text = "192.168.1.65"
     End Sub
+    Private Sub lblHik25_MouseHover(sender As Object, e As EventArgs) Handles lblHik25.MouseHover
+        StatusText = "Cam IP : 192.168.1.66"
+        txtIp.Text = "192.168.1.66"
+    End Sub
+
 
 
 #End Region
@@ -906,12 +992,15 @@ Public Class coolBlue
     Private Sub picHikv24_DoubleClick(sender As Object, e As EventArgs) Handles picHikv24.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.1.65")
     End Sub
+    Private Sub picHikv25_DoubleClick(sender As Object, e As EventArgs) Handles picHikv25.DoubleClick
+        Process.Start("cmd", "/k ping -t 192.168.1.66")
+    End Sub
     'This code is for check running status in CMD seperate window (Hik-vision)
     Private Sub picBox_DoubleClick(sender As Object, e As EventArgs) Handles picBox.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.1.3")
     End Sub
     Private Sub picBox2_DoubleClick(sender As Object, e As EventArgs) Handles picBox2.DoubleClick
-        Process.Start("cmd", "/k ping -t 192.168.1.4")
+        Process.Start("cmd", "/k ping -t 192.168.1.35")
     End Sub
 
     Private Sub picBox3_DoubleClick(sender As Object, e As EventArgs) Handles picBox3.DoubleClick
@@ -1033,6 +1122,7 @@ Public Class coolBlue
     Private Sub picBox32_DoubleClick(sender As Object, e As EventArgs) Handles picBox32.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.1.34")
     End Sub
+
 #End Region
 #Region "HIK-1 IP- hover"
     'Camera ip address on hover hikvision camera name at status bar 
@@ -1046,8 +1136,8 @@ Public Class coolBlue
         txtIp.Text = "192.168.1.3"
     End Sub
     Private Sub lblCam2_MouseHover(sender As Object, e As EventArgs) Handles lblCam2.MouseHover
-        StatusText = "Cam IP : 192.168.1.4"
-        txtIp.Text = "192.168.1.4"
+        StatusText = "Cam IP : 192.168.1.35"
+        txtIp.Text = "192.168.1.35"
     End Sub
 
     Private Sub lblCam3_MouseHover(sender As Object, e As EventArgs) Handles lblCam3.MouseHover
@@ -1263,6 +1353,42 @@ Public Class coolBlue
         pnlWire.Visible = False
         pnlBackup.Visible = False
         lblTile.Text = "NIC MEKA PAC"
+    End Sub
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+
+
+    End Sub
+    Private Sub picUser_Click(sender As Object, e As EventArgs) Handles picUser.Click
+
+        lblTile.Text = "User Management"
+        pnlUser.Visible = True
+        pnlStore.Visible = False
+        pnlTime.Visible = True
+    End Sub
+    Private Sub HideUIElements()
+        ' Hide various UI elements
+        'pnlTime.Hide()
+        ' lblTile.Hide()
+        txtIp.Hide()
+        Label1.Hide()
+        PictureBox3.Hide()
+        ' picLogo.Hide()
+        picSetting.Hide()
+        ' pnlBtnbar.Hide()
+
+    End Sub
+    Private Sub pnlHideUIelements()
+        pnlWire.Visible = False
+        pnlSen.Visible = False
+        pnlHik.Visible = False
+        pnlGeo.Visible = False
+        pnlHik2.Visible = False
+        pnlOther.Visible = False
+        pnlBackup.Visible = False
+        pnlBtnbar.Visible = False
+        '
+
     End Sub
 #End Region
 #Region "Geo ping code"
@@ -1499,7 +1625,7 @@ Public Class coolBlue
                 lvitem.SubItems.Add("192.168.100.51")
             Else
                 lvitem2 = Me.ListView2.Items.Add("25. Lab. Inside The Room")
-                'lvitem2.SubItems.Add("192.168.100.51")
+                lvitem2.SubItems.Add("192.168.100.51")
             End If
             geoCam = pingIPcamera("192.168.100.52")
             proBar.Value = 23
@@ -1814,15 +1940,17 @@ Public Class coolBlue
                 lvitem2 = Me.ListView2.Items.Add("60. Pipe Scrap Block Area")
                 lvitem2.SubItems.Add("192.168.100.112")
             End If
-            geoCam = pingIPcamera("192.168.100.113")
-            proBar.Value = 57
-            If geoCam = True Then
-                lvitem = Me.ListView1.Items.Add("61. IBF Boundary Near ACICO")
-                lvitem.SubItems.Add("192.168.100.113")
-            Else
-                lvitem2 = Me.ListView2.Items.Add("61. IBF Boundary Near ACICO")
-                lvitem2.SubItems.Add("192.168.100.113")
-            End If
+            '--------------------------- ' geoCam = pingIPcamera("192.168.100.113") --------------------------------
+            ' If geoCam = True Then
+            'geoCam = pingIPcamera("192.168.100.113")
+            'proBar.Value = 57
+            'If geoCam = True Then
+            '    lvitem = Me.ListView1.Items.Add("61. IBF Boundary Near ACICO")
+            '    lvitem.SubItems.Add("192.168.100.113")
+            'Else
+            '    lvitem2 = Me.ListView2.Items.Add("61. IBF Boundary Near ACICO")
+            '    lvitem2.SubItems.Add("192.168.100.113")
+            'End If
             '--------------------------- ' geoCam = pingIPcamera("192.168.100.114") --------------------------------
             ' If geoCam = True Then
             '  lvitem = Me.ListView1.Items.Add("62. IBF PTZ")
@@ -2711,7 +2839,7 @@ Public Class coolBlue
         End Try
     End Sub
 #End Region
-#Region "CMDstatus HIK-1"
+#Region "CMDstatus Sensor"
     'This code is for check running status in CMD seperate window (Hik-vision)
     Private Sub picSen1_DoubleClick(sender As Object, e As EventArgs) Handles picSen1.DoubleClick
         Process.Start("cmd", "/k ping -t 192.168.101.1")
@@ -3493,7 +3621,7 @@ Public Class coolBlue
         If PACmachine = True Then
             picMeka4.Image = My.Resources.mixer_truck_green
         Else
-            picMeka4.Image = My.Resources.mixer_truck_red
+            picMeka4.Image = My.Resources.concrete_mixer
         End If
         PACmachine = pingIPcamera("192.168.11.1")
         If PACmachine = True Then
@@ -4067,4 +4195,492 @@ Public Class coolBlue
     End Sub
 
 
+
+    '===========================================================================================================================
+
+
+
+    Private Sub btnOpen_Click(sender As Object, e As EventArgs) Handles btnOpen.Click
+        '   opFile.Filter = "Excel files (*.xls)|*.xls|All Files (*.*)|*.*"
+        opFile.Multiselect = False
+        If opFile.ShowDialog() = DialogResult.OK Then
+            dirPathname = opFile.FileName
+            filename = Path.GetFileName(dirPathname)
+            txtFilepath.Text = dirPathname 'opFile.FileName
+            ' lblFilelocation.Text = Path.GetFileName(opFile.FileName)
+        End If
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        opFile.FileName = Nothing
+        txtFilepath.Text = ""
+        Application.Exit()
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Try
+
+            filename = Path.GetFileName(dirPathname) 'Full_file_name.Last.ToString
+            subject = txtSubject.Text.Trim()
+            username = currentUsername
+            Description = txtDiscreption.Text.Trim()
+            ' Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath
+            ' conString &= "\FileStorage.accdb"
+            Using con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\FileStorage.accdb")
+                con.Open()
+                Dim cmd As OleDbCommand = New OleDbCommand
+                cmd.Connection = con
+
+                cmd.CommandText = "insert into ExcelFiles(Filename,Filedata,Subject,Description,UpdateDateTime,Username)" &
+                                   "values(@file_name,@file,@subject,@Description,@UpdateDateTime,@Username)"
+                With cmd.Parameters
+                    .AddWithValue("@file_name", filename)
+                    .AddWithValue("@file", OleDbType.VarBinary).Value = File.ReadAllBytes(txtFilepath.Text)
+                    .AddWithValue("@subject", subject)
+                    .AddWithValue("@Description", Description)
+                    .Add("@UpdateDateTime", OleDbType.Date).Value = DateTime.Now
+                    '.AddWithValue("@UpdateDateTime", Date.Now) ' Save current date and time
+                    .AddWithValue("@Username", username) ' Replace with the actual username
+                End With
+                cmd.ExecuteNonQuery()
+                toostriplblStatus.Text = "File Saved Successfully"
+                If con.State = ConnectionState.Open Then
+                    con.Close()
+                End If
+
+                clearControls()
+                Timer1.Start()
+            End Using
+        Catch ex As Exception
+            'MessageBox.Show(ex.Message)
+            MessageBox.Show("Please insert the file first. " & vbCrLf & " Then save it into the database.", "Warning",
+            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            btnSave.Focus()
+        End Try
+        LoadData()
+    End Sub
+
+    Private Sub DataGridView1_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseDoubleClick
+        Try
+            If e.RowIndex = -1 Then
+                Exit Sub
+            End If
+
+            SelectedID = DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString().Trim()
+            ToolStriplblID.Text = "Selected ID: " & SelectedID
+            txtFilename.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString().Trim()
+            txtSubject.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString().Trim()
+            txtDiscreption.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString().Trim()
+            toostriplblStatus.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value.ToString().Trim()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub clearControls()
+        SelectedID = "No ID Selected"
+        txtSubject.Text = ""
+        txtFilepath.Text = ""
+        txtDiscreption.Text = ""
+        txtFilename.Text = ""
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Try
+            If DataGridView1.SelectedRows.Count > 0 Then
+                If MessageBox.Show("Do You want to Delete selected record ? ", appTitle1,
+                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                               MessageBoxDefaultButton.Button2) = DialogResult.No Then
+                    Exit Sub
+                End If
+
+                Dim intID As Integer
+                intID = Convert.ToInt32(SelectedID.ToString.Trim())
+                sql = "DELETE from ExcelFiles WHERE ID = " & intID & ""
+                If ExecuteDb(sql) = True Then
+                    SelectedID = ""
+                    ToolStriplblID.Text = "No ID Selected "
+                    'MessageBox.Show("Selected Item has been Deleted successfully ",
+                    '    apTiltle2withdb, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+                toostriplblStatus.Text = "Deleted successfully " & smilingFace
+                clearControls()
+                ' ShowUserData()
+                LoadData()
+                Timer1.Start()
+            Else
+                MessageBox.Show("Please double-click on at least one row" & vbCrLf & "to delete data from the database.",
+                    "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Please double-click on at least one row.", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Try
+            If DataGridView1.SelectedRows.Count > 0 Then
+                If MessageBox.Show("Do You want to Update selected record ? ", appTitle1,
+                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                       MessageBoxDefaultButton.Button2) = DialogResult.No Then
+                    Exit Sub
+                End If
+                Dim intID As Integer
+                intID = Convert.ToInt32(SelectedID.ToString.Trim())
+                sql = "UPDATE ExcelFiles SET Subject= '" & txtSubject.Text.Trim() & "', "
+                sql &= " Description ='" & txtDiscreption.Text.Trim() & "',"
+                sql &= " Filename = '" & txtFilename.Text.Trim() & "', "
+                sql &= " UpdateDateTime = '" & Date.Now.ToString("dd-MM-yyyy HH:mm:ss") & "', "
+                sql &= " username = 'Updated By: " & currentUsername & "' "
+                sql &= " WHERE ID= " & intID
+
+                If ExecuteDb(sql) = True Then
+                    SelectedID = ""
+                    toostriplblStatus.Text = "No ID Selected "
+                    'MessageBox.Show($"Selected Details has been Updated successfully " & smilingFace,
+                    '        apTiltle2withdb, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    toostriplblStatus.Text = "Updated successfully " & smilingFace
+                    clearControls()
+                    'ShowUserData()
+                    LoadData()
+                    Timer1.Start()
+                End If
+            Else
+                MessageBox.Show("Please Double-click On at least one row" & vbCrLf & "To update details In the database.",
+                       "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Please Double-click On at least one row.", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+    Private Sub DownloadFile(NewFileLocation As String)
+        Try
+            con.Open()
+            '  NewFileLocation = dirPathname
+            Dim id As Integer = Convert.ToInt32(DataGridView1.CurrentRow.Cells(0).Value.ToString())
+            sql = "Select * From ExcelFiles Where ID = @id"
+            cmd = New OleDbCommand(sql, con)
+            cmd.Parameters.Add("@id", OleDbType.Integer).Value = id
+            da = New OleDbDataAdapter(cmd)
+            dt = New DataTable("ExcelFiles")
+            dt.Clear()
+            da.Fill(dt)
+            If dt IsNot Nothing And dt.Rows.Count > 0 Then
+
+
+                For Each row As DataRow In dt.Rows
+
+                    Dim filebyte As Byte() = DirectCast(row(2), Byte())
+                    Dim filePath As String = Path.Combine(NewFileLocation, row(1).ToString())
+                    'Dim fs As New FileStream(NewFileLocation & "\" & row(1), FileMode.Create, FileAccess.Write)
+                    Using fs As New FileStream(filePath, FileMode.Create, FileAccess.Write)
+                        fs.Write(filebyte, 0, filebyte.Length)
+                    End Using
+
+                Next
+                txtFilepath.Clear()
+                'MessageBox.Show("File Downloaded Successfully", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                toostriplblStatus.Text = "Downloaded successfully " & smilingFace
+                Timer1.Start()
+            Else
+                MessageBox.Show("No data found For the selected ID.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Catch ex As Exception
+            MessageBox.Show($"Error downloading file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Finally
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
+        Dim fbd As New FolderBrowserDialog
+        If DataGridView1.SelectedRows.Count > 0 Then
+            If fbd.ShowDialog() = DialogResult.OK Then
+                dirPathname = fbd.SelectedPath
+                txtFilepath.Text = dirPathname
+                DownloadFile(dirPathname)
+            End If
+        Else
+            MessageBox.Show("Please select at least one row.", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        toostriplblStatus.Text = ""
+    End Sub
+    Private Sub LoadData()
+        ' SQL query to retrieve all data from your table
+        Dim query As String = "Select ID, Filename,Subject,Description, UpdateDateTime, Username FROM ExcelFiles ORDER BY ID ASC;"
+        ' Create a connection and a data adapter
+        Using con As New OleDbConnection(conString)
+            Using adapter As New OleDbDataAdapter(query, con)
+                ' Create a DataSet to hold the data
+                Dim dataSet As New DataSet()
+
+                ' Fill the DataSet with data from the database
+                adapter.Fill(dataSet, "ExcelFiles")
+
+                ' Set the DataGridView's DataSource to the DataSet
+                DataGridView1.DataSource = dataSet.Tables("ExcelFiles")
+                DataGridView1.Columns(0).Width = (40) 'This is for fixed ID colunm width
+                DataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                DataGridView1.DefaultCellStyle.ForeColor = Color.Black
+            End Using
+        End Using
+    End Sub
+    Private Sub txtSearchBox_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBox.TextChanged
+        ' Get the search term from the TextBox
+        Dim searchTerm As String = txtSearchBox.Text.Trim()
+
+        ' Check if the search term is not empty
+        If Not String.IsNullOrEmpty(searchTerm) Then
+            ' SQL query to retrieve filtered data based on the search term
+            Dim query As String = "SELECT ID, Filename,Subject,Description,Username FROM ExcelFiles WHERE Filename LIKE ? OR Subject LIKE ? OR Description LIKE ? OR ID LIKE ? OR Username Like ?"
+
+            ' Create a connection and a data adapter
+            Using con As New OleDbConnection(conString)
+                Using adapter As New OleDbDataAdapter(query, con)
+                    ' Add a parameter for the search term
+                    adapter.SelectCommand.Parameters.AddWithValue("?", "%" & searchTerm & "%")
+                    adapter.SelectCommand.Parameters.AddWithValue("?", "%" & searchTerm & "%")
+                    adapter.SelectCommand.Parameters.AddWithValue("?", "%" & searchTerm & "%")
+                    adapter.SelectCommand.Parameters.AddWithValue("?", "%" & searchTerm & "%")
+                    adapter.SelectCommand.Parameters.AddWithValue("?", "%" & searchTerm & "%")
+                    ' Create a DataSet to hold the filtered data
+                    Dim dataSet As New DataSet()
+
+                    ' Fill the DataSet with filtered data from the database
+                    adapter.Fill(dataSet, "FilteredData")
+
+                    ' Set the DataGridView's DataSource to the filtered data
+                    DataGridView1.DataSource = dataSet.Tables("FilteredData")
+                End Using
+            End Using
+        Else
+            ' If the search term is empty, reload all data
+            LoadData()
+        End If
+    End Sub
+
+    Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
+        txtSearchBox.Clear()
+    End Sub
+
+
+    Private SelectedUserID As String = ""
+
+
+    '   Private SelectedID As String = ""
+    '=========================================================================================================================
+    'Usermanaement Form Coding
+
+    Private Sub ShowUserData()
+        lblloginUser.Text = "Logged as: " & currentPermission & smilingFace & currentUsername.ToUpper()
+        Dim ds1 As New DataSet()
+        sql = "Select ID,user,password,permission FROM userdata ORDER BY ID ASC;"
+        Try
+            ds1 = DisplayData(sql, "userdata", ds1)
+            If ds1 Is Nothing Then
+                MsgBox("Error: Dataset was nothing")
+                Return
+            End If
+            If ds1.Tables("userdata").Rows.Count > 0 Then
+                DataGridView2.DataSource = ds1.Tables("userdata")
+            Else
+                DataGridView2.DataSource = Nothing
+            End If
+
+
+            If DataGridView2.Rows.Count > 0 Then
+                DataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
+                DataGridView2.Columns(0).HeaderText = "UserID"
+                DataGridView2.Columns(1).HeaderText = "Username"
+                DataGridView2.Columns(2).HeaderText = "Password"
+                DataGridView2.Columns(3).HeaderText = "Permission"
+
+                '    DataGridView2.Columns(0).Visible = False
+                DataGridView2.Columns(0).Width = 40
+
+
+                If currentPermission.ToUpper() = "USER" Then
+
+                    btnAdd.Enabled = False
+                    btnuserDelete.Enabled = False
+                    btnUpdate.Enabled = False
+                    txtPassword.UseSystemPasswordChar = True
+                    DataGridView2.Columns(1).Width = (50)
+                    DataGridView2.Columns(2).Visible = False
+                Else
+
+                    btnAdd.Enabled = True
+                    btnuserDelete.Enabled = True
+                    btnUpdate.Enabled = True
+                    '  ToolStripbtnClear.Enabled = True
+                    txtPassword.UseSystemPasswordChar = False
+                    With DataGridView2
+
+                        .Columns(1).Width = 50
+                        .Columns(2).Visible = True
+                        .Columns(2).Width = 50
+
+                    End With
+                End If
+                DataGridView2.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DataGridView2.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DataGridView2.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DataGridView2.ClearSelection()
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message.ToString(), "Error Message.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub UserclearControls()
+        SelectedUserID = "No ID Selected"
+        txtUsername.Text = ""
+        txtPassword.Text = ""
+        If cmbPermission.Items.Count > 0 Then
+            cmbPermission.SelectedIndex = 0
+        End If
+    End Sub
+
+    Private Sub DataGridView2_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView2.CellMouseDoubleClick
+        Try
+            If e.RowIndex = -1 Then
+                Exit Sub
+            End If
+
+            SelectedUserID = DataGridView2.Rows(e.RowIndex).Cells(0).Value.ToString().Trim()
+            Label7.Text = "Selected ID :" & SelectedUserID
+            txtUsername.Text = DataGridView2.Rows(e.RowIndex).Cells(1).Value.ToString().Trim()
+            txtPassword.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value.ToString().Trim()
+            If Convert.ToString(DataGridView2.CurrentRow.Cells(3).Value).Trim().ToUpper() = "ADMIN" Then
+                cmbPermission.SelectedIndex = 1 'Admin  
+            Else
+                cmbPermission.SelectedIndex = 2 'user
+
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub SaveUserData(dbcommand As String)
+        Try
+            If dbcommand.ToUpper() = "UPDATE" Or dbcommand.ToUpper() = "DELETE" Then
+                If SelectedUserID = "" Then
+                    MessageBox.Show("ID not Found. Please select Atleast one Item.",
+                                    appTitle1, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Return
+                End If
+            End If
+
+            If dbcommand.ToUpper() = "INSERT" Or dbcommand.ToUpper() = "UPDATE" Then
+                If txtUsername.Text.Trim() = "" Then
+                    MessageBox.Show("Please input username.",
+                                    appTitle1, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    txtUsername.Focus()
+                End If
+
+                If txtPassword.Text.Trim() = "" Then
+                    MessageBox.Show("Please input Password.",
+                                            appTitle1, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    txtPassword.Focus()
+                End If
+            End If
+
+            If dbcommand.ToUpper() <> "DELETE" Then
+                If cmbPermission.SelectedIndex = 0 Then
+                    MessageBox.Show("Please select the permission from the ComboBox",
+                                        appTitle1, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Return
+                End If
+            End If
+            Dim intID As Integer
+            Select Case dbcommand.ToUpper()
+                Case "INSERT"
+                    If MessageBox.Show("Do You want to add new user ? ", "Add New User ",
+                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                       MessageBoxDefaultButton.Button2) = DialogResult.No Then
+                        Exit Sub
+                    End If
+
+                    sql = "insert into userdata ([user],[password],[permission])"
+                    sql &= "values ('" & txtUsername.Text.Trim() & "','" & txtPassword.Text.Trim() & "',
+                    '" & cmbPermission.SelectedItem.ToString.Trim() & "')"
+                Case "UPDATE"
+                    If MessageBox.Show("Do You want to Update selected record ? ", appTitle1,
+                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                       MessageBoxDefaultButton.Button2) = DialogResult.No Then
+                        Exit Sub
+                    End If
+                    intID = Convert.ToInt32(SelectedUserID.ToString.Trim())
+                    sql = "UPDATE userdata SET [user]= '" & txtUsername.Text.Trim() & "', "
+                    sql &= " [password] ='" & txtPassword.Text.Trim() & "',"
+                    sql &= " [permission]= '" & cmbPermission.SelectedItem.ToString.Trim() & "' "
+                    sql &= " WHERE [ID]= " & intID & " "
+                    If currentUserID = SelectedUserID Then
+                        currentUsername = txtUsername.Text.Trim()
+                        currentPermission = cmbPermission.SelectedItem.ToString.Trim()
+                    End If
+                Case "DELETE"
+                    If currentUserID = SelectedUserID Then
+                        MessageBox.Show("Error Deleting Record: " & "The User " & Chr(39) & currentUsername & Chr(39) &
+                                        " Is currenty logged in. ", appTitle1,
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        Exit Sub
+                    End If
+                    If MessageBox.Show("Do You want to Delete selected record ? ", appTitle1,
+                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                       MessageBoxDefaultButton.Button2) = DialogResult.No Then
+                        Exit Sub
+                    End If
+                    intID = Convert.ToInt32(SelectedUserID.ToString.Trim())
+                    sql = "DELETE from userata WHERE [ID] = " & intID & ""
+
+            End Select
+            If ExecuteDb(sql) = True Then
+                SelectedUserID = ""
+                MessageBox.Show("Your SQL " & dbcommand & " Query has been executed successfully ",
+                            apTiltle2withdb, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error:  " & ex.Message.ToString(),
+                            appTitle1, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+
+        End Try
+        ShowUserData()
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        SaveUserData("INSERT")
+    End Sub
+
+    Private Sub btnUserEdit_Click(sender As Object, e As EventArgs) Handles btnUserEdit.Click
+        SaveUserData("UPDATE")
+    End Sub
+
+    Private Sub btnClearcontrol_Click(sender As Object, e As EventArgs) Handles btnClearcontrol.Click
+        UserclearControls()
+    End Sub
+
+    Private Sub btnuserDelete_Click(sender As Object, e As EventArgs) Handles btnuserDelete.Click
+        SaveUserData("DELETE")
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        ' Me.Close()
+        pnlUser.Visible = False
+        pnlStore.Visible = True
+    End Sub
 End Class

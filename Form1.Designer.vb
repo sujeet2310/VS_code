@@ -24,7 +24,12 @@ Partial Class coolBlue
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(coolBlue))
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTitlebar = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.btnAbout = New System.Windows.Forms.Button()
         Me.lblMainTitle = New System.Windows.Forms.Label()
@@ -114,6 +119,21 @@ Partial Class coolBlue
         Me.lblCam3 = New System.Windows.Forms.Label()
         Me.lblCam2 = New System.Windows.Forms.Label()
         Me.lblCam1 = New System.Windows.Forms.Label()
+        Me.pnlUser = New System.Windows.Forms.Panel()
+        Me.btnuserDelete = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnClearcontrol = New System.Windows.Forms.Button()
+        Me.btnUserEdit = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.grpBox = New System.Windows.Forms.GroupBox()
+        Me.cmbPermission = New System.Windows.Forms.ComboBox()
+        Me.lblPermission = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.lblPassword = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.pnlGeo = New System.Windows.Forms.Panel()
         Me.btnCopy = New System.Windows.Forms.Button()
         Me.btnCMDcheck = New System.Windows.Forms.Button()
@@ -263,6 +283,9 @@ Partial Class coolBlue
         Me.ssl = New System.Windows.Forms.StatusStrip()
         Me.sslStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.sslStatus2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStriplblID = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.toostriplblStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolDatabaseConnect = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnHikTest2 = New System.Windows.Forms.Button()
         Me.lblHik1 = New System.Windows.Forms.Label()
@@ -330,7 +353,7 @@ Partial Class coolBlue
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.picHik34 = New System.Windows.Forms.PictureBox()
+        Me.picHikv25 = New System.Windows.Forms.PictureBox()
         Me.picHikv24 = New System.Windows.Forms.PictureBox()
         Me.picHikv23 = New System.Windows.Forms.PictureBox()
         Me.picHikv22 = New System.Windows.Forms.PictureBox()
@@ -357,7 +380,7 @@ Partial Class coolBlue
         Me.picHikv1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblHik34 = New System.Windows.Forms.Label()
+        Me.lblHik25 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblHik23 = New System.Windows.Forms.Label()
@@ -403,6 +426,30 @@ Partial Class coolBlue
         Me.txtBackup2 = New System.Windows.Forms.TextBox()
         Me.txtBackup1 = New System.Windows.Forms.TextBox()
         Me.proBar = New System.Windows.Forms.ProgressBar()
+        Me.pnlStore = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.picUser = New System.Windows.Forms.PictureBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.btnOpen = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.lblSearch = New System.Windows.Forms.Label()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.txtDiscreption = New System.Windows.Forms.TextBox()
+        Me.lblDiscreption = New System.Windows.Forms.Label()
+        Me.txtFilepath = New System.Windows.Forms.TextBox()
+        Me.lblFilelocation = New System.Windows.Forms.Label()
+        Me.txtFilename = New System.Windows.Forms.TextBox()
+        Me.lblFilename = New System.Windows.Forms.Label()
+        Me.txtSubject = New System.Windows.Forms.TextBox()
+        Me.lblSubject = New System.Windows.Forms.Label()
+        Me.txtSearchBox = New System.Windows.Forms.TextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.lblloginUser = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.pnlTitlebar.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlClosebar.SuspendLayout()
@@ -441,6 +488,9 @@ Partial Class coolBlue
         CType(Me.picBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlUser.SuspendLayout()
+        Me.grpBox.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlGeo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -523,7 +573,7 @@ Partial Class coolBlue
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picHik34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHikv25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picHikv24, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picHikv23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picHikv22, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -551,10 +601,17 @@ Partial Class coolBlue
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picSetting, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackup.SuspendLayout()
+        Me.pnlStore.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.picUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlTitlebar
         '
+        Me.pnlTitlebar.Controls.Add(Me.Button5)
         Me.pnlTitlebar.Controls.Add(Me.PictureBox4)
         Me.pnlTitlebar.Controls.Add(Me.btnAbout)
         Me.pnlTitlebar.Controls.Add(Me.lblMainTitle)
@@ -562,16 +619,25 @@ Partial Class coolBlue
         Me.pnlTitlebar.Controls.Add(Me.btndefaultip)
         Me.pnlTitlebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTitlebar.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTitlebar.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlTitlebar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlTitlebar.Name = "pnlTitlebar"
-        Me.pnlTitlebar.Size = New System.Drawing.Size(801, 56)
+        Me.pnlTitlebar.Size = New System.Drawing.Size(1068, 69)
         Me.pnlTitlebar.TabIndex = 0
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(373, -1)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(50, 54)
+        Me.Button5.TabIndex = 5
+        Me.Button5.Text = "access"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.CoolBlueColor.My.Resources.Resources._656_person_sign_protest_lineal__6_
-        Me.PictureBox4.Location = New System.Drawing.Point(529, 2)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox4.Location = New System.Drawing.Point(705, 2)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(53, 53)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -586,10 +652,10 @@ Partial Class coolBlue
         Me.btnAbout.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAbout.ForeColor = System.Drawing.Color.Snow
         Me.btnAbout.Image = CType(resources.GetObject("btnAbout.Image"), System.Drawing.Image)
-        Me.btnAbout.Location = New System.Drawing.Point(433, 0)
-        Me.btnAbout.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAbout.Location = New System.Drawing.Point(577, 0)
+        Me.btnAbout.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAbout.Name = "btnAbout"
-        Me.btnAbout.Size = New System.Drawing.Size(92, 44)
+        Me.btnAbout.Size = New System.Drawing.Size(123, 54)
         Me.btnAbout.TabIndex = 3
         Me.btnAbout.Text = " About"
         Me.btnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -601,10 +667,9 @@ Partial Class coolBlue
         Me.lblMainTitle.AutoSize = True
         Me.lblMainTitle.Font = New System.Drawing.Font("Segoe UI Semilight", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMainTitle.ForeColor = System.Drawing.Color.White
-        Me.lblMainTitle.Location = New System.Drawing.Point(9, 7)
-        Me.lblMainTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblMainTitle.Location = New System.Drawing.Point(12, 9)
         Me.lblMainTitle.Name = "lblMainTitle"
-        Me.lblMainTitle.Size = New System.Drawing.Size(282, 37)
+        Me.lblMainTitle.Size = New System.Drawing.Size(339, 45)
         Me.lblMainTitle.TabIndex = 1
         Me.lblMainTitle.Text = "Network Device Utility "
         '
@@ -613,26 +678,26 @@ Partial Class coolBlue
         Me.pnlClosebar.Controls.Add(Me.btmMinimize)
         Me.pnlClosebar.Controls.Add(Me.btnClose)
         Me.pnlClosebar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pnlClosebar.Location = New System.Drawing.Point(672, 0)
-        Me.pnlClosebar.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlClosebar.Location = New System.Drawing.Point(896, 0)
+        Me.pnlClosebar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlClosebar.Name = "pnlClosebar"
-        Me.pnlClosebar.Size = New System.Drawing.Size(129, 56)
+        Me.pnlClosebar.Size = New System.Drawing.Size(172, 69)
         Me.pnlClosebar.TabIndex = 0
         '
         'btmMinimize
         '
-        Me.btmMinimize.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.btmMinimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.btmMinimize.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btmMinimize.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btmMinimize.FlatAppearance.BorderSize = 0
-        Me.btmMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.btmMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(198, Byte), Integer))
+        Me.btmMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btmMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btmMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btmMinimize.Font = New System.Drawing.Font("Segoe UI Symbol", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btmMinimize.ForeColor = System.Drawing.Color.Transparent
-        Me.btmMinimize.Location = New System.Drawing.Point(32, 0)
-        Me.btmMinimize.Margin = New System.Windows.Forms.Padding(2)
+        Me.btmMinimize.Location = New System.Drawing.Point(43, 0)
+        Me.btmMinimize.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btmMinimize.Name = "btmMinimize"
-        Me.btmMinimize.Size = New System.Drawing.Size(38, 32)
+        Me.btmMinimize.Size = New System.Drawing.Size(51, 39)
         Me.btmMinimize.TabIndex = 2
         Me.btmMinimize.Text = "▁"
         Me.ToolTip1.SetToolTip(Me.btmMinimize, "Minimize")
@@ -640,18 +705,16 @@ Partial Class coolBlue
         '
         'btnClose
         '
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnClose.FlatAppearance.BorderSize = 0
-        Me.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(1, Byte), Integer))
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI Symbol", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(91, 0)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnClose.Location = New System.Drawing.Point(121, 0)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(38, 32)
+        Me.btnClose.Size = New System.Drawing.Size(51, 39)
         Me.btnClose.TabIndex = 0
         Me.btnClose.Text = "╳"
         Me.ToolTip1.SetToolTip(Me.btnClose, "Close application")
@@ -663,10 +726,10 @@ Partial Class coolBlue
         Me.btndefaultip.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btndefaultip.ForeColor = System.Drawing.Color.Snow
         Me.btndefaultip.Image = CType(resources.GetObject("btndefaultip.Image"), System.Drawing.Image)
-        Me.btndefaultip.Location = New System.Drawing.Point(320, 0)
-        Me.btndefaultip.Margin = New System.Windows.Forms.Padding(2)
+        Me.btndefaultip.Location = New System.Drawing.Point(427, 0)
+        Me.btndefaultip.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btndefaultip.Name = "btndefaultip"
-        Me.btndefaultip.Size = New System.Drawing.Size(105, 44)
+        Me.btndefaultip.Size = New System.Drawing.Size(140, 54)
         Me.btndefaultip.TabIndex = 2
         Me.btndefaultip.Text = "Default IP"
         Me.btndefaultip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -681,10 +744,9 @@ Partial Class coolBlue
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.Color.Snow
-        Me.lblTime.Location = New System.Drawing.Point(8, 25)
-        Me.lblTime.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTime.Location = New System.Drawing.Point(11, 31)
         Me.lblTime.Name = "lblTime"
-        Me.lblTime.Size = New System.Drawing.Size(87, 45)
+        Me.lblTime.Size = New System.Drawing.Size(108, 54)
         Me.lblTime.TabIndex = 3
         Me.lblTime.Text = "Time"
         '
@@ -693,10 +755,9 @@ Partial Class coolBlue
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDate.ForeColor = System.Drawing.Color.Snow
-        Me.lblDate.Location = New System.Drawing.Point(11, 72)
-        Me.lblDate.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblDate.Location = New System.Drawing.Point(15, 89)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(38, 19)
+        Me.lblDate.Size = New System.Drawing.Size(46, 23)
         Me.lblDate.TabIndex = 4
         Me.lblDate.Text = "Date"
         '
@@ -705,10 +766,9 @@ Partial Class coolBlue
         Me.lblPM.AutoSize = True
         Me.lblPM.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPM.ForeColor = System.Drawing.Color.Snow
-        Me.lblPM.Location = New System.Drawing.Point(162, 43)
-        Me.lblPM.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPM.Location = New System.Drawing.Point(216, 53)
         Me.lblPM.Name = "lblPM"
-        Me.lblPM.Size = New System.Drawing.Size(57, 19)
+        Me.lblPM.Size = New System.Drawing.Size(68, 23)
         Me.lblPM.TabIndex = 5
         Me.lblPM.Text = "AM/PM"
         '
@@ -718,10 +778,10 @@ Partial Class coolBlue
         Me.pnlTime.Controls.Add(Me.lblPM)
         Me.pnlTime.Controls.Add(Me.lblTime)
         Me.pnlTime.Controls.Add(Me.lblDate)
-        Me.pnlTime.Location = New System.Drawing.Point(568, 61)
-        Me.pnlTime.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlTime.Location = New System.Drawing.Point(757, 75)
+        Me.pnlTime.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlTime.Name = "pnlTime"
-        Me.pnlTime.Size = New System.Drawing.Size(226, 114)
+        Me.pnlTime.Size = New System.Drawing.Size(301, 140)
         Me.pnlTime.TabIndex = 6
         '
         'Timer2
@@ -732,16 +792,15 @@ Partial Class coolBlue
         Me.lblTile.AutoSize = True
         Me.lblTile.Font = New System.Drawing.Font("Segoe UI Semilight", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTile.ForeColor = System.Drawing.Color.Snow
-        Me.lblTile.Location = New System.Drawing.Point(151, 77)
-        Me.lblTile.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTile.Location = New System.Drawing.Point(201, 95)
         Me.lblTile.Name = "lblTile"
-        Me.lblTile.Size = New System.Drawing.Size(316, 41)
+        Me.lblTile.Size = New System.Drawing.Size(401, 51)
         Me.lblTile.TabIndex = 0
         Me.lblTile.Text = "NIC NETWORK UTILITY"
         '
         'pnlBtnbar
         '
-        Me.pnlBtnbar.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.pnlBtnbar.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.pnlBtnbar.Controls.Add(Me.btnBackup)
         Me.pnlBtnbar.Controls.Add(Me.chkBox)
         Me.pnlBtnbar.Controls.Add(Me.btnHik2)
@@ -750,23 +809,24 @@ Partial Class coolBlue
         Me.pnlBtnbar.Controls.Add(Me.btnSensor)
         Me.pnlBtnbar.Controls.Add(Me.btnGeo)
         Me.pnlBtnbar.Controls.Add(Me.btnHik)
-        Me.pnlBtnbar.Location = New System.Drawing.Point(9, 187)
-        Me.pnlBtnbar.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlBtnbar.Location = New System.Drawing.Point(12, 230)
+        Me.pnlBtnbar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlBtnbar.Name = "pnlBtnbar"
-        Me.pnlBtnbar.Size = New System.Drawing.Size(784, 44)
+        Me.pnlBtnbar.Size = New System.Drawing.Size(1045, 54)
         Me.pnlBtnbar.TabIndex = 7
         '
         'btnBackup
         '
-        Me.btnBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.btnBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBackup.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBackup.ForeColor = System.Drawing.Color.Snow
         Me.btnBackup.Image = Global.CoolBlueColor.My.Resources.Resources.backup__2_
-        Me.btnBackup.Location = New System.Drawing.Point(624, 5)
-        Me.btnBackup.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBackup.Location = New System.Drawing.Point(832, 6)
+        Me.btnBackup.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBackup.Name = "btnBackup"
-        Me.btnBackup.Size = New System.Drawing.Size(40, 32)
+        Me.btnBackup.Size = New System.Drawing.Size(53, 39)
         Me.btnBackup.TabIndex = 7
         Me.ToolTip1.SetToolTip(Me.btnBackup, "RMS & Diesel Backup")
         Me.btnBackup.UseVisualStyleBackColor = False
@@ -774,44 +834,48 @@ Partial Class coolBlue
         'chkBox
         '
         Me.chkBox.AutoSize = True
+        Me.chkBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.chkBox.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!)
         Me.chkBox.ForeColor = System.Drawing.Color.Snow
-        Me.chkBox.Location = New System.Drawing.Point(676, 11)
-        Me.chkBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.chkBox.Location = New System.Drawing.Point(901, 14)
+        Me.chkBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.chkBox.Name = "chkBox"
-        Me.chkBox.Size = New System.Drawing.Size(106, 23)
+        Me.chkBox.Size = New System.Drawing.Size(127, 27)
         Me.chkBox.TabIndex = 9
         Me.chkBox.Text = "Auto Refresh"
-        Me.chkBox.UseVisualStyleBackColor = True
+        Me.chkBox.UseVisualStyleBackColor = False
         '
         'btnHik2
         '
+        Me.btnHik2.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnHik2.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnHik2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnHik2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHik2.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHik2.ForeColor = System.Drawing.Color.Snow
         Me.btnHik2.Image = CType(resources.GetObject("btnHik2.Image"), System.Drawing.Image)
         Me.btnHik2.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnHik2.Location = New System.Drawing.Point(122, 5)
-        Me.btnHik2.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnHik2.Location = New System.Drawing.Point(163, 6)
+        Me.btnHik2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHik2.Name = "btnHik2"
-        Me.btnHik2.Size = New System.Drawing.Size(115, 32)
+        Me.btnHik2.Size = New System.Drawing.Size(153, 39)
         Me.btnHik2.TabIndex = 2
         Me.btnHik2.Text = " Hik Vision 2"
         Me.btnHik2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnHik2, "Click on this button for Hikvision Cam status")
-        Me.btnHik2.UseVisualStyleBackColor = True
+        Me.btnHik2.UseVisualStyleBackColor = False
         '
         'btnPac
         '
-        Me.btnPac.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.btnPac.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnPac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnPac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPac.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPac.ForeColor = System.Drawing.Color.Snow
-        Me.btnPac.Location = New System.Drawing.Point(574, 5)
-        Me.btnPac.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPac.Location = New System.Drawing.Point(765, 6)
+        Me.btnPac.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPac.Name = "btnPac"
-        Me.btnPac.Size = New System.Drawing.Size(46, 32)
+        Me.btnPac.Size = New System.Drawing.Size(61, 39)
         Me.btnPac.TabIndex = 6
         Me.btnPac.Text = "PAC"
         Me.ToolTip1.SetToolTip(Me.btnPac, "PAC Status")
@@ -819,83 +883,88 @@ Partial Class coolBlue
         '
         'btnWire
         '
+        Me.btnWire.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnWire.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnWire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(178, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnWire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnWire.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWire.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnWire.ForeColor = System.Drawing.Color.Snow
         Me.btnWire.Image = CType(resources.GetObject("btnWire.Image"), System.Drawing.Image)
         Me.btnWire.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnWire.Location = New System.Drawing.Point(464, 5)
-        Me.btnWire.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnWire.Location = New System.Drawing.Point(619, 6)
+        Me.btnWire.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnWire.Name = "btnWire"
-        Me.btnWire.Size = New System.Drawing.Size(104, 32)
+        Me.btnWire.Size = New System.Drawing.Size(139, 39)
         Me.btnWire.TabIndex = 5
         Me.btnWire.Text = "Wireless"
         Me.btnWire.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnWire.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnWire, "Click on this button for wireless status")
-        Me.btnWire.UseVisualStyleBackColor = True
+        Me.btnWire.UseVisualStyleBackColor = False
         '
         'btnSensor
         '
+        Me.btnSensor.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnSensor.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnSensor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(178, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnSensor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSensor.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSensor.ForeColor = System.Drawing.Color.Snow
         Me.btnSensor.Image = CType(resources.GetObject("btnSensor.Image"), System.Drawing.Image)
         Me.btnSensor.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnSensor.Location = New System.Drawing.Point(366, 5)
-        Me.btnSensor.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSensor.Location = New System.Drawing.Point(488, 6)
+        Me.btnSensor.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSensor.Name = "btnSensor"
-        Me.btnSensor.Size = New System.Drawing.Size(94, 32)
+        Me.btnSensor.Size = New System.Drawing.Size(125, 39)
         Me.btnSensor.TabIndex = 4
         Me.btnSensor.Text = " Sensor"
         Me.btnSensor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnSensor, "Click on this button for Sensor status")
-        Me.btnSensor.UseVisualStyleBackColor = True
+        Me.btnSensor.UseVisualStyleBackColor = False
         '
         'btnGeo
         '
+        Me.btnGeo.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnGeo.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnGeo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(178, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnGeo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnGeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGeo.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGeo.ForeColor = System.Drawing.Color.Snow
         Me.btnGeo.Image = CType(resources.GetObject("btnGeo.Image"), System.Drawing.Image)
         Me.btnGeo.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnGeo.Location = New System.Drawing.Point(241, 5)
-        Me.btnGeo.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnGeo.Location = New System.Drawing.Point(321, 6)
+        Me.btnGeo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGeo.Name = "btnGeo"
-        Me.btnGeo.Size = New System.Drawing.Size(121, 32)
+        Me.btnGeo.Size = New System.Drawing.Size(161, 39)
         Me.btnGeo.TabIndex = 3
         Me.btnGeo.Text = " Geo Vision"
         Me.btnGeo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnGeo, "Click on this button for Geovision Cam status")
-        Me.btnGeo.UseVisualStyleBackColor = True
+        Me.btnGeo.UseVisualStyleBackColor = False
         '
         'btnHik
         '
+        Me.btnHik.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnHik.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnHik.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnHik.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHik.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHik.ForeColor = System.Drawing.Color.Snow
         Me.btnHik.Image = CType(resources.GetObject("btnHik.Image"), System.Drawing.Image)
         Me.btnHik.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnHik.Location = New System.Drawing.Point(8, 5)
-        Me.btnHik.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnHik.Location = New System.Drawing.Point(11, 6)
+        Me.btnHik.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHik.Name = "btnHik"
-        Me.btnHik.Size = New System.Drawing.Size(109, 32)
+        Me.btnHik.Size = New System.Drawing.Size(145, 39)
         Me.btnHik.TabIndex = 1
         Me.btnHik.Text = " Hik Vision"
         Me.btnHik.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btnHik, "Click on this button for Hikvision Cam status")
-        Me.btnHik.UseVisualStyleBackColor = True
+        Me.btnHik.UseVisualStyleBackColor = False
         '
         'pnlHik
         '
-        Me.pnlHik.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.pnlHik.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.pnlHik.Controls.Add(Me.picBox32)
         Me.pnlHik.Controls.Add(Me.lblCam32)
         Me.pnlHik.Controls.Add(Me.picBox31)
@@ -962,16 +1031,16 @@ Partial Class coolBlue
         Me.pnlHik.Controls.Add(Me.lblCam2)
         Me.pnlHik.Controls.Add(Me.lblCam1)
         Me.pnlHik.ForeColor = System.Drawing.Color.Transparent
-        Me.pnlHik.Location = New System.Drawing.Point(9, 236)
-        Me.pnlHik.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlHik.Location = New System.Drawing.Point(12, 290)
+        Me.pnlHik.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlHik.Name = "pnlHik"
-        Me.pnlHik.Size = New System.Drawing.Size(780, 396)
+        Me.pnlHik.Size = New System.Drawing.Size(1040, 487)
         Me.pnlHik.TabIndex = 5
         '
         'picBox32
         '
-        Me.picBox32.Location = New System.Drawing.Point(508, 223)
-        Me.picBox32.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox32.Location = New System.Drawing.Point(677, 274)
+        Me.picBox32.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox32.Name = "picBox32"
         Me.picBox32.Size = New System.Drawing.Size(33, 29)
         Me.picBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -983,16 +1052,15 @@ Partial Class coolBlue
         Me.lblCam32.AutoSize = True
         Me.lblCam32.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam32.Location = New System.Drawing.Point(540, 221)
-        Me.lblCam32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam32.Location = New System.Drawing.Point(720, 272)
         Me.lblCam32.Name = "lblCam32"
-        Me.lblCam32.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam32.Size = New System.Drawing.Size(0, 28)
         Me.lblCam32.TabIndex = 124
         '
         'picBox31
         '
-        Me.picBox31.Location = New System.Drawing.Point(508, 193)
-        Me.picBox31.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox31.Location = New System.Drawing.Point(677, 238)
+        Me.picBox31.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox31.Name = "picBox31"
         Me.picBox31.Size = New System.Drawing.Size(33, 29)
         Me.picBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1004,16 +1072,15 @@ Partial Class coolBlue
         Me.lblCam31.AutoSize = True
         Me.lblCam31.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam31.Location = New System.Drawing.Point(540, 191)
-        Me.lblCam31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam31.Location = New System.Drawing.Point(720, 235)
         Me.lblCam31.Name = "lblCam31"
-        Me.lblCam31.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam31.Size = New System.Drawing.Size(0, 28)
         Me.lblCam31.TabIndex = 122
         '
         'picBox29
         '
-        Me.picBox29.Location = New System.Drawing.Point(508, 135)
-        Me.picBox29.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox29.Location = New System.Drawing.Point(677, 166)
+        Me.picBox29.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox29.Name = "picBox29"
         Me.picBox29.Size = New System.Drawing.Size(33, 29)
         Me.picBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1022,8 +1089,8 @@ Partial Class coolBlue
         '
         'picBox30
         '
-        Me.picBox30.Location = New System.Drawing.Point(508, 163)
-        Me.picBox30.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox30.Location = New System.Drawing.Point(677, 201)
+        Me.picBox30.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox30.Name = "picBox30"
         Me.picBox30.Size = New System.Drawing.Size(33, 29)
         Me.picBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1032,8 +1099,8 @@ Partial Class coolBlue
         '
         'picBox28
         '
-        Me.picBox28.Location = New System.Drawing.Point(508, 106)
-        Me.picBox28.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox28.Location = New System.Drawing.Point(677, 130)
+        Me.picBox28.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox28.Name = "picBox28"
         Me.picBox28.Size = New System.Drawing.Size(33, 29)
         Me.picBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1042,8 +1109,8 @@ Partial Class coolBlue
         '
         'picBox27
         '
-        Me.picBox27.Location = New System.Drawing.Point(508, 78)
-        Me.picBox27.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox27.Location = New System.Drawing.Point(677, 96)
+        Me.picBox27.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox27.Name = "picBox27"
         Me.picBox27.Size = New System.Drawing.Size(33, 29)
         Me.picBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1052,8 +1119,8 @@ Partial Class coolBlue
         '
         'picBox26
         '
-        Me.picBox26.Location = New System.Drawing.Point(508, 50)
-        Me.picBox26.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox26.Location = New System.Drawing.Point(677, 62)
+        Me.picBox26.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox26.Name = "picBox26"
         Me.picBox26.Size = New System.Drawing.Size(33, 29)
         Me.picBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1062,8 +1129,8 @@ Partial Class coolBlue
         '
         'picBox25
         '
-        Me.picBox25.Location = New System.Drawing.Point(508, 21)
-        Me.picBox25.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox25.Location = New System.Drawing.Point(677, 26)
+        Me.picBox25.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox25.Name = "picBox25"
         Me.picBox25.Size = New System.Drawing.Size(33, 29)
         Me.picBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1072,8 +1139,8 @@ Partial Class coolBlue
         '
         'picBox24
         '
-        Me.picBox24.Location = New System.Drawing.Point(263, 340)
-        Me.picBox24.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox24.Location = New System.Drawing.Point(351, 418)
+        Me.picBox24.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox24.Name = "picBox24"
         Me.picBox24.Size = New System.Drawing.Size(33, 29)
         Me.picBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1082,8 +1149,8 @@ Partial Class coolBlue
         '
         'picBox23
         '
-        Me.picBox23.Location = New System.Drawing.Point(263, 311)
-        Me.picBox23.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox23.Location = New System.Drawing.Point(351, 383)
+        Me.picBox23.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox23.Name = "picBox23"
         Me.picBox23.Size = New System.Drawing.Size(33, 29)
         Me.picBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1092,8 +1159,8 @@ Partial Class coolBlue
         '
         'picBox22
         '
-        Me.picBox22.Location = New System.Drawing.Point(263, 282)
-        Me.picBox22.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox22.Location = New System.Drawing.Point(351, 347)
+        Me.picBox22.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox22.Name = "picBox22"
         Me.picBox22.Size = New System.Drawing.Size(33, 29)
         Me.picBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1102,8 +1169,8 @@ Partial Class coolBlue
         '
         'picBox21
         '
-        Me.picBox21.Location = New System.Drawing.Point(263, 254)
-        Me.picBox21.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox21.Location = New System.Drawing.Point(351, 313)
+        Me.picBox21.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox21.Name = "picBox21"
         Me.picBox21.Size = New System.Drawing.Size(33, 29)
         Me.picBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1112,8 +1179,8 @@ Partial Class coolBlue
         '
         'picBox20
         '
-        Me.picBox20.Location = New System.Drawing.Point(263, 225)
-        Me.picBox20.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox20.Location = New System.Drawing.Point(351, 277)
+        Me.picBox20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox20.Name = "picBox20"
         Me.picBox20.Size = New System.Drawing.Size(33, 29)
         Me.picBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1122,8 +1189,8 @@ Partial Class coolBlue
         '
         'picBox19
         '
-        Me.picBox19.Location = New System.Drawing.Point(263, 197)
-        Me.picBox19.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox19.Location = New System.Drawing.Point(351, 242)
+        Me.picBox19.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox19.Name = "picBox19"
         Me.picBox19.Size = New System.Drawing.Size(33, 29)
         Me.picBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1132,8 +1199,8 @@ Partial Class coolBlue
         '
         'picBox18
         '
-        Me.picBox18.Location = New System.Drawing.Point(263, 167)
-        Me.picBox18.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox18.Location = New System.Drawing.Point(351, 206)
+        Me.picBox18.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox18.Name = "picBox18"
         Me.picBox18.Size = New System.Drawing.Size(33, 29)
         Me.picBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1142,8 +1209,8 @@ Partial Class coolBlue
         '
         'picBox17
         '
-        Me.picBox17.Location = New System.Drawing.Point(263, 138)
-        Me.picBox17.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox17.Location = New System.Drawing.Point(351, 170)
+        Me.picBox17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox17.Name = "picBox17"
         Me.picBox17.Size = New System.Drawing.Size(33, 29)
         Me.picBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1152,8 +1219,8 @@ Partial Class coolBlue
         '
         'picBox16
         '
-        Me.picBox16.Location = New System.Drawing.Point(263, 109)
-        Me.picBox16.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox16.Location = New System.Drawing.Point(351, 134)
+        Me.picBox16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox16.Name = "picBox16"
         Me.picBox16.Size = New System.Drawing.Size(33, 29)
         Me.picBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1162,8 +1229,8 @@ Partial Class coolBlue
         '
         'picBox15
         '
-        Me.picBox15.Location = New System.Drawing.Point(263, 80)
-        Me.picBox15.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox15.Location = New System.Drawing.Point(351, 98)
+        Me.picBox15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox15.Name = "picBox15"
         Me.picBox15.Size = New System.Drawing.Size(33, 29)
         Me.picBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1172,8 +1239,8 @@ Partial Class coolBlue
         '
         'picBox14
         '
-        Me.picBox14.Location = New System.Drawing.Point(263, 52)
-        Me.picBox14.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox14.Location = New System.Drawing.Point(351, 64)
+        Me.picBox14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox14.Name = "picBox14"
         Me.picBox14.Size = New System.Drawing.Size(33, 29)
         Me.picBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1182,8 +1249,8 @@ Partial Class coolBlue
         '
         'picBox13
         '
-        Me.picBox13.Location = New System.Drawing.Point(263, 24)
-        Me.picBox13.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox13.Location = New System.Drawing.Point(351, 30)
+        Me.picBox13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox13.Name = "picBox13"
         Me.picBox13.Size = New System.Drawing.Size(33, 29)
         Me.picBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1192,8 +1259,8 @@ Partial Class coolBlue
         '
         'picBox12
         '
-        Me.picBox12.Location = New System.Drawing.Point(11, 337)
-        Me.picBox12.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox12.Location = New System.Drawing.Point(15, 415)
+        Me.picBox12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox12.Name = "picBox12"
         Me.picBox12.Size = New System.Drawing.Size(33, 29)
         Me.picBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1202,8 +1269,8 @@ Partial Class coolBlue
         '
         'picBox11
         '
-        Me.picBox11.Location = New System.Drawing.Point(11, 309)
-        Me.picBox11.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox11.Location = New System.Drawing.Point(15, 380)
+        Me.picBox11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox11.Name = "picBox11"
         Me.picBox11.Size = New System.Drawing.Size(33, 29)
         Me.picBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1212,8 +1279,8 @@ Partial Class coolBlue
         '
         'picBox10
         '
-        Me.picBox10.Location = New System.Drawing.Point(11, 280)
-        Me.picBox10.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox10.Location = New System.Drawing.Point(15, 345)
+        Me.picBox10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox10.Name = "picBox10"
         Me.picBox10.Size = New System.Drawing.Size(33, 29)
         Me.picBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1222,8 +1289,8 @@ Partial Class coolBlue
         '
         'picBox9
         '
-        Me.picBox9.Location = New System.Drawing.Point(11, 252)
-        Me.picBox9.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox9.Location = New System.Drawing.Point(15, 310)
+        Me.picBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox9.Name = "picBox9"
         Me.picBox9.Size = New System.Drawing.Size(33, 29)
         Me.picBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1232,8 +1299,8 @@ Partial Class coolBlue
         '
         'picBox8
         '
-        Me.picBox8.Location = New System.Drawing.Point(11, 223)
-        Me.picBox8.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox8.Location = New System.Drawing.Point(15, 274)
+        Me.picBox8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox8.Name = "picBox8"
         Me.picBox8.Size = New System.Drawing.Size(33, 29)
         Me.picBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1242,8 +1309,8 @@ Partial Class coolBlue
         '
         'picBox7
         '
-        Me.picBox7.Location = New System.Drawing.Point(11, 195)
-        Me.picBox7.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox7.Location = New System.Drawing.Point(15, 240)
+        Me.picBox7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox7.Name = "picBox7"
         Me.picBox7.Size = New System.Drawing.Size(33, 29)
         Me.picBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1252,8 +1319,8 @@ Partial Class coolBlue
         '
         'picBox6
         '
-        Me.picBox6.Location = New System.Drawing.Point(11, 167)
-        Me.picBox6.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox6.Location = New System.Drawing.Point(15, 206)
+        Me.picBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox6.Name = "picBox6"
         Me.picBox6.Size = New System.Drawing.Size(33, 29)
         Me.picBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1262,8 +1329,8 @@ Partial Class coolBlue
         '
         'picBox5
         '
-        Me.picBox5.Location = New System.Drawing.Point(11, 138)
-        Me.picBox5.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox5.Location = New System.Drawing.Point(15, 170)
+        Me.picBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox5.Name = "picBox5"
         Me.picBox5.Size = New System.Drawing.Size(33, 29)
         Me.picBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1272,8 +1339,8 @@ Partial Class coolBlue
         '
         'picBox4
         '
-        Me.picBox4.Location = New System.Drawing.Point(11, 110)
-        Me.picBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox4.Location = New System.Drawing.Point(15, 135)
+        Me.picBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox4.Name = "picBox4"
         Me.picBox4.Size = New System.Drawing.Size(33, 29)
         Me.picBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1282,8 +1349,8 @@ Partial Class coolBlue
         '
         'picBox3
         '
-        Me.picBox3.Location = New System.Drawing.Point(11, 81)
-        Me.picBox3.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox3.Location = New System.Drawing.Point(15, 100)
+        Me.picBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox3.Name = "picBox3"
         Me.picBox3.Size = New System.Drawing.Size(33, 29)
         Me.picBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1292,8 +1359,8 @@ Partial Class coolBlue
         '
         'picBox2
         '
-        Me.picBox2.Location = New System.Drawing.Point(11, 53)
-        Me.picBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox2.Location = New System.Drawing.Point(15, 65)
+        Me.picBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox2.Name = "picBox2"
         Me.picBox2.Size = New System.Drawing.Size(33, 29)
         Me.picBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1302,8 +1369,8 @@ Partial Class coolBlue
         '
         'picBox
         '
-        Me.picBox.Location = New System.Drawing.Point(11, 24)
-        Me.picBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.picBox.Location = New System.Drawing.Point(15, 30)
+        Me.picBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picBox.Name = "picBox"
         Me.picBox.Size = New System.Drawing.Size(33, 29)
         Me.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1315,10 +1382,9 @@ Partial Class coolBlue
         Me.lblCam30.AutoSize = True
         Me.lblCam30.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam30.Location = New System.Drawing.Point(540, 162)
-        Me.lblCam30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam30.Location = New System.Drawing.Point(720, 199)
         Me.lblCam30.Name = "lblCam30"
-        Me.lblCam30.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam30.Size = New System.Drawing.Size(0, 28)
         Me.lblCam30.TabIndex = 91
         '
         'lblCam29
@@ -1326,10 +1392,9 @@ Partial Class coolBlue
         Me.lblCam29.AutoSize = True
         Me.lblCam29.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam29.Location = New System.Drawing.Point(540, 134)
-        Me.lblCam29.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam29.Location = New System.Drawing.Point(720, 165)
         Me.lblCam29.Name = "lblCam29"
-        Me.lblCam29.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam29.Size = New System.Drawing.Size(0, 28)
         Me.lblCam29.TabIndex = 90
         '
         'lblCam25
@@ -1337,10 +1402,9 @@ Partial Class coolBlue
         Me.lblCam25.AutoSize = True
         Me.lblCam25.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam25.Location = New System.Drawing.Point(540, 22)
-        Me.lblCam25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam25.Location = New System.Drawing.Point(720, 27)
         Me.lblCam25.Name = "lblCam25"
-        Me.lblCam25.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam25.Size = New System.Drawing.Size(0, 28)
         Me.lblCam25.TabIndex = 89
         '
         'lblCam26
@@ -1348,10 +1412,9 @@ Partial Class coolBlue
         Me.lblCam26.AutoSize = True
         Me.lblCam26.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam26.Location = New System.Drawing.Point(540, 51)
-        Me.lblCam26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam26.Location = New System.Drawing.Point(720, 63)
         Me.lblCam26.Name = "lblCam26"
-        Me.lblCam26.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam26.Size = New System.Drawing.Size(0, 28)
         Me.lblCam26.TabIndex = 88
         '
         'lblCam28
@@ -1359,10 +1422,9 @@ Partial Class coolBlue
         Me.lblCam28.AutoSize = True
         Me.lblCam28.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam28.Location = New System.Drawing.Point(540, 106)
-        Me.lblCam28.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam28.Location = New System.Drawing.Point(720, 130)
         Me.lblCam28.Name = "lblCam28"
-        Me.lblCam28.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam28.Size = New System.Drawing.Size(0, 28)
         Me.lblCam28.TabIndex = 87
         '
         'lblCam23
@@ -1370,10 +1432,9 @@ Partial Class coolBlue
         Me.lblCam23.AutoSize = True
         Me.lblCam23.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam23.Location = New System.Drawing.Point(296, 314)
-        Me.lblCam23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam23.Location = New System.Drawing.Point(395, 386)
         Me.lblCam23.Name = "lblCam23"
-        Me.lblCam23.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam23.Size = New System.Drawing.Size(0, 28)
         Me.lblCam23.TabIndex = 86
         '
         'lblCam27
@@ -1381,10 +1442,9 @@ Partial Class coolBlue
         Me.lblCam27.AutoSize = True
         Me.lblCam27.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam27.Location = New System.Drawing.Point(540, 78)
-        Me.lblCam27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam27.Location = New System.Drawing.Point(720, 96)
         Me.lblCam27.Name = "lblCam27"
-        Me.lblCam27.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam27.Size = New System.Drawing.Size(0, 28)
         Me.lblCam27.TabIndex = 85
         '
         'lblCam24
@@ -1392,10 +1452,9 @@ Partial Class coolBlue
         Me.lblCam24.AutoSize = True
         Me.lblCam24.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam24.Location = New System.Drawing.Point(296, 343)
-        Me.lblCam24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam24.Location = New System.Drawing.Point(395, 422)
         Me.lblCam24.Name = "lblCam24"
-        Me.lblCam24.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam24.Size = New System.Drawing.Size(0, 28)
         Me.lblCam24.TabIndex = 84
         '
         'btnTestConnection
@@ -1403,12 +1462,14 @@ Partial Class coolBlue
         Me.btnTestConnection.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnTestConnection.BackColor = System.Drawing.Color.ForestGreen
         Me.btnTestConnection.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTestConnection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btnTestConnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTestConnection.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTestConnection.ForeColor = System.Drawing.Color.White
-        Me.btnTestConnection.Location = New System.Drawing.Point(553, 340)
-        Me.btnTestConnection.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnTestConnection.Location = New System.Drawing.Point(737, 418)
+        Me.btnTestConnection.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTestConnection.Name = "btnTestConnection"
-        Me.btnTestConnection.Size = New System.Drawing.Size(129, 31)
+        Me.btnTestConnection.Size = New System.Drawing.Size(172, 38)
         Me.btnTestConnection.TabIndex = 1
         Me.btnTestConnection.Text = "Te&st Connection"
         Me.ToolTip1.SetToolTip(Me.btnTestConnection, "Click on this for Hik vision cam status")
@@ -1419,10 +1480,9 @@ Partial Class coolBlue
         Me.lblCam20.AutoSize = True
         Me.lblCam20.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam20.Location = New System.Drawing.Point(296, 226)
-        Me.lblCam20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam20.Location = New System.Drawing.Point(395, 278)
         Me.lblCam20.Name = "lblCam20"
-        Me.lblCam20.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam20.Size = New System.Drawing.Size(0, 28)
         Me.lblCam20.TabIndex = 83
         '
         'lblCam22
@@ -1430,10 +1490,9 @@ Partial Class coolBlue
         Me.lblCam22.AutoSize = True
         Me.lblCam22.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam22.Location = New System.Drawing.Point(296, 284)
-        Me.lblCam22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam22.Location = New System.Drawing.Point(395, 350)
         Me.lblCam22.Name = "lblCam22"
-        Me.lblCam22.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam22.Size = New System.Drawing.Size(0, 28)
         Me.lblCam22.TabIndex = 82
         '
         'lblCam21
@@ -1441,10 +1500,9 @@ Partial Class coolBlue
         Me.lblCam21.AutoSize = True
         Me.lblCam21.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam21.Location = New System.Drawing.Point(296, 255)
-        Me.lblCam21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam21.Location = New System.Drawing.Point(395, 314)
         Me.lblCam21.Name = "lblCam21"
-        Me.lblCam21.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam21.Size = New System.Drawing.Size(0, 28)
         Me.lblCam21.TabIndex = 81
         '
         'lblCam19
@@ -1452,10 +1510,9 @@ Partial Class coolBlue
         Me.lblCam19.AutoSize = True
         Me.lblCam19.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam19.Location = New System.Drawing.Point(296, 197)
-        Me.lblCam19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam19.Location = New System.Drawing.Point(395, 242)
         Me.lblCam19.Name = "lblCam19"
-        Me.lblCam19.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam19.Size = New System.Drawing.Size(0, 28)
         Me.lblCam19.TabIndex = 80
         '
         'lblCam18
@@ -1463,10 +1520,9 @@ Partial Class coolBlue
         Me.lblCam18.AutoSize = True
         Me.lblCam18.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam18.Location = New System.Drawing.Point(296, 167)
-        Me.lblCam18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam18.Location = New System.Drawing.Point(395, 206)
         Me.lblCam18.Name = "lblCam18"
-        Me.lblCam18.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam18.Size = New System.Drawing.Size(0, 28)
         Me.lblCam18.TabIndex = 79
         '
         'lblCam17
@@ -1474,10 +1530,9 @@ Partial Class coolBlue
         Me.lblCam17.AutoSize = True
         Me.lblCam17.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam17.Location = New System.Drawing.Point(296, 138)
-        Me.lblCam17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam17.Location = New System.Drawing.Point(395, 170)
         Me.lblCam17.Name = "lblCam17"
-        Me.lblCam17.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam17.Size = New System.Drawing.Size(0, 28)
         Me.lblCam17.TabIndex = 78
         '
         'lblCam16
@@ -1485,10 +1540,9 @@ Partial Class coolBlue
         Me.lblCam16.AutoSize = True
         Me.lblCam16.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam16.Location = New System.Drawing.Point(296, 109)
-        Me.lblCam16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam16.Location = New System.Drawing.Point(395, 134)
         Me.lblCam16.Name = "lblCam16"
-        Me.lblCam16.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam16.Size = New System.Drawing.Size(0, 28)
         Me.lblCam16.TabIndex = 77
         '
         'lblCam15
@@ -1496,10 +1550,9 @@ Partial Class coolBlue
         Me.lblCam15.AutoSize = True
         Me.lblCam15.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam15.Location = New System.Drawing.Point(296, 80)
-        Me.lblCam15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam15.Location = New System.Drawing.Point(395, 98)
         Me.lblCam15.Name = "lblCam15"
-        Me.lblCam15.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam15.Size = New System.Drawing.Size(0, 28)
         Me.lblCam15.TabIndex = 76
         '
         'lblCam14
@@ -1507,10 +1560,9 @@ Partial Class coolBlue
         Me.lblCam14.AutoSize = True
         Me.lblCam14.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam14.Location = New System.Drawing.Point(296, 50)
-        Me.lblCam14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam14.Location = New System.Drawing.Point(395, 62)
         Me.lblCam14.Name = "lblCam14"
-        Me.lblCam14.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam14.Size = New System.Drawing.Size(0, 28)
         Me.lblCam14.TabIndex = 75
         '
         'lblCam13
@@ -1518,10 +1570,9 @@ Partial Class coolBlue
         Me.lblCam13.AutoSize = True
         Me.lblCam13.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam13.Location = New System.Drawing.Point(296, 21)
-        Me.lblCam13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam13.Location = New System.Drawing.Point(395, 26)
         Me.lblCam13.Name = "lblCam13"
-        Me.lblCam13.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam13.Size = New System.Drawing.Size(0, 28)
         Me.lblCam13.TabIndex = 74
         '
         'lblCam12
@@ -1529,10 +1580,9 @@ Partial Class coolBlue
         Me.lblCam12.AutoSize = True
         Me.lblCam12.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam12.Location = New System.Drawing.Point(44, 343)
-        Me.lblCam12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam12.Location = New System.Drawing.Point(59, 422)
         Me.lblCam12.Name = "lblCam12"
-        Me.lblCam12.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam12.Size = New System.Drawing.Size(0, 28)
         Me.lblCam12.TabIndex = 73
         '
         'lblCam11
@@ -1540,10 +1590,9 @@ Partial Class coolBlue
         Me.lblCam11.AutoSize = True
         Me.lblCam11.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam11.Location = New System.Drawing.Point(44, 314)
-        Me.lblCam11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam11.Location = New System.Drawing.Point(59, 386)
         Me.lblCam11.Name = "lblCam11"
-        Me.lblCam11.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam11.Size = New System.Drawing.Size(0, 28)
         Me.lblCam11.TabIndex = 72
         '
         'lblCam10
@@ -1551,10 +1600,9 @@ Partial Class coolBlue
         Me.lblCam10.AutoSize = True
         Me.lblCam10.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam10.Location = New System.Drawing.Point(44, 284)
-        Me.lblCam10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam10.Location = New System.Drawing.Point(59, 350)
         Me.lblCam10.Name = "lblCam10"
-        Me.lblCam10.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam10.Size = New System.Drawing.Size(0, 28)
         Me.lblCam10.TabIndex = 70
         '
         'lblCam9
@@ -1562,10 +1610,9 @@ Partial Class coolBlue
         Me.lblCam9.AutoSize = True
         Me.lblCam9.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam9.Location = New System.Drawing.Point(44, 255)
-        Me.lblCam9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam9.Location = New System.Drawing.Point(59, 314)
         Me.lblCam9.Name = "lblCam9"
-        Me.lblCam9.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam9.Size = New System.Drawing.Size(0, 28)
         Me.lblCam9.TabIndex = 69
         '
         'lblCam8
@@ -1573,10 +1620,9 @@ Partial Class coolBlue
         Me.lblCam8.AutoSize = True
         Me.lblCam8.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam8.Location = New System.Drawing.Point(44, 226)
-        Me.lblCam8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam8.Location = New System.Drawing.Point(59, 278)
         Me.lblCam8.Name = "lblCam8"
-        Me.lblCam8.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam8.Size = New System.Drawing.Size(0, 28)
         Me.lblCam8.TabIndex = 68
         '
         'lblCam7
@@ -1584,10 +1630,9 @@ Partial Class coolBlue
         Me.lblCam7.AutoSize = True
         Me.lblCam7.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam7.Location = New System.Drawing.Point(44, 197)
-        Me.lblCam7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam7.Location = New System.Drawing.Point(59, 242)
         Me.lblCam7.Name = "lblCam7"
-        Me.lblCam7.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam7.Size = New System.Drawing.Size(0, 28)
         Me.lblCam7.TabIndex = 67
         '
         'lblCam6
@@ -1595,10 +1640,9 @@ Partial Class coolBlue
         Me.lblCam6.AutoSize = True
         Me.lblCam6.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam6.Location = New System.Drawing.Point(44, 167)
-        Me.lblCam6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam6.Location = New System.Drawing.Point(59, 206)
         Me.lblCam6.Name = "lblCam6"
-        Me.lblCam6.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam6.Size = New System.Drawing.Size(0, 28)
         Me.lblCam6.TabIndex = 66
         '
         'lblCam5
@@ -1606,10 +1650,9 @@ Partial Class coolBlue
         Me.lblCam5.AutoSize = True
         Me.lblCam5.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam5.Location = New System.Drawing.Point(44, 138)
-        Me.lblCam5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam5.Location = New System.Drawing.Point(59, 170)
         Me.lblCam5.Name = "lblCam5"
-        Me.lblCam5.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam5.Size = New System.Drawing.Size(0, 28)
         Me.lblCam5.TabIndex = 65
         '
         'lblCam4
@@ -1617,10 +1660,9 @@ Partial Class coolBlue
         Me.lblCam4.AutoSize = True
         Me.lblCam4.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam4.Location = New System.Drawing.Point(44, 109)
-        Me.lblCam4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam4.Location = New System.Drawing.Point(59, 134)
         Me.lblCam4.Name = "lblCam4"
-        Me.lblCam4.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam4.Size = New System.Drawing.Size(0, 28)
         Me.lblCam4.TabIndex = 64
         '
         'lblCam3
@@ -1628,10 +1670,9 @@ Partial Class coolBlue
         Me.lblCam3.AutoSize = True
         Me.lblCam3.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam3.Location = New System.Drawing.Point(44, 80)
-        Me.lblCam3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam3.Location = New System.Drawing.Point(59, 98)
         Me.lblCam3.Name = "lblCam3"
-        Me.lblCam3.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam3.Size = New System.Drawing.Size(0, 28)
         Me.lblCam3.TabIndex = 63
         '
         'lblCam2
@@ -1639,10 +1680,9 @@ Partial Class coolBlue
         Me.lblCam2.AutoSize = True
         Me.lblCam2.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam2.Location = New System.Drawing.Point(44, 50)
-        Me.lblCam2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam2.Location = New System.Drawing.Point(59, 62)
         Me.lblCam2.Name = "lblCam2"
-        Me.lblCam2.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam2.Size = New System.Drawing.Size(0, 28)
         Me.lblCam2.TabIndex = 62
         '
         'lblCam1
@@ -1650,19 +1690,205 @@ Partial Class coolBlue
         Me.lblCam1.AutoSize = True
         Me.lblCam1.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCam1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCam1.Location = New System.Drawing.Point(44, 21)
-        Me.lblCam1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCam1.Location = New System.Drawing.Point(59, 26)
         Me.lblCam1.Name = "lblCam1"
-        Me.lblCam1.Size = New System.Drawing.Size(0, 21)
+        Me.lblCam1.Size = New System.Drawing.Size(0, 28)
         Me.lblCam1.TabIndex = 61
         Me.ToolTip1.SetToolTip(Me.lblCam1, "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        '
+        'pnlUser
+        '
+        Me.pnlUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.pnlUser.Controls.Add(Me.DateTimePicker1)
+        Me.pnlUser.Controls.Add(Me.lblloginUser)
+        Me.pnlUser.Controls.Add(Me.btnuserDelete)
+        Me.pnlUser.Controls.Add(Me.btnExit)
+        Me.pnlUser.Controls.Add(Me.btnClearcontrol)
+        Me.pnlUser.Controls.Add(Me.btnUserEdit)
+        Me.pnlUser.Controls.Add(Me.btnAdd)
+        Me.pnlUser.Controls.Add(Me.grpBox)
+        Me.pnlUser.Controls.Add(Me.DataGridView2)
+        Me.pnlUser.Controls.Add(Me.Label7)
+        Me.pnlUser.ForeColor = System.Drawing.Color.Transparent
+        Me.pnlUser.Location = New System.Drawing.Point(9, 219)
+        Me.pnlUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlUser.Name = "pnlUser"
+        Me.pnlUser.Size = New System.Drawing.Size(1040, 552)
+        Me.pnlUser.TabIndex = 126
+        '
+        'btnuserDelete
+        '
+        Me.btnuserDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnuserDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnuserDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnuserDelete.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnuserDelete.Image = CType(resources.GetObject("btnuserDelete.Image"), System.Drawing.Image)
+        Me.btnuserDelete.Location = New System.Drawing.Point(303, 26)
+        Me.btnuserDelete.Name = "btnuserDelete"
+        Me.btnuserDelete.Size = New System.Drawing.Size(116, 45)
+        Me.btnuserDelete.TabIndex = 23
+        Me.btnuserDelete.Text = " Delete"
+        Me.btnuserDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnuserDelete.UseVisualStyleBackColor = False
+        '
+        'btnExit
+        '
+        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
+        Me.btnExit.Location = New System.Drawing.Point(582, 25)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(107, 45)
+        Me.btnExit.TabIndex = 22
+        Me.btnExit.Text = " Exit"
+        Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExit.UseVisualStyleBackColor = False
+        '
+        'btnClearcontrol
+        '
+        Me.btnClearcontrol.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnClearcontrol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnClearcontrol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClearcontrol.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearcontrol.Image = CType(resources.GetObject("btnClearcontrol.Image"), System.Drawing.Image)
+        Me.btnClearcontrol.Location = New System.Drawing.Point(447, 25)
+        Me.btnClearcontrol.Name = "btnClearcontrol"
+        Me.btnClearcontrol.Size = New System.Drawing.Size(116, 45)
+        Me.btnClearcontrol.TabIndex = 21
+        Me.btnClearcontrol.Text = " Clear"
+        Me.btnClearcontrol.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClearcontrol.UseVisualStyleBackColor = False
+        '
+        'btnUserEdit
+        '
+        Me.btnUserEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnUserEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnUserEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUserEdit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUserEdit.Image = CType(resources.GetObject("btnUserEdit.Image"), System.Drawing.Image)
+        Me.btnUserEdit.Location = New System.Drawing.Point(150, 26)
+        Me.btnUserEdit.Name = "btnUserEdit"
+        Me.btnUserEdit.Size = New System.Drawing.Size(125, 44)
+        Me.btnUserEdit.TabIndex = 20
+        Me.btnUserEdit.Text = " Update"
+        Me.btnUserEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnUserEdit.UseVisualStyleBackColor = False
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"), System.Drawing.Image)
+        Me.btnAdd.Location = New System.Drawing.Point(18, 27)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(101, 43)
+        Me.btnAdd.TabIndex = 19
+        Me.btnAdd.Text = " Add"
+        Me.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'grpBox
+        '
+        Me.grpBox.Controls.Add(Me.cmbPermission)
+        Me.grpBox.Controls.Add(Me.lblPermission)
+        Me.grpBox.Controls.Add(Me.lblUser)
+        Me.grpBox.Controls.Add(Me.txtUsername)
+        Me.grpBox.Controls.Add(Me.lblPassword)
+        Me.grpBox.Controls.Add(Me.txtPassword)
+        Me.grpBox.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpBox.ForeColor = System.Drawing.Color.White
+        Me.grpBox.Location = New System.Drawing.Point(7, 123)
+        Me.grpBox.Name = "grpBox"
+        Me.grpBox.Size = New System.Drawing.Size(425, 210)
+        Me.grpBox.TabIndex = 15
+        Me.grpBox.TabStop = False
+        Me.grpBox.Text = "User_Details"
+        '
+        'cmbPermission
+        '
+        Me.cmbPermission.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbPermission.FormattingEnabled = True
+        Me.cmbPermission.Items.AddRange(New Object() {"-Select-", "Admin", "User"})
+        Me.cmbPermission.Location = New System.Drawing.Point(130, 125)
+        Me.cmbPermission.Name = "cmbPermission"
+        Me.cmbPermission.Size = New System.Drawing.Size(121, 28)
+        Me.cmbPermission.TabIndex = 10
+        '
+        'lblPermission
+        '
+        Me.lblPermission.AutoSize = True
+        Me.lblPermission.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPermission.Location = New System.Drawing.Point(22, 128)
+        Me.lblPermission.Name = "lblPermission"
+        Me.lblPermission.Size = New System.Drawing.Size(86, 20)
+        Me.lblPermission.TabIndex = 12
+        Me.lblPermission.Text = "Permission:"
+        '
+        'lblUser
+        '
+        Me.lblUser.AutoSize = True
+        Me.lblUser.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUser.Location = New System.Drawing.Point(22, 35)
+        Me.lblUser.Name = "lblUser"
+        Me.lblUser.Size = New System.Drawing.Size(82, 20)
+        Me.lblUser.TabIndex = 5
+        Me.lblUser.Text = "Username:"
+        '
+        'txtUsername
+        '
+        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Location = New System.Drawing.Point(130, 32)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(179, 27)
+        Me.txtUsername.TabIndex = 6
+        '
+        'lblPassword
+        '
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassword.Location = New System.Drawing.Point(22, 83)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(77, 20)
+        Me.lblPassword.TabIndex = 7
+        Me.lblPassword.Text = "Password:"
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(130, 80)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(179, 27)
+        Me.txtPassword.TabIndex = 8
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(438, 133)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.Size = New System.Drawing.Size(585, 338)
+        Me.DataGridView2.TabIndex = 14
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(13, 373)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(51, 17)
+        Me.Label7.TabIndex = 17
+        Me.Label7.Text = "Label7"
         '
         'pnlGeo
         '
         Me.pnlGeo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnlGeo.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.pnlGeo.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.pnlGeo.Controls.Add(Me.btnCopy)
         Me.pnlGeo.Controls.Add(Me.btnCMDcheck)
         Me.pnlGeo.Controls.Add(Me.txtCMDtext)
@@ -1673,10 +1899,10 @@ Partial Class coolBlue
         Me.pnlGeo.Controls.Add(Me.btnckeck)
         Me.pnlGeo.Controls.Add(Me.ListView1)
         Me.pnlGeo.Controls.Add(Me.ListView2)
-        Me.pnlGeo.Location = New System.Drawing.Point(9, 236)
-        Me.pnlGeo.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlGeo.Location = New System.Drawing.Point(12, 290)
+        Me.pnlGeo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlGeo.Name = "pnlGeo"
-        Me.pnlGeo.Size = New System.Drawing.Size(780, 396)
+        Me.pnlGeo.Size = New System.Drawing.Size(1040, 487)
         Me.pnlGeo.TabIndex = 9
         '
         'btnCopy
@@ -1687,10 +1913,10 @@ Partial Class coolBlue
         Me.btnCopy.ForeColor = System.Drawing.Color.Orange
         Me.btnCopy.Image = Global.CoolBlueColor.My.Resources.Resources.duplicate
         Me.btnCopy.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnCopy.Location = New System.Drawing.Point(346, 223)
-        Me.btnCopy.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCopy.Location = New System.Drawing.Point(461, 274)
+        Me.btnCopy.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCopy.Name = "btnCopy"
-        Me.btnCopy.Size = New System.Drawing.Size(85, 37)
+        Me.btnCopy.Size = New System.Drawing.Size(113, 46)
         Me.btnCopy.TabIndex = 11
         Me.btnCopy.Text = "Copy"
         Me.btnCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1701,28 +1927,28 @@ Partial Class coolBlue
         '
         Me.btnCMDcheck.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCMDcheck.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnCMDcheck.Location = New System.Drawing.Point(360, 145)
-        Me.btnCMDcheck.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCMDcheck.Location = New System.Drawing.Point(480, 178)
+        Me.btnCMDcheck.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCMDcheck.Name = "btnCMDcheck"
-        Me.btnCMDcheck.Size = New System.Drawing.Size(55, 21)
+        Me.btnCMDcheck.Size = New System.Drawing.Size(73, 26)
         Me.btnCMDcheck.TabIndex = 10
         Me.btnCMDcheck.Text = "Test"
         Me.btnCMDcheck.UseVisualStyleBackColor = True
         '
         'txtCMDtext
         '
-        Me.txtCMDtext.Location = New System.Drawing.Point(346, 112)
-        Me.txtCMDtext.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtCMDtext.Location = New System.Drawing.Point(461, 138)
+        Me.txtCMDtext.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCMDtext.Name = "txtCMDtext"
-        Me.txtCMDtext.Size = New System.Drawing.Size(86, 20)
+        Me.txtCMDtext.Size = New System.Drawing.Size(113, 22)
         Me.txtCMDtext.TabIndex = 9
         Me.txtCMDtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.CoolBlueColor.My.Resources.Resources.red_new
-        Me.PictureBox2.Location = New System.Drawing.Point(344, 347)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox2.Location = New System.Drawing.Point(459, 427)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1733,8 +1959,8 @@ Partial Class coolBlue
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.CoolBlueColor.My.Resources.Resources.green_new
-        Me.PictureBox1.Location = New System.Drawing.Point(342, 20)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Location = New System.Drawing.Point(456, 25)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -1747,10 +1973,9 @@ Partial Class coolBlue
         Me.lblNotworking.AutoSize = True
         Me.lblNotworking.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold)
         Me.lblNotworking.ForeColor = System.Drawing.Color.White
-        Me.lblNotworking.Location = New System.Drawing.Point(399, 345)
-        Me.lblNotworking.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblNotworking.Location = New System.Drawing.Point(532, 425)
         Me.lblNotworking.Name = "lblNotworking"
-        Me.lblNotworking.Size = New System.Drawing.Size(0, 25)
+        Me.lblNotworking.Size = New System.Drawing.Size(0, 32)
         Me.lblNotworking.TabIndex = 6
         '
         'lblWorking
@@ -1758,21 +1983,22 @@ Partial Class coolBlue
         Me.lblWorking.AutoSize = True
         Me.lblWorking.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWorking.ForeColor = System.Drawing.Color.White
-        Me.lblWorking.Location = New System.Drawing.Point(399, 27)
-        Me.lblWorking.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWorking.Location = New System.Drawing.Point(532, 33)
         Me.lblWorking.Name = "lblWorking"
-        Me.lblWorking.Size = New System.Drawing.Size(0, 25)
+        Me.lblWorking.Size = New System.Drawing.Size(0, 32)
         Me.lblWorking.TabIndex = 5
         '
         'btnckeck
         '
+        Me.btnckeck.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btnckeck.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnckeck.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnckeck.ForeColor = System.Drawing.Color.ForestGreen
         Me.btnckeck.Image = CType(resources.GetObject("btnckeck.Image"), System.Drawing.Image)
-        Me.btnckeck.Location = New System.Drawing.Point(346, 181)
-        Me.btnckeck.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnckeck.Location = New System.Drawing.Point(461, 223)
+        Me.btnckeck.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnckeck.Name = "btnckeck"
-        Me.btnckeck.Size = New System.Drawing.Size(85, 35)
+        Me.btnckeck.Size = New System.Drawing.Size(113, 43)
         Me.btnckeck.TabIndex = 1
         Me.btnckeck.Text = " Check"
         Me.btnckeck.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1786,10 +2012,10 @@ Partial Class coolBlue
         Me.ListView1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView1.Location = New System.Drawing.Point(8, 3)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListView1.Location = New System.Drawing.Point(11, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(324, 390)
+        Me.ListView1.Size = New System.Drawing.Size(431, 479)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -1809,10 +2035,10 @@ Partial Class coolBlue
         Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
         Me.ListView2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView2.FullRowSelect = True
-        Me.ListView2.Location = New System.Drawing.Point(466, 3)
-        Me.ListView2.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListView2.Location = New System.Drawing.Point(621, 4)
+        Me.ListView2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(303, 390)
+        Me.ListView2.Size = New System.Drawing.Size(403, 479)
         Me.ListView2.TabIndex = 2
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
@@ -1829,7 +2055,7 @@ Partial Class coolBlue
         '
         'pnlSen
         '
-        Me.pnlSen.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.pnlSen.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.pnlSen.Controls.Add(Me.btnClkSen)
         Me.pnlSen.Controls.Add(Me.lblCPF)
         Me.pnlSen.Controls.Add(Me.lblHenke)
@@ -1902,21 +2128,23 @@ Partial Class coolBlue
         Me.pnlSen.Controls.Add(Me.picSen2)
         Me.pnlSen.Controls.Add(Me.picSen1)
         Me.pnlSen.Controls.Add(Me.lblSenMasa)
-        Me.pnlSen.Location = New System.Drawing.Point(9, 236)
-        Me.pnlSen.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlSen.Location = New System.Drawing.Point(12, 290)
+        Me.pnlSen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlSen.Name = "pnlSen"
-        Me.pnlSen.Size = New System.Drawing.Size(780, 396)
+        Me.pnlSen.Size = New System.Drawing.Size(1040, 487)
         Me.pnlSen.TabIndex = 10
         '
         'btnClkSen
         '
         Me.btnClkSen.BackColor = System.Drawing.Color.SeaGreen
+        Me.btnClkSen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btnClkSen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClkSen.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClkSen.ForeColor = System.Drawing.Color.YellowGreen
-        Me.btnClkSen.Location = New System.Drawing.Point(25, 362)
-        Me.btnClkSen.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnClkSen.Location = New System.Drawing.Point(33, 446)
+        Me.btnClkSen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnClkSen.Name = "btnClkSen"
-        Me.btnClkSen.Size = New System.Drawing.Size(92, 30)
+        Me.btnClkSen.Size = New System.Drawing.Size(123, 37)
         Me.btnClkSen.TabIndex = 82
         Me.btnClkSen.Text = "Check"
         Me.ToolTip1.SetToolTip(Me.btnClkSen, "Click on this for Working Sensor status")
@@ -1928,10 +2156,9 @@ Partial Class coolBlue
         Me.lblCPF.BackColor = System.Drawing.Color.SlateBlue
         Me.lblCPF.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCPF.ForeColor = System.Drawing.Color.Snow
-        Me.lblCPF.Location = New System.Drawing.Point(468, 17)
-        Me.lblCPF.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCPF.Location = New System.Drawing.Point(624, 21)
         Me.lblCPF.Name = "lblCPF"
-        Me.lblCPF.Size = New System.Drawing.Size(101, 20)
+        Me.lblCPF.Size = New System.Drawing.Size(131, 25)
         Me.lblCPF.TabIndex = 81
         Me.lblCPF.Text = "PIPE FACTORY"
         Me.ToolTip1.SetToolTip(Me.lblCPF, "PIPE FACTORY Sensors")
@@ -1942,10 +2169,9 @@ Partial Class coolBlue
         Me.lblHenke.BackColor = System.Drawing.Color.Green
         Me.lblHenke.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHenke.ForeColor = System.Drawing.Color.Snow
-        Me.lblHenke.Location = New System.Drawing.Point(238, 17)
-        Me.lblHenke.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHenke.Location = New System.Drawing.Point(317, 21)
         Me.lblHenke.Name = "lblHenke"
-        Me.lblHenke.Size = New System.Drawing.Size(80, 20)
+        Me.lblHenke.Size = New System.Drawing.Size(100, 25)
         Me.lblHenke.TabIndex = 80
         Me.lblHenke.Text = "IBF HENKE"
         Me.ToolTip1.SetToolTip(Me.lblHenke, "IBF HENKE Sensors")
@@ -1953,313 +2179,279 @@ Partial Class coolBlue
         'lblSen34
         '
         Me.lblSen34.AutoSize = True
-        Me.lblSen34.Location = New System.Drawing.Point(504, 366)
-        Me.lblSen34.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen34.Location = New System.Drawing.Point(672, 450)
         Me.lblSen34.Name = "lblSen34"
-        Me.lblSen34.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen34.Size = New System.Drawing.Size(0, 17)
         Me.lblSen34.TabIndex = 79
         '
         'lblSen33
         '
         Me.lblSen33.AutoSize = True
-        Me.lblSen33.Location = New System.Drawing.Point(504, 340)
-        Me.lblSen33.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen33.Location = New System.Drawing.Point(672, 418)
         Me.lblSen33.Name = "lblSen33"
-        Me.lblSen33.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen33.Size = New System.Drawing.Size(0, 17)
         Me.lblSen33.TabIndex = 78
         '
         'lblSen32
         '
         Me.lblSen32.AutoSize = True
-        Me.lblSen32.Location = New System.Drawing.Point(504, 313)
-        Me.lblSen32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen32.Location = New System.Drawing.Point(672, 385)
         Me.lblSen32.Name = "lblSen32"
-        Me.lblSen32.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen32.Size = New System.Drawing.Size(0, 17)
         Me.lblSen32.TabIndex = 77
         '
         'lblSen31
         '
         Me.lblSen31.AutoSize = True
-        Me.lblSen31.Location = New System.Drawing.Point(504, 286)
-        Me.lblSen31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen31.Location = New System.Drawing.Point(672, 352)
         Me.lblSen31.Name = "lblSen31"
-        Me.lblSen31.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen31.Size = New System.Drawing.Size(0, 17)
         Me.lblSen31.TabIndex = 76
         '
         'lblSen30
         '
         Me.lblSen30.AutoSize = True
-        Me.lblSen30.Location = New System.Drawing.Point(504, 259)
-        Me.lblSen30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen30.Location = New System.Drawing.Point(672, 319)
         Me.lblSen30.Name = "lblSen30"
-        Me.lblSen30.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen30.Size = New System.Drawing.Size(0, 17)
         Me.lblSen30.TabIndex = 75
         '
         'lblSen29
         '
         Me.lblSen29.AutoSize = True
-        Me.lblSen29.Location = New System.Drawing.Point(504, 232)
-        Me.lblSen29.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen29.Location = New System.Drawing.Point(672, 286)
         Me.lblSen29.Name = "lblSen29"
-        Me.lblSen29.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen29.Size = New System.Drawing.Size(0, 17)
         Me.lblSen29.TabIndex = 74
         '
         'lblSen28
         '
         Me.lblSen28.AutoSize = True
-        Me.lblSen28.Location = New System.Drawing.Point(504, 206)
-        Me.lblSen28.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen28.Location = New System.Drawing.Point(672, 254)
         Me.lblSen28.Name = "lblSen28"
-        Me.lblSen28.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen28.Size = New System.Drawing.Size(0, 17)
         Me.lblSen28.TabIndex = 73
         '
         'lblSen27
         '
         Me.lblSen27.AutoSize = True
-        Me.lblSen27.Location = New System.Drawing.Point(504, 179)
-        Me.lblSen27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen27.Location = New System.Drawing.Point(672, 220)
         Me.lblSen27.Name = "lblSen27"
-        Me.lblSen27.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen27.Size = New System.Drawing.Size(0, 17)
         Me.lblSen27.TabIndex = 72
         '
         'lblSen26
         '
         Me.lblSen26.AutoSize = True
-        Me.lblSen26.Location = New System.Drawing.Point(504, 152)
-        Me.lblSen26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen26.Location = New System.Drawing.Point(672, 187)
         Me.lblSen26.Name = "lblSen26"
-        Me.lblSen26.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen26.Size = New System.Drawing.Size(0, 17)
         Me.lblSen26.TabIndex = 71
         '
         'lblSen25
         '
         Me.lblSen25.AutoSize = True
-        Me.lblSen25.Location = New System.Drawing.Point(504, 125)
-        Me.lblSen25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen25.Location = New System.Drawing.Point(672, 154)
         Me.lblSen25.Name = "lblSen25"
-        Me.lblSen25.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen25.Size = New System.Drawing.Size(0, 17)
         Me.lblSen25.TabIndex = 70
         '
         'lblSen24
         '
         Me.lblSen24.AutoSize = True
-        Me.lblSen24.Location = New System.Drawing.Point(504, 98)
-        Me.lblSen24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen24.Location = New System.Drawing.Point(672, 121)
         Me.lblSen24.Name = "lblSen24"
-        Me.lblSen24.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen24.Size = New System.Drawing.Size(0, 17)
         Me.lblSen24.TabIndex = 69
         '
         'lblSen23
         '
         Me.lblSen23.AutoSize = True
-        Me.lblSen23.Location = New System.Drawing.Point(504, 72)
-        Me.lblSen23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen23.Location = New System.Drawing.Point(672, 89)
         Me.lblSen23.Name = "lblSen23"
-        Me.lblSen23.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen23.Size = New System.Drawing.Size(0, 17)
         Me.lblSen23.TabIndex = 68
         '
         'lblSen22
         '
         Me.lblSen22.AutoSize = True
-        Me.lblSen22.Location = New System.Drawing.Point(266, 366)
-        Me.lblSen22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen22.Location = New System.Drawing.Point(355, 450)
         Me.lblSen22.Name = "lblSen22"
-        Me.lblSen22.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen22.Size = New System.Drawing.Size(0, 17)
         Me.lblSen22.TabIndex = 67
         '
         'lblSen21
         '
         Me.lblSen21.AutoSize = True
-        Me.lblSen21.Location = New System.Drawing.Point(266, 340)
-        Me.lblSen21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen21.Location = New System.Drawing.Point(355, 418)
         Me.lblSen21.Name = "lblSen21"
-        Me.lblSen21.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen21.Size = New System.Drawing.Size(0, 17)
         Me.lblSen21.TabIndex = 66
         '
         'lblSen20
         '
         Me.lblSen20.AutoSize = True
-        Me.lblSen20.Location = New System.Drawing.Point(266, 313)
-        Me.lblSen20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen20.Location = New System.Drawing.Point(355, 385)
         Me.lblSen20.Name = "lblSen20"
-        Me.lblSen20.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen20.Size = New System.Drawing.Size(0, 17)
         Me.lblSen20.TabIndex = 65
         '
         'lblSen19
         '
         Me.lblSen19.AutoSize = True
-        Me.lblSen19.Location = New System.Drawing.Point(266, 286)
-        Me.lblSen19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen19.Location = New System.Drawing.Point(355, 352)
         Me.lblSen19.Name = "lblSen19"
-        Me.lblSen19.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen19.Size = New System.Drawing.Size(0, 17)
         Me.lblSen19.TabIndex = 64
         '
         'lblSen18
         '
         Me.lblSen18.AutoSize = True
-        Me.lblSen18.Location = New System.Drawing.Point(266, 259)
-        Me.lblSen18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen18.Location = New System.Drawing.Point(355, 319)
         Me.lblSen18.Name = "lblSen18"
-        Me.lblSen18.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen18.Size = New System.Drawing.Size(0, 17)
         Me.lblSen18.TabIndex = 63
         '
         'lblSen17
         '
         Me.lblSen17.AutoSize = True
-        Me.lblSen17.Location = New System.Drawing.Point(266, 232)
-        Me.lblSen17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen17.Location = New System.Drawing.Point(355, 286)
         Me.lblSen17.Name = "lblSen17"
-        Me.lblSen17.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen17.Size = New System.Drawing.Size(0, 17)
         Me.lblSen17.TabIndex = 62
         '
         'lblSen16
         '
         Me.lblSen16.AutoSize = True
-        Me.lblSen16.Location = New System.Drawing.Point(266, 206)
-        Me.lblSen16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen16.Location = New System.Drawing.Point(355, 254)
         Me.lblSen16.Name = "lblSen16"
-        Me.lblSen16.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen16.Size = New System.Drawing.Size(0, 17)
         Me.lblSen16.TabIndex = 61
         '
         'lblSen15
         '
         Me.lblSen15.AutoSize = True
-        Me.lblSen15.Location = New System.Drawing.Point(266, 179)
-        Me.lblSen15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen15.Location = New System.Drawing.Point(355, 220)
         Me.lblSen15.Name = "lblSen15"
-        Me.lblSen15.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen15.Size = New System.Drawing.Size(0, 17)
         Me.lblSen15.TabIndex = 60
         '
         'lblSen14
         '
         Me.lblSen14.AutoSize = True
-        Me.lblSen14.Location = New System.Drawing.Point(266, 152)
-        Me.lblSen14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen14.Location = New System.Drawing.Point(355, 187)
         Me.lblSen14.Name = "lblSen14"
-        Me.lblSen14.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen14.Size = New System.Drawing.Size(0, 17)
         Me.lblSen14.TabIndex = 59
         '
         'lblSen13
         '
         Me.lblSen13.AutoSize = True
-        Me.lblSen13.Location = New System.Drawing.Point(266, 125)
-        Me.lblSen13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen13.Location = New System.Drawing.Point(355, 154)
         Me.lblSen13.Name = "lblSen13"
-        Me.lblSen13.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen13.Size = New System.Drawing.Size(0, 17)
         Me.lblSen13.TabIndex = 58
         '
         'lblSen12
         '
         Me.lblSen12.AutoSize = True
-        Me.lblSen12.Location = New System.Drawing.Point(266, 98)
-        Me.lblSen12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen12.Location = New System.Drawing.Point(355, 121)
         Me.lblSen12.Name = "lblSen12"
-        Me.lblSen12.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen12.Size = New System.Drawing.Size(0, 17)
         Me.lblSen12.TabIndex = 57
         '
         'lblSen11
         '
         Me.lblSen11.AutoSize = True
-        Me.lblSen11.Location = New System.Drawing.Point(266, 72)
-        Me.lblSen11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen11.Location = New System.Drawing.Point(355, 89)
         Me.lblSen11.Name = "lblSen11"
-        Me.lblSen11.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen11.Size = New System.Drawing.Size(0, 17)
         Me.lblSen11.TabIndex = 56
         '
         'lblSen10
         '
         Me.lblSen10.AutoSize = True
-        Me.lblSen10.Location = New System.Drawing.Point(56, 313)
-        Me.lblSen10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen10.Location = New System.Drawing.Point(75, 385)
         Me.lblSen10.Name = "lblSen10"
-        Me.lblSen10.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen10.Size = New System.Drawing.Size(0, 17)
         Me.lblSen10.TabIndex = 55
         '
         'lblSen9
         '
         Me.lblSen9.AutoSize = True
-        Me.lblSen9.Location = New System.Drawing.Point(56, 286)
-        Me.lblSen9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen9.Location = New System.Drawing.Point(75, 352)
         Me.lblSen9.Name = "lblSen9"
-        Me.lblSen9.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen9.Size = New System.Drawing.Size(0, 17)
         Me.lblSen9.TabIndex = 54
         '
         'lblSen8
         '
         Me.lblSen8.AutoSize = True
-        Me.lblSen8.Location = New System.Drawing.Point(56, 259)
-        Me.lblSen8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen8.Location = New System.Drawing.Point(75, 319)
         Me.lblSen8.Name = "lblSen8"
-        Me.lblSen8.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen8.Size = New System.Drawing.Size(0, 17)
         Me.lblSen8.TabIndex = 53
         '
         'lblSen7
         '
         Me.lblSen7.AutoSize = True
-        Me.lblSen7.Location = New System.Drawing.Point(56, 232)
-        Me.lblSen7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen7.Location = New System.Drawing.Point(75, 286)
         Me.lblSen7.Name = "lblSen7"
-        Me.lblSen7.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen7.Size = New System.Drawing.Size(0, 17)
         Me.lblSen7.TabIndex = 52
         '
         'lblSen6
         '
         Me.lblSen6.AutoSize = True
-        Me.lblSen6.Location = New System.Drawing.Point(56, 206)
-        Me.lblSen6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen6.Location = New System.Drawing.Point(75, 254)
         Me.lblSen6.Name = "lblSen6"
-        Me.lblSen6.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen6.Size = New System.Drawing.Size(0, 17)
         Me.lblSen6.TabIndex = 51
         '
         'lblSen5
         '
         Me.lblSen5.AutoSize = True
-        Me.lblSen5.Location = New System.Drawing.Point(56, 179)
-        Me.lblSen5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen5.Location = New System.Drawing.Point(75, 220)
         Me.lblSen5.Name = "lblSen5"
-        Me.lblSen5.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen5.Size = New System.Drawing.Size(0, 17)
         Me.lblSen5.TabIndex = 50
         '
         'lblSen4
         '
         Me.lblSen4.AutoSize = True
-        Me.lblSen4.Location = New System.Drawing.Point(56, 152)
-        Me.lblSen4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen4.Location = New System.Drawing.Point(75, 187)
         Me.lblSen4.Name = "lblSen4"
-        Me.lblSen4.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen4.Size = New System.Drawing.Size(0, 17)
         Me.lblSen4.TabIndex = 49
         '
         'lblSen3
         '
         Me.lblSen3.AutoSize = True
-        Me.lblSen3.Location = New System.Drawing.Point(56, 125)
-        Me.lblSen3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen3.Location = New System.Drawing.Point(75, 154)
         Me.lblSen3.Name = "lblSen3"
-        Me.lblSen3.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen3.Size = New System.Drawing.Size(0, 17)
         Me.lblSen3.TabIndex = 48
         '
         'lblSen2
         '
         Me.lblSen2.AutoSize = True
-        Me.lblSen2.Location = New System.Drawing.Point(56, 98)
-        Me.lblSen2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen2.Location = New System.Drawing.Point(75, 121)
         Me.lblSen2.Name = "lblSen2"
-        Me.lblSen2.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen2.Size = New System.Drawing.Size(0, 17)
         Me.lblSen2.TabIndex = 47
         '
         'lblSen1
         '
         Me.lblSen1.AutoSize = True
-        Me.lblSen1.Location = New System.Drawing.Point(56, 72)
-        Me.lblSen1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSen1.Location = New System.Drawing.Point(75, 89)
         Me.lblSen1.Name = "lblSen1"
-        Me.lblSen1.Size = New System.Drawing.Size(0, 13)
+        Me.lblSen1.Size = New System.Drawing.Size(0, 17)
         Me.lblSen1.TabIndex = 46
         '
         'picSen34
         '
-        Me.picSen34.Location = New System.Drawing.Point(462, 358)
-        Me.picSen34.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen34.Location = New System.Drawing.Point(616, 441)
+        Me.picSen34.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen34.Name = "picSen34"
         Me.picSen34.Size = New System.Drawing.Size(31, 27)
         Me.picSen34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2268,8 +2460,8 @@ Partial Class coolBlue
         '
         'picSen33
         '
-        Me.picSen33.Location = New System.Drawing.Point(462, 332)
-        Me.picSen33.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen33.Location = New System.Drawing.Point(616, 409)
+        Me.picSen33.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen33.Name = "picSen33"
         Me.picSen33.Size = New System.Drawing.Size(31, 27)
         Me.picSen33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2278,8 +2470,8 @@ Partial Class coolBlue
         '
         'picSen32
         '
-        Me.picSen32.Location = New System.Drawing.Point(462, 305)
-        Me.picSen32.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen32.Location = New System.Drawing.Point(616, 375)
+        Me.picSen32.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen32.Name = "picSen32"
         Me.picSen32.Size = New System.Drawing.Size(31, 27)
         Me.picSen32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2288,8 +2480,8 @@ Partial Class coolBlue
         '
         'picSen31
         '
-        Me.picSen31.Location = New System.Drawing.Point(462, 278)
-        Me.picSen31.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen31.Location = New System.Drawing.Point(616, 342)
+        Me.picSen31.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen31.Name = "picSen31"
         Me.picSen31.Size = New System.Drawing.Size(31, 27)
         Me.picSen31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2298,8 +2490,8 @@ Partial Class coolBlue
         '
         'picSen30
         '
-        Me.picSen30.Location = New System.Drawing.Point(462, 251)
-        Me.picSen30.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen30.Location = New System.Drawing.Point(616, 309)
+        Me.picSen30.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen30.Name = "picSen30"
         Me.picSen30.Size = New System.Drawing.Size(31, 27)
         Me.picSen30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2308,8 +2500,8 @@ Partial Class coolBlue
         '
         'picSen29
         '
-        Me.picSen29.Location = New System.Drawing.Point(462, 224)
-        Me.picSen29.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen29.Location = New System.Drawing.Point(616, 276)
+        Me.picSen29.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen29.Name = "picSen29"
         Me.picSen29.Size = New System.Drawing.Size(31, 27)
         Me.picSen29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2318,8 +2510,8 @@ Partial Class coolBlue
         '
         'picSen28
         '
-        Me.picSen28.Location = New System.Drawing.Point(462, 197)
-        Me.picSen28.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen28.Location = New System.Drawing.Point(616, 242)
+        Me.picSen28.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen28.Name = "picSen28"
         Me.picSen28.Size = New System.Drawing.Size(31, 27)
         Me.picSen28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2328,8 +2520,8 @@ Partial Class coolBlue
         '
         'picSen27
         '
-        Me.picSen27.Location = New System.Drawing.Point(462, 171)
-        Me.picSen27.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen27.Location = New System.Drawing.Point(616, 210)
+        Me.picSen27.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen27.Name = "picSen27"
         Me.picSen27.Size = New System.Drawing.Size(31, 27)
         Me.picSen27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2338,8 +2530,8 @@ Partial Class coolBlue
         '
         'picSen26
         '
-        Me.picSen26.Location = New System.Drawing.Point(462, 144)
-        Me.picSen26.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen26.Location = New System.Drawing.Point(616, 177)
+        Me.picSen26.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen26.Name = "picSen26"
         Me.picSen26.Size = New System.Drawing.Size(31, 27)
         Me.picSen26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2348,8 +2540,8 @@ Partial Class coolBlue
         '
         'picSen25
         '
-        Me.picSen25.Location = New System.Drawing.Point(462, 117)
-        Me.picSen25.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen25.Location = New System.Drawing.Point(616, 144)
+        Me.picSen25.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen25.Name = "picSen25"
         Me.picSen25.Size = New System.Drawing.Size(31, 27)
         Me.picSen25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2358,8 +2550,8 @@ Partial Class coolBlue
         '
         'picSen24
         '
-        Me.picSen24.Location = New System.Drawing.Point(462, 90)
-        Me.picSen24.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen24.Location = New System.Drawing.Point(616, 111)
+        Me.picSen24.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen24.Name = "picSen24"
         Me.picSen24.Size = New System.Drawing.Size(31, 27)
         Me.picSen24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2368,8 +2560,8 @@ Partial Class coolBlue
         '
         'picSen23
         '
-        Me.picSen23.Location = New System.Drawing.Point(462, 63)
-        Me.picSen23.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen23.Location = New System.Drawing.Point(616, 78)
+        Me.picSen23.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen23.Name = "picSen23"
         Me.picSen23.Size = New System.Drawing.Size(31, 27)
         Me.picSen23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2378,8 +2570,8 @@ Partial Class coolBlue
         '
         'picSen22
         '
-        Me.picSen22.Location = New System.Drawing.Point(231, 358)
-        Me.picSen22.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen22.Location = New System.Drawing.Point(308, 441)
+        Me.picSen22.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen22.Name = "picSen22"
         Me.picSen22.Size = New System.Drawing.Size(31, 27)
         Me.picSen22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2388,8 +2580,8 @@ Partial Class coolBlue
         '
         'picSen21
         '
-        Me.picSen21.Location = New System.Drawing.Point(231, 332)
-        Me.picSen21.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen21.Location = New System.Drawing.Point(308, 409)
+        Me.picSen21.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen21.Name = "picSen21"
         Me.picSen21.Size = New System.Drawing.Size(31, 27)
         Me.picSen21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2398,8 +2590,8 @@ Partial Class coolBlue
         '
         'picSen20
         '
-        Me.picSen20.Location = New System.Drawing.Point(231, 305)
-        Me.picSen20.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen20.Location = New System.Drawing.Point(308, 375)
+        Me.picSen20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen20.Name = "picSen20"
         Me.picSen20.Size = New System.Drawing.Size(31, 27)
         Me.picSen20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2408,8 +2600,8 @@ Partial Class coolBlue
         '
         'picSen19
         '
-        Me.picSen19.Location = New System.Drawing.Point(231, 278)
-        Me.picSen19.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen19.Location = New System.Drawing.Point(308, 342)
+        Me.picSen19.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen19.Name = "picSen19"
         Me.picSen19.Size = New System.Drawing.Size(31, 27)
         Me.picSen19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2418,8 +2610,8 @@ Partial Class coolBlue
         '
         'picSen18
         '
-        Me.picSen18.Location = New System.Drawing.Point(231, 251)
-        Me.picSen18.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen18.Location = New System.Drawing.Point(308, 309)
+        Me.picSen18.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen18.Name = "picSen18"
         Me.picSen18.Size = New System.Drawing.Size(31, 27)
         Me.picSen18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2428,8 +2620,8 @@ Partial Class coolBlue
         '
         'picSen17
         '
-        Me.picSen17.Location = New System.Drawing.Point(231, 224)
-        Me.picSen17.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen17.Location = New System.Drawing.Point(308, 276)
+        Me.picSen17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen17.Name = "picSen17"
         Me.picSen17.Size = New System.Drawing.Size(31, 27)
         Me.picSen17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2438,8 +2630,8 @@ Partial Class coolBlue
         '
         'picSen16
         '
-        Me.picSen16.Location = New System.Drawing.Point(231, 197)
-        Me.picSen16.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen16.Location = New System.Drawing.Point(308, 242)
+        Me.picSen16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen16.Name = "picSen16"
         Me.picSen16.Size = New System.Drawing.Size(31, 27)
         Me.picSen16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2448,8 +2640,8 @@ Partial Class coolBlue
         '
         'picSen15
         '
-        Me.picSen15.Location = New System.Drawing.Point(231, 171)
-        Me.picSen15.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen15.Location = New System.Drawing.Point(308, 210)
+        Me.picSen15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen15.Name = "picSen15"
         Me.picSen15.Size = New System.Drawing.Size(31, 27)
         Me.picSen15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2458,8 +2650,8 @@ Partial Class coolBlue
         '
         'picSen14
         '
-        Me.picSen14.Location = New System.Drawing.Point(231, 144)
-        Me.picSen14.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen14.Location = New System.Drawing.Point(308, 177)
+        Me.picSen14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen14.Name = "picSen14"
         Me.picSen14.Size = New System.Drawing.Size(31, 27)
         Me.picSen14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2468,8 +2660,8 @@ Partial Class coolBlue
         '
         'picSen13
         '
-        Me.picSen13.Location = New System.Drawing.Point(231, 117)
-        Me.picSen13.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen13.Location = New System.Drawing.Point(308, 144)
+        Me.picSen13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen13.Name = "picSen13"
         Me.picSen13.Size = New System.Drawing.Size(31, 27)
         Me.picSen13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2478,8 +2670,8 @@ Partial Class coolBlue
         '
         'picSen12
         '
-        Me.picSen12.Location = New System.Drawing.Point(231, 90)
-        Me.picSen12.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen12.Location = New System.Drawing.Point(308, 111)
+        Me.picSen12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen12.Name = "picSen12"
         Me.picSen12.Size = New System.Drawing.Size(31, 27)
         Me.picSen12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2488,8 +2680,8 @@ Partial Class coolBlue
         '
         'picSen11
         '
-        Me.picSen11.Location = New System.Drawing.Point(231, 63)
-        Me.picSen11.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen11.Location = New System.Drawing.Point(308, 78)
+        Me.picSen11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen11.Name = "picSen11"
         Me.picSen11.Size = New System.Drawing.Size(31, 27)
         Me.picSen11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2498,8 +2690,8 @@ Partial Class coolBlue
         '
         'picSen10
         '
-        Me.picSen10.Location = New System.Drawing.Point(25, 305)
-        Me.picSen10.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen10.Location = New System.Drawing.Point(33, 375)
+        Me.picSen10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen10.Name = "picSen10"
         Me.picSen10.Size = New System.Drawing.Size(31, 27)
         Me.picSen10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2508,8 +2700,8 @@ Partial Class coolBlue
         '
         'picSen9
         '
-        Me.picSen9.Location = New System.Drawing.Point(25, 278)
-        Me.picSen9.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen9.Location = New System.Drawing.Point(33, 342)
+        Me.picSen9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen9.Name = "picSen9"
         Me.picSen9.Size = New System.Drawing.Size(31, 27)
         Me.picSen9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2518,8 +2710,8 @@ Partial Class coolBlue
         '
         'picSen8
         '
-        Me.picSen8.Location = New System.Drawing.Point(25, 251)
-        Me.picSen8.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen8.Location = New System.Drawing.Point(33, 309)
+        Me.picSen8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen8.Name = "picSen8"
         Me.picSen8.Size = New System.Drawing.Size(31, 27)
         Me.picSen8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2528,8 +2720,8 @@ Partial Class coolBlue
         '
         'picSen7
         '
-        Me.picSen7.Location = New System.Drawing.Point(25, 224)
-        Me.picSen7.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen7.Location = New System.Drawing.Point(33, 276)
+        Me.picSen7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen7.Name = "picSen7"
         Me.picSen7.Size = New System.Drawing.Size(31, 27)
         Me.picSen7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2538,8 +2730,8 @@ Partial Class coolBlue
         '
         'picSen6
         '
-        Me.picSen6.Location = New System.Drawing.Point(25, 197)
-        Me.picSen6.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen6.Location = New System.Drawing.Point(33, 242)
+        Me.picSen6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen6.Name = "picSen6"
         Me.picSen6.Size = New System.Drawing.Size(31, 27)
         Me.picSen6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2548,8 +2740,8 @@ Partial Class coolBlue
         '
         'picSen5
         '
-        Me.picSen5.Location = New System.Drawing.Point(25, 171)
-        Me.picSen5.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen5.Location = New System.Drawing.Point(33, 210)
+        Me.picSen5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen5.Name = "picSen5"
         Me.picSen5.Size = New System.Drawing.Size(31, 27)
         Me.picSen5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2558,8 +2750,8 @@ Partial Class coolBlue
         '
         'picSen4
         '
-        Me.picSen4.Location = New System.Drawing.Point(25, 144)
-        Me.picSen4.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen4.Location = New System.Drawing.Point(33, 177)
+        Me.picSen4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen4.Name = "picSen4"
         Me.picSen4.Size = New System.Drawing.Size(31, 27)
         Me.picSen4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2568,8 +2760,8 @@ Partial Class coolBlue
         '
         'picSen3
         '
-        Me.picSen3.Location = New System.Drawing.Point(25, 117)
-        Me.picSen3.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen3.Location = New System.Drawing.Point(33, 144)
+        Me.picSen3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen3.Name = "picSen3"
         Me.picSen3.Size = New System.Drawing.Size(31, 27)
         Me.picSen3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2578,8 +2770,8 @@ Partial Class coolBlue
         '
         'picSen2
         '
-        Me.picSen2.Location = New System.Drawing.Point(25, 90)
-        Me.picSen2.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen2.Location = New System.Drawing.Point(33, 111)
+        Me.picSen2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen2.Name = "picSen2"
         Me.picSen2.Size = New System.Drawing.Size(31, 27)
         Me.picSen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2588,8 +2780,8 @@ Partial Class coolBlue
         '
         'picSen1
         '
-        Me.picSen1.Location = New System.Drawing.Point(25, 63)
-        Me.picSen1.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSen1.Location = New System.Drawing.Point(33, 78)
+        Me.picSen1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSen1.Name = "picSen1"
         Me.picSen1.Size = New System.Drawing.Size(31, 27)
         Me.picSen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2602,16 +2794,16 @@ Partial Class coolBlue
         Me.lblSenMasa.BackColor = System.Drawing.Color.DarkGoldenrod
         Me.lblSenMasa.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSenMasa.ForeColor = System.Drawing.Color.Snow
-        Me.lblSenMasa.Location = New System.Drawing.Point(28, 17)
-        Me.lblSenMasa.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSenMasa.Location = New System.Drawing.Point(37, 21)
         Me.lblSenMasa.Name = "lblSenMasa"
-        Me.lblSenMasa.Size = New System.Drawing.Size(74, 20)
+        Me.lblSenMasa.Size = New System.Drawing.Size(93, 25)
         Me.lblSenMasa.TabIndex = 9
         Me.lblSenMasa.Text = "IBF MASA"
         Me.ToolTip1.SetToolTip(Me.lblSenMasa, "IBF MASA Sensors")
         '
         'pnlWire
         '
+        Me.pnlWire.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.pnlWire.Controls.Add(Me.picWire20)
         Me.pnlWire.Controls.Add(Me.lblWl21)
         Me.pnlWire.Controls.Add(Me.picWireRemove7)
@@ -2669,16 +2861,16 @@ Partial Class coolBlue
         Me.pnlWire.Controls.Add(Me.lblWl2)
         Me.pnlWire.Controls.Add(Me.lblWl1)
         Me.pnlWire.Controls.Add(Me.lblName)
-        Me.pnlWire.Location = New System.Drawing.Point(9, 236)
-        Me.pnlWire.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlWire.Location = New System.Drawing.Point(12, 290)
+        Me.pnlWire.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlWire.Name = "pnlWire"
-        Me.pnlWire.Size = New System.Drawing.Size(780, 396)
+        Me.pnlWire.Size = New System.Drawing.Size(1040, 487)
         Me.pnlWire.TabIndex = 10
         '
         'picWire20
         '
-        Me.picWire20.Location = New System.Drawing.Point(236, 317)
-        Me.picWire20.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire20.Location = New System.Drawing.Point(315, 390)
+        Me.picWire20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire20.Name = "picWire20"
         Me.picWire20.Size = New System.Drawing.Size(24, 24)
         Me.picWire20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2689,18 +2881,17 @@ Partial Class coolBlue
         '
         Me.lblWl21.AutoSize = True
         Me.lblWl21.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl21.Location = New System.Drawing.Point(266, 321)
-        Me.lblWl21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl21.Location = New System.Drawing.Point(355, 395)
         Me.lblWl21.Name = "lblWl21"
-        Me.lblWl21.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl21.Size = New System.Drawing.Size(0, 20)
         Me.lblWl21.TabIndex = 126
         Me.lblWl21.Tag = ""
         Me.ToolTip1.SetToolTip(Me.lblWl21, "ROADSIDE BIG TOWER" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " (ACCESS POINT) 192.168.150.28")
         '
         'picWireRemove7
         '
-        Me.picWireRemove7.Location = New System.Drawing.Point(487, 236)
-        Me.picWireRemove7.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWireRemove7.Location = New System.Drawing.Point(649, 290)
+        Me.picWireRemove7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWireRemove7.Name = "picWireRemove7"
         Me.picWireRemove7.Size = New System.Drawing.Size(24, 24)
         Me.picWireRemove7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2709,8 +2900,8 @@ Partial Class coolBlue
         '
         'picWireRemove6
         '
-        Me.picWireRemove6.Location = New System.Drawing.Point(487, 205)
-        Me.picWireRemove6.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWireRemove6.Location = New System.Drawing.Point(649, 252)
+        Me.picWireRemove6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWireRemove6.Name = "picWireRemove6"
         Me.picWireRemove6.Size = New System.Drawing.Size(24, 24)
         Me.picWireRemove6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2719,8 +2910,8 @@ Partial Class coolBlue
         '
         'picWireRemove5
         '
-        Me.picWireRemove5.Location = New System.Drawing.Point(487, 175)
-        Me.picWireRemove5.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWireRemove5.Location = New System.Drawing.Point(649, 215)
+        Me.picWireRemove5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWireRemove5.Name = "picWireRemove5"
         Me.picWireRemove5.Size = New System.Drawing.Size(24, 24)
         Me.picWireRemove5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2729,8 +2920,8 @@ Partial Class coolBlue
         '
         'picWireRemove4
         '
-        Me.picWireRemove4.Location = New System.Drawing.Point(487, 144)
-        Me.picWireRemove4.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWireRemove4.Location = New System.Drawing.Point(649, 177)
+        Me.picWireRemove4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWireRemove4.Name = "picWireRemove4"
         Me.picWireRemove4.Size = New System.Drawing.Size(24, 24)
         Me.picWireRemove4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2739,8 +2930,8 @@ Partial Class coolBlue
         '
         'picWireRemove3
         '
-        Me.picWireRemove3.Location = New System.Drawing.Point(487, 113)
-        Me.picWireRemove3.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWireRemove3.Location = New System.Drawing.Point(649, 139)
+        Me.picWireRemove3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWireRemove3.Name = "picWireRemove3"
         Me.picWireRemove3.Size = New System.Drawing.Size(24, 24)
         Me.picWireRemove3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2749,8 +2940,8 @@ Partial Class coolBlue
         '
         'picWire19
         '
-        Me.picWire19.Location = New System.Drawing.Point(236, 288)
-        Me.picWire19.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire19.Location = New System.Drawing.Point(315, 354)
+        Me.picWire19.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire19.Name = "picWire19"
         Me.picWire19.Size = New System.Drawing.Size(24, 24)
         Me.picWire19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2759,8 +2950,8 @@ Partial Class coolBlue
         '
         'picWire18
         '
-        Me.picWire18.Location = New System.Drawing.Point(236, 262)
-        Me.picWire18.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire18.Location = New System.Drawing.Point(315, 322)
+        Me.picWire18.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire18.Name = "picWire18"
         Me.picWire18.Size = New System.Drawing.Size(24, 24)
         Me.picWire18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2769,8 +2960,8 @@ Partial Class coolBlue
         '
         'picWire17
         '
-        Me.picWire17.Location = New System.Drawing.Point(236, 234)
-        Me.picWire17.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire17.Location = New System.Drawing.Point(315, 288)
+        Me.picWire17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire17.Name = "picWire17"
         Me.picWire17.Size = New System.Drawing.Size(24, 24)
         Me.picWire17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2779,8 +2970,8 @@ Partial Class coolBlue
         '
         'picWire16
         '
-        Me.picWire16.Location = New System.Drawing.Point(236, 205)
-        Me.picWire16.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire16.Location = New System.Drawing.Point(315, 252)
+        Me.picWire16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire16.Name = "picWire16"
         Me.picWire16.Size = New System.Drawing.Size(24, 24)
         Me.picWire16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2789,8 +2980,8 @@ Partial Class coolBlue
         '
         'picWire15
         '
-        Me.picWire15.Location = New System.Drawing.Point(236, 175)
-        Me.picWire15.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire15.Location = New System.Drawing.Point(315, 215)
+        Me.picWire15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire15.Name = "picWire15"
         Me.picWire15.Size = New System.Drawing.Size(24, 24)
         Me.picWire15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2799,8 +2990,8 @@ Partial Class coolBlue
         '
         'picWire14
         '
-        Me.picWire14.Location = New System.Drawing.Point(236, 144)
-        Me.picWire14.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire14.Location = New System.Drawing.Point(315, 177)
+        Me.picWire14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire14.Name = "picWire14"
         Me.picWire14.Size = New System.Drawing.Size(24, 24)
         Me.picWire14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2809,8 +3000,8 @@ Partial Class coolBlue
         '
         'picWire13
         '
-        Me.picWire13.Location = New System.Drawing.Point(236, 115)
-        Me.picWire13.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire13.Location = New System.Drawing.Point(315, 142)
+        Me.picWire13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire13.Name = "picWire13"
         Me.picWire13.Size = New System.Drawing.Size(24, 24)
         Me.picWire13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2819,8 +3010,8 @@ Partial Class coolBlue
         '
         'picWire12
         '
-        Me.picWire12.Location = New System.Drawing.Point(236, 82)
-        Me.picWire12.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire12.Location = New System.Drawing.Point(315, 101)
+        Me.picWire12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire12.Name = "picWire12"
         Me.picWire12.Size = New System.Drawing.Size(24, 24)
         Me.picWire12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2829,8 +3020,8 @@ Partial Class coolBlue
         '
         'picWire11
         '
-        Me.picWire11.Location = New System.Drawing.Point(236, 54)
-        Me.picWire11.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire11.Location = New System.Drawing.Point(315, 66)
+        Me.picWire11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire11.Name = "picWire11"
         Me.picWire11.Size = New System.Drawing.Size(24, 24)
         Me.picWire11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2839,8 +3030,8 @@ Partial Class coolBlue
         '
         'picWireRemove2
         '
-        Me.picWireRemove2.Location = New System.Drawing.Point(487, 84)
-        Me.picWireRemove2.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWireRemove2.Location = New System.Drawing.Point(649, 103)
+        Me.picWireRemove2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWireRemove2.Name = "picWireRemove2"
         Me.picWireRemove2.Size = New System.Drawing.Size(24, 24)
         Me.picWireRemove2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2849,8 +3040,8 @@ Partial Class coolBlue
         '
         'picWireRemove1
         '
-        Me.picWireRemove1.Location = New System.Drawing.Point(487, 54)
-        Me.picWireRemove1.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWireRemove1.Location = New System.Drawing.Point(649, 66)
+        Me.picWireRemove1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWireRemove1.Name = "picWireRemove1"
         Me.picWireRemove1.Size = New System.Drawing.Size(24, 24)
         Me.picWireRemove1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2859,8 +3050,8 @@ Partial Class coolBlue
         '
         'picWire10
         '
-        Me.picWire10.Location = New System.Drawing.Point(8, 317)
-        Me.picWire10.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire10.Location = New System.Drawing.Point(11, 390)
+        Me.picWire10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire10.Name = "picWire10"
         Me.picWire10.Size = New System.Drawing.Size(24, 24)
         Me.picWire10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2869,8 +3060,8 @@ Partial Class coolBlue
         '
         'picWire9
         '
-        Me.picWire9.Location = New System.Drawing.Point(8, 288)
-        Me.picWire9.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire9.Location = New System.Drawing.Point(11, 354)
+        Me.picWire9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire9.Name = "picWire9"
         Me.picWire9.Size = New System.Drawing.Size(24, 24)
         Me.picWire9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2879,8 +3070,8 @@ Partial Class coolBlue
         '
         'picWire8
         '
-        Me.picWire8.Location = New System.Drawing.Point(8, 258)
-        Me.picWire8.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire8.Location = New System.Drawing.Point(11, 318)
+        Me.picWire8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire8.Name = "picWire8"
         Me.picWire8.Size = New System.Drawing.Size(24, 24)
         Me.picWire8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2889,8 +3080,8 @@ Partial Class coolBlue
         '
         'picWire7
         '
-        Me.picWire7.Location = New System.Drawing.Point(8, 229)
-        Me.picWire7.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire7.Location = New System.Drawing.Point(11, 282)
+        Me.picWire7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire7.Name = "picWire7"
         Me.picWire7.Size = New System.Drawing.Size(24, 24)
         Me.picWire7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2899,8 +3090,8 @@ Partial Class coolBlue
         '
         'picWire6
         '
-        Me.picWire6.Location = New System.Drawing.Point(8, 200)
-        Me.picWire6.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire6.Location = New System.Drawing.Point(11, 246)
+        Me.picWire6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire6.Name = "picWire6"
         Me.picWire6.Size = New System.Drawing.Size(24, 24)
         Me.picWire6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2909,8 +3100,8 @@ Partial Class coolBlue
         '
         'picWire5
         '
-        Me.picWire5.Location = New System.Drawing.Point(8, 169)
-        Me.picWire5.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire5.Location = New System.Drawing.Point(11, 208)
+        Me.picWire5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire5.Name = "picWire5"
         Me.picWire5.Size = New System.Drawing.Size(24, 24)
         Me.picWire5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2919,8 +3110,8 @@ Partial Class coolBlue
         '
         'picWire4
         '
-        Me.picWire4.Location = New System.Drawing.Point(8, 141)
-        Me.picWire4.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire4.Location = New System.Drawing.Point(11, 174)
+        Me.picWire4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire4.Name = "picWire4"
         Me.picWire4.Size = New System.Drawing.Size(24, 24)
         Me.picWire4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2929,8 +3120,8 @@ Partial Class coolBlue
         '
         'picWire3
         '
-        Me.picWire3.Location = New System.Drawing.Point(8, 110)
-        Me.picWire3.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire3.Location = New System.Drawing.Point(11, 135)
+        Me.picWire3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire3.Name = "picWire3"
         Me.picWire3.Size = New System.Drawing.Size(24, 24)
         Me.picWire3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2939,8 +3130,8 @@ Partial Class coolBlue
         '
         'picWire2
         '
-        Me.picWire2.Location = New System.Drawing.Point(8, 83)
-        Me.picWire2.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire2.Location = New System.Drawing.Point(11, 102)
+        Me.picWire2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire2.Name = "picWire2"
         Me.picWire2.Size = New System.Drawing.Size(24, 24)
         Me.picWire2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2949,8 +3140,8 @@ Partial Class coolBlue
         '
         'picWire1
         '
-        Me.picWire1.Location = New System.Drawing.Point(8, 54)
-        Me.picWire1.Margin = New System.Windows.Forms.Padding(2)
+        Me.picWire1.Location = New System.Drawing.Point(11, 66)
+        Me.picWire1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWire1.Name = "picWire1"
         Me.picWire1.Size = New System.Drawing.Size(24, 24)
         Me.picWire1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -2962,10 +3153,10 @@ Partial Class coolBlue
         Me.btnWireless.BackColor = System.Drawing.Color.LightSeaGreen
         Me.btnWireless.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnWireless.ForeColor = System.Drawing.Color.Snow
-        Me.btnWireless.Location = New System.Drawing.Point(558, 344)
-        Me.btnWireless.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnWireless.Location = New System.Drawing.Point(744, 423)
+        Me.btnWireless.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnWireless.Name = "btnWireless"
-        Me.btnWireless.Size = New System.Drawing.Size(80, 33)
+        Me.btnWireless.Size = New System.Drawing.Size(107, 41)
         Me.btnWireless.TabIndex = 98
         Me.btnWireless.Text = "Check"
         Me.ToolTip1.SetToolTip(Me.btnWireless, "Click on this for wireless working status")
@@ -2976,10 +3167,9 @@ Partial Class coolBlue
         Me.lblRemoved6.AutoSize = True
         Me.lblRemoved6.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRemoved6.ForeColor = System.Drawing.Color.Silver
-        Me.lblRemoved6.Location = New System.Drawing.Point(516, 240)
-        Me.lblRemoved6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRemoved6.Location = New System.Drawing.Point(688, 295)
         Me.lblRemoved6.Name = "lblRemoved6"
-        Me.lblRemoved6.Size = New System.Drawing.Size(0, 15)
+        Me.lblRemoved6.Size = New System.Drawing.Size(0, 20)
         Me.lblRemoved6.TabIndex = 97
         Me.ToolTip1.SetToolTip(Me.lblRemoved6, "QA-QC LABORATORY" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.14")
         '
@@ -2988,10 +3178,9 @@ Partial Class coolBlue
         Me.lblRemoved5.AutoSize = True
         Me.lblRemoved5.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRemoved5.ForeColor = System.Drawing.Color.Silver
-        Me.lblRemoved5.Location = New System.Drawing.Point(516, 208)
-        Me.lblRemoved5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRemoved5.Location = New System.Drawing.Point(688, 256)
         Me.lblRemoved5.Name = "lblRemoved5"
-        Me.lblRemoved5.Size = New System.Drawing.Size(0, 15)
+        Me.lblRemoved5.Size = New System.Drawing.Size(0, 20)
         Me.lblRemoved5.TabIndex = 96
         Me.ToolTip1.SetToolTip(Me.lblRemoved5, "PIPE TESTING TO QA-QC DEPT." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "192.168.150.12")
         '
@@ -3000,10 +3189,9 @@ Partial Class coolBlue
         Me.lblRemoved4.AutoSize = True
         Me.lblRemoved4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRemoved4.ForeColor = System.Drawing.Color.Silver
-        Me.lblRemoved4.Location = New System.Drawing.Point(516, 178)
-        Me.lblRemoved4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRemoved4.Location = New System.Drawing.Point(688, 219)
         Me.lblRemoved4.Name = "lblRemoved4"
-        Me.lblRemoved4.Size = New System.Drawing.Size(0, 15)
+        Me.lblRemoved4.Size = New System.Drawing.Size(0, 20)
         Me.lblRemoved4.TabIndex = 95
         Me.ToolTip1.SetToolTip(Me.lblRemoved4, "PIPE ROADSIDE TO QC DEPARTMENT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.11")
         '
@@ -3012,10 +3200,9 @@ Partial Class coolBlue
         Me.lblRemoved3.AutoSize = True
         Me.lblRemoved3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRemoved3.ForeColor = System.Drawing.Color.Silver
-        Me.lblRemoved3.Location = New System.Drawing.Point(516, 145)
-        Me.lblRemoved3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRemoved3.Location = New System.Drawing.Point(688, 178)
         Me.lblRemoved3.Name = "lblRemoved3"
-        Me.lblRemoved3.Size = New System.Drawing.Size(0, 15)
+        Me.lblRemoved3.Size = New System.Drawing.Size(0, 20)
         Me.lblRemoved3.TabIndex = 94
         Me.ToolTip1.SetToolTip(Me.lblRemoved3, "QA-QC DEPARTMENT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.10")
         '
@@ -3024,10 +3211,9 @@ Partial Class coolBlue
         Me.lblRemoved2.AutoSize = True
         Me.lblRemoved2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRemoved2.ForeColor = System.Drawing.Color.Silver
-        Me.lblRemoved2.Location = New System.Drawing.Point(516, 115)
-        Me.lblRemoved2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRemoved2.Location = New System.Drawing.Point(688, 142)
         Me.lblRemoved2.Name = "lblRemoved2"
-        Me.lblRemoved2.Size = New System.Drawing.Size(0, 15)
+        Me.lblRemoved2.Size = New System.Drawing.Size(0, 20)
         Me.lblRemoved2.TabIndex = 93
         Me.ToolTip1.SetToolTip(Me.lblRemoved2, "ENNGINEER EMAD OFFICE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.9")
         '
@@ -3036,10 +3222,9 @@ Partial Class coolBlue
         Me.lblRemoved1.AutoSize = True
         Me.lblRemoved1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRemoved1.ForeColor = System.Drawing.Color.Silver
-        Me.lblRemoved1.Location = New System.Drawing.Point(516, 88)
-        Me.lblRemoved1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRemoved1.Location = New System.Drawing.Point(688, 108)
         Me.lblRemoved1.Name = "lblRemoved1"
-        Me.lblRemoved1.Size = New System.Drawing.Size(0, 15)
+        Me.lblRemoved1.Size = New System.Drawing.Size(0, 20)
         Me.lblRemoved1.TabIndex = 92
         Me.ToolTip1.SetToolTip(Me.lblRemoved1, "CLADDING FACTORY TO IBF" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.6")
         '
@@ -3049,10 +3234,9 @@ Partial Class coolBlue
         Me.Label2.BackColor = System.Drawing.SystemColors.GrayText
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(515, 20)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(687, 25)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(125, 20)
+        Me.Label2.Size = New System.Drawing.Size(157, 25)
         Me.Label2.TabIndex = 91
         Me.Label2.Text = "Removed Devices"
         Me.ToolTip1.SetToolTip(Me.Label2, "List of Removed Wirelesses")
@@ -3061,10 +3245,9 @@ Partial Class coolBlue
         '
         Me.lblWl20.AutoSize = True
         Me.lblWl20.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl20.Location = New System.Drawing.Point(266, 292)
-        Me.lblWl20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl20.Location = New System.Drawing.Point(355, 359)
         Me.lblWl20.Name = "lblWl20"
-        Me.lblWl20.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl20.Size = New System.Drawing.Size(0, 20)
         Me.lblWl20.TabIndex = 90
         Me.ToolTip1.SetToolTip(Me.lblWl20, "READY MIX DISTRIBUTION ROOM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ( STATION )     192.168.150.27")
         '
@@ -3072,10 +3255,9 @@ Partial Class coolBlue
         '
         Me.lblWl19.AutoSize = True
         Me.lblWl19.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl19.Location = New System.Drawing.Point(266, 268)
-        Me.lblWl19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl19.Location = New System.Drawing.Point(355, 330)
         Me.lblWl19.Name = "lblWl19"
-        Me.lblWl19.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl19.Size = New System.Drawing.Size(0, 20)
         Me.lblWl19.TabIndex = 89
         Me.ToolTip1.SetToolTip(Me.lblWl19, "READY MIX STORE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "( STATION )   192.168.150.26")
         '
@@ -3083,10 +3265,9 @@ Partial Class coolBlue
         '
         Me.lblWl18.AutoSize = True
         Me.lblWl18.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl18.Location = New System.Drawing.Point(266, 238)
-        Me.lblWl18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl18.Location = New System.Drawing.Point(355, 293)
         Me.lblWl18.Name = "lblWl18"
-        Me.lblWl18.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl18.Size = New System.Drawing.Size(0, 20)
         Me.lblWl18.TabIndex = 88
         Me.ToolTip1.SetToolTip(Me.lblWl18, "TREATMENT PLANT LAST BOUNDARY" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " STATION 192.168.150.25")
         '
@@ -3094,10 +3275,9 @@ Partial Class coolBlue
         '
         Me.lblWl17.AutoSize = True
         Me.lblWl17.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl17.Location = New System.Drawing.Point(266, 208)
-        Me.lblWl17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl17.Location = New System.Drawing.Point(355, 256)
         Me.lblWl17.Name = "lblWl17"
-        Me.lblWl17.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl17.Size = New System.Drawing.Size(0, 20)
         Me.lblWl17.TabIndex = 87
         Me.ToolTip1.SetToolTip(Me.lblWl17, "TREATMENT PLANT UP" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "192.168.150.23")
         '
@@ -3105,10 +3285,9 @@ Partial Class coolBlue
         '
         Me.lblWl16.AutoSize = True
         Me.lblWl16.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl16.Location = New System.Drawing.Point(266, 178)
-        Me.lblWl16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl16.Location = New System.Drawing.Point(355, 219)
         Me.lblWl16.Name = "lblWl16"
-        Me.lblWl16.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl16.Size = New System.Drawing.Size(0, 20)
         Me.lblWl16.TabIndex = 86
         Me.ToolTip1.SetToolTip(Me.lblWl16, "IBF OUTSIDE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " STATION 192.168.150.22")
         '
@@ -3116,10 +3295,9 @@ Partial Class coolBlue
         '
         Me.lblWl15.AutoSize = True
         Me.lblWl15.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl15.Location = New System.Drawing.Point(266, 148)
-        Me.lblWl15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl15.Location = New System.Drawing.Point(355, 182)
         Me.lblWl15.Name = "lblWl15"
-        Me.lblWl15.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl15.Size = New System.Drawing.Size(0, 20)
         Me.lblWl15.TabIndex = 85
         Me.ToolTip1.SetToolTip(Me.lblWl15, "IBF OUTSIDE MASA" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "192.168.150.21")
         '
@@ -3127,10 +3305,9 @@ Partial Class coolBlue
         '
         Me.lblWl14.AutoSize = True
         Me.lblWl14.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWl14.Location = New System.Drawing.Point(266, 118)
-        Me.lblWl14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl14.Location = New System.Drawing.Point(355, 145)
         Me.lblWl14.Name = "lblWl14"
-        Me.lblWl14.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl14.Size = New System.Drawing.Size(0, 20)
         Me.lblWl14.TabIndex = 84
         Me.ToolTip1.SetToolTip(Me.lblWl14, "STORE (FLEET OFFICE)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "192.168.150.20" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         '
@@ -3139,10 +3316,9 @@ Partial Class coolBlue
         Me.lblWl13.AutoSize = True
         Me.lblWl13.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl13.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl13.Location = New System.Drawing.Point(266, 88)
-        Me.lblWl13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl13.Location = New System.Drawing.Point(355, 108)
         Me.lblWl13.Name = "lblWl13"
-        Me.lblWl13.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl13.Size = New System.Drawing.Size(0, 20)
         Me.lblWl13.TabIndex = 83
         Me.ToolTip1.SetToolTip(Me.lblWl13, "TILES & KERBSTONE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT FTS-4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "192.168.150.19")
         '
@@ -3151,10 +3327,9 @@ Partial Class coolBlue
         Me.lblWl12.AutoSize = True
         Me.lblWl12.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl12.ForeColor = System.Drawing.Color.Silver
-        Me.lblWl12.Location = New System.Drawing.Point(516, 58)
-        Me.lblWl12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl12.Location = New System.Drawing.Point(688, 71)
         Me.lblWl12.Name = "lblWl12"
-        Me.lblWl12.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl12.Size = New System.Drawing.Size(0, 20)
         Me.lblWl12.TabIndex = 82
         Me.ToolTip1.SetToolTip(Me.lblWl12, "READYMIX OLD OFFICE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "192.168.150.18")
         '
@@ -3163,10 +3338,9 @@ Partial Class coolBlue
         Me.lblWl11.AutoSize = True
         Me.lblWl11.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl11.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl11.Location = New System.Drawing.Point(266, 58)
-        Me.lblWl11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl11.Location = New System.Drawing.Point(355, 71)
         Me.lblWl11.Name = "lblWl11"
-        Me.lblWl11.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl11.Size = New System.Drawing.Size(0, 20)
         Me.lblWl11.TabIndex = 81
         Me.ToolTip1.SetToolTip(Me.lblWl11, "TRANSPORT DEPARTMENT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT FTS-2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.17")
         '
@@ -3175,10 +3349,9 @@ Partial Class coolBlue
         Me.lblWl10.AutoSize = True
         Me.lblWl10.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl10.ForeColor = System.Drawing.Color.Silver
-        Me.lblWl10.Location = New System.Drawing.Point(38, 319)
-        Me.lblWl10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl10.Location = New System.Drawing.Point(51, 393)
         Me.lblWl10.Name = "lblWl10"
-        Me.lblWl10.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl10.Size = New System.Drawing.Size(0, 20)
         Me.lblWl10.TabIndex = 80
         Me.ToolTip1.SetToolTip(Me.lblWl10, "READYMIX FTS-1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.16")
         '
@@ -3187,10 +3360,9 @@ Partial Class coolBlue
         Me.lblWl9.AutoSize = True
         Me.lblWl9.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl9.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl9.Location = New System.Drawing.Point(38, 292)
-        Me.lblWl9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl9.Location = New System.Drawing.Point(51, 359)
         Me.lblWl9.Name = "lblWl9"
-        Me.lblWl9.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl9.Size = New System.Drawing.Size(0, 20)
         Me.lblWl9.TabIndex = 79
         Me.ToolTip1.SetToolTip(Me.lblWl9, "GATE-3  FTS" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 192.168.150.15")
         '
@@ -3199,10 +3371,9 @@ Partial Class coolBlue
         Me.lblWl8.AutoSize = True
         Me.lblWl8.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl8.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl8.Location = New System.Drawing.Point(38, 262)
-        Me.lblWl8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl8.Location = New System.Drawing.Point(51, 322)
         Me.lblWl8.Name = "lblWl8"
-        Me.lblWl8.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl8.Size = New System.Drawing.Size(0, 20)
         Me.lblWl8.TabIndex = 78
         Me.ToolTip1.SetToolTip(Me.lblWl8, "READY MIX SILO MEKA 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT 192.168.150.13")
         '
@@ -3211,10 +3382,9 @@ Partial Class coolBlue
         Me.lblWl7.AutoSize = True
         Me.lblWl7.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl7.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl7.Location = New System.Drawing.Point(38, 233)
-        Me.lblWl7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl7.Location = New System.Drawing.Point(51, 287)
         Me.lblWl7.Name = "lblWl7"
-        Me.lblWl7.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl7.Size = New System.Drawing.Size(0, 20)
         Me.lblWl7.TabIndex = 77
         Me.ToolTip1.SetToolTip(Me.lblWl7, "JUBLIN TO CPF" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " CLIENT 192.168.150.8" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         '
@@ -3223,10 +3393,9 @@ Partial Class coolBlue
         Me.lblWl6.AutoSize = True
         Me.lblWl6.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl6.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl6.Location = New System.Drawing.Point(38, 204)
-        Me.lblWl6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl6.Location = New System.Drawing.Point(51, 251)
         Me.lblWl6.Name = "lblWl6"
-        Me.lblWl6.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl6.Size = New System.Drawing.Size(0, 20)
         Me.lblWl6.TabIndex = 76
         Me.ToolTip1.SetToolTip(Me.lblWl6, "PIPE FACTORY CPF" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ACCESS POINT 192.168.150.7")
         '
@@ -3235,10 +3404,9 @@ Partial Class coolBlue
         Me.lblWl5.AutoSize = True
         Me.lblWl5.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl5.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl5.Location = New System.Drawing.Point(38, 175)
-        Me.lblWl5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl5.Location = New System.Drawing.Point(51, 215)
         Me.lblWl5.Name = "lblWl5"
-        Me.lblWl5.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl5.Size = New System.Drawing.Size(0, 20)
         Me.lblWl5.TabIndex = 75
         Me.ToolTip1.SetToolTip(Me.lblWl5, "QA-QC DEPT. TO AIR STATION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " STATION 192.168.150.5")
         '
@@ -3247,10 +3415,9 @@ Partial Class coolBlue
         Me.lblWl4.AutoSize = True
         Me.lblWl4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl4.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl4.Location = New System.Drawing.Point(38, 145)
-        Me.lblWl4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl4.Location = New System.Drawing.Point(51, 178)
         Me.lblWl4.Name = "lblWl4"
-        Me.lblWl4.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl4.Size = New System.Drawing.Size(0, 20)
         Me.lblWl4.TabIndex = 74
         Me.ToolTip1.SetToolTip(Me.lblWl4, "QA-QC DEPARTMENT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ACCESS POINT 192.168.150.4")
         '
@@ -3259,10 +3426,9 @@ Partial Class coolBlue
         Me.lblWl3.AutoSize = True
         Me.lblWl3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl3.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl3.Location = New System.Drawing.Point(38, 116)
-        Me.lblWl3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl3.Location = New System.Drawing.Point(51, 143)
         Me.lblWl3.Name = "lblWl3"
-        Me.lblWl3.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl3.Size = New System.Drawing.Size(0, 20)
         Me.lblWl3.TabIndex = 73
         Me.ToolTip1.SetToolTip(Me.lblWl3, "PIPE SCRAP 2 TO IBF" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " STATION  192.168.150.3")
         '
@@ -3271,10 +3437,9 @@ Partial Class coolBlue
         Me.lblWl2.AutoSize = True
         Me.lblWl2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl2.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl2.Location = New System.Drawing.Point(38, 87)
-        Me.lblWl2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl2.Location = New System.Drawing.Point(51, 107)
         Me.lblWl2.Name = "lblWl2"
-        Me.lblWl2.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl2.Size = New System.Drawing.Size(0, 20)
         Me.lblWl2.TabIndex = 72
         Me.ToolTip1.SetToolTip(Me.lblWl2, "PIPE SCRAP 1 TO IBF" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " STATION 192.168.150.2")
         '
@@ -3283,10 +3448,9 @@ Partial Class coolBlue
         Me.lblWl1.AutoSize = True
         Me.lblWl1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWl1.ForeColor = System.Drawing.Color.Transparent
-        Me.lblWl1.Location = New System.Drawing.Point(38, 58)
-        Me.lblWl1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblWl1.Location = New System.Drawing.Point(51, 71)
         Me.lblWl1.Name = "lblWl1"
-        Me.lblWl1.Size = New System.Drawing.Size(0, 15)
+        Me.lblWl1.Size = New System.Drawing.Size(0, 20)
         Me.lblWl1.TabIndex = 71
         Me.ToolTip1.SetToolTip(Me.lblWl1, "IBF MASJID UP" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ACCESS POINT  192.168.150.1")
         '
@@ -3296,10 +3460,9 @@ Partial Class coolBlue
         Me.lblName.BackColor = System.Drawing.Color.OliveDrab
         Me.lblName.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.ForeColor = System.Drawing.Color.White
-        Me.lblName.Location = New System.Drawing.Point(38, 20)
-        Me.lblName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblName.Location = New System.Drawing.Point(51, 25)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(115, 20)
+        Me.lblName.Size = New System.Drawing.Size(147, 25)
         Me.lblName.TabIndex = 70
         Me.lblName.Text = "Wireless Devices"
         Me.ToolTip1.SetToolTip(Me.lblName, "List of Working Wireless")
@@ -3309,11 +3472,11 @@ Partial Class coolBlue
         Me.ssl.BackColor = System.Drawing.Color.Transparent
         Me.ssl.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ssl.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ssl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sslStatus, Me.sslStatus2})
-        Me.ssl.Location = New System.Drawing.Point(0, 639)
+        Me.ssl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sslStatus, Me.sslStatus2, Me.ToolStriplblID, Me.toostriplblStatus, Me.ToolDatabaseConnect})
+        Me.ssl.Location = New System.Drawing.Point(0, 792)
         Me.ssl.Name = "ssl"
-        Me.ssl.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
-        Me.ssl.Size = New System.Drawing.Size(801, 22)
+        Me.ssl.Padding = New System.Windows.Forms.Padding(1, 0, 13, 0)
+        Me.ssl.Size = New System.Drawing.Size(1068, 22)
         Me.ssl.TabIndex = 11
         Me.ToolTip1.SetToolTip(Me.ssl, "STATUS PANEL")
         '
@@ -3331,17 +3494,38 @@ Partial Class coolBlue
         Me.sslStatus2.Name = "sslStatus2"
         Me.sslStatus2.Size = New System.Drawing.Size(0, 17)
         '
+        'ToolStriplblID
+        '
+        Me.ToolStriplblID.Name = "ToolStriplblID"
+        Me.ToolStriplblID.Size = New System.Drawing.Size(0, 17)
+        '
+        'toostriplblStatus
+        '
+        Me.toostriplblStatus.ActiveLinkColor = System.Drawing.Color.ForestGreen
+        Me.toostriplblStatus.ForeColor = System.Drawing.Color.Snow
+        Me.toostriplblStatus.Name = "toostriplblStatus"
+        Me.toostriplblStatus.Size = New System.Drawing.Size(0, 17)
+        '
+        'ToolDatabaseConnect
+        '
+        Me.ToolDatabaseConnect.BackColor = System.Drawing.Color.ForestGreen
+        Me.ToolDatabaseConnect.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.ToolDatabaseConnect.Name = "ToolDatabaseConnect"
+        Me.ToolDatabaseConnect.Size = New System.Drawing.Size(0, 17)
+        '
         'btnHikTest2
         '
         Me.btnHikTest2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnHikTest2.BackColor = System.Drawing.Color.ForestGreen
         Me.btnHikTest2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHikTest2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btnHikTest2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHikTest2.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHikTest2.ForeColor = System.Drawing.Color.White
-        Me.btnHikTest2.Location = New System.Drawing.Point(596, 341)
-        Me.btnHikTest2.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnHikTest2.Location = New System.Drawing.Point(795, 420)
+        Me.btnHikTest2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHikTest2.Name = "btnHikTest2"
-        Me.btnHikTest2.Size = New System.Drawing.Size(129, 31)
+        Me.btnHikTest2.Size = New System.Drawing.Size(172, 38)
         Me.btnHikTest2.TabIndex = 136
         Me.btnHikTest2.Text = "Te&st Connection"
         Me.ToolTip1.SetToolTip(Me.btnHikTest2, "Click on this for Hik vision cam status")
@@ -3352,10 +3536,9 @@ Partial Class coolBlue
         Me.lblHik1.AutoSize = True
         Me.lblHik1.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik1.Location = New System.Drawing.Point(67, 23)
-        Me.lblHik1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik1.Location = New System.Drawing.Point(89, 28)
         Me.lblHik1.Name = "lblHik1"
-        Me.lblHik1.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik1.Size = New System.Drawing.Size(0, 28)
         Me.lblHik1.TabIndex = 126
         Me.ToolTip1.SetToolTip(Me.lblHik1, "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         '
@@ -3363,10 +3546,10 @@ Partial Class coolBlue
         '
         Me.txtBackup4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited4", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtBackup4.Enabled = False
-        Me.txtBackup4.Location = New System.Drawing.Point(146, 183)
-        Me.txtBackup4.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBackup4.Location = New System.Drawing.Point(195, 225)
+        Me.txtBackup4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBackup4.Name = "txtBackup4"
-        Me.txtBackup4.Size = New System.Drawing.Size(320, 20)
+        Me.txtBackup4.Size = New System.Drawing.Size(425, 22)
         Me.txtBackup4.TabIndex = 84
         Me.txtBackup4.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited4
         Me.ToolTip1.SetToolTip(Me.txtBackup4, "Line of code for copy datababse")
@@ -3375,16 +3558,17 @@ Partial Class coolBlue
         '
         Me.txtBackup3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtBackup3.Enabled = False
-        Me.txtBackup3.Location = New System.Drawing.Point(142, 137)
-        Me.txtBackup3.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBackup3.Location = New System.Drawing.Point(189, 169)
+        Me.txtBackup3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBackup3.Name = "txtBackup3"
-        Me.txtBackup3.Size = New System.Drawing.Size(320, 20)
+        Me.txtBackup3.Size = New System.Drawing.Size(425, 22)
         Me.txtBackup3.TabIndex = 80
         Me.txtBackup3.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited3
         Me.ToolTip1.SetToolTip(Me.txtBackup3, "Line of code for copy datababse")
         '
         'pnlOther
         '
+        Me.pnlOther.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.pnlOther.Controls.Add(Me.lblSpon)
         Me.pnlOther.Controls.Add(Me.txtSpon)
         Me.pnlOther.Controls.Add(Me.grpPAC)
@@ -3426,19 +3610,18 @@ Partial Class coolBlue
         Me.pnlOther.Controls.Add(Me.lblServer)
         Me.pnlOther.Controls.Add(Me.btnmekaping)
         Me.pnlOther.ForeColor = System.Drawing.Color.Snow
-        Me.pnlOther.Location = New System.Drawing.Point(9, 236)
-        Me.pnlOther.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlOther.Location = New System.Drawing.Point(12, 290)
+        Me.pnlOther.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlOther.Name = "pnlOther"
-        Me.pnlOther.Size = New System.Drawing.Size(780, 396)
+        Me.pnlOther.Size = New System.Drawing.Size(1040, 487)
         Me.pnlOther.TabIndex = 12
         '
         'lblSpon
         '
         Me.lblSpon.AutoSize = True
-        Me.lblSpon.Location = New System.Drawing.Point(556, 318)
-        Me.lblSpon.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSpon.Location = New System.Drawing.Point(741, 391)
         Me.lblSpon.Name = "lblSpon"
-        Me.lblSpon.Size = New System.Drawing.Size(84, 13)
+        Me.lblSpon.Size = New System.Drawing.Size(107, 17)
         Me.lblSpon.TabIndex = 51
         Me.lblSpon.Tag = ""
         Me.lblSpon.Text = "SPON SERVER"
@@ -3448,11 +3631,11 @@ Partial Class coolBlue
         Me.txtSpon.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtSpon.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSpon.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtSpon.Location = New System.Drawing.Point(638, 315)
-        Me.txtSpon.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtSpon.Location = New System.Drawing.Point(851, 388)
+        Me.txtSpon.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtSpon.Name = "txtSpon"
         Me.txtSpon.ReadOnly = True
-        Me.txtSpon.Size = New System.Drawing.Size(96, 23)
+        Me.txtSpon.Size = New System.Drawing.Size(127, 27)
         Me.txtSpon.TabIndex = 50
         Me.txtSpon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3467,19 +3650,19 @@ Partial Class coolBlue
         Me.grpPAC.Controls.Add(Me.lblmeka4)
         Me.grpPAC.Controls.Add(Me.lblmeka2)
         Me.grpPAC.ForeColor = System.Drawing.Color.Snow
-        Me.grpPAC.Location = New System.Drawing.Point(11, 34)
-        Me.grpPAC.Margin = New System.Windows.Forms.Padding(2)
+        Me.grpPAC.Location = New System.Drawing.Point(15, 42)
+        Me.grpPAC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grpPAC.Name = "grpPAC"
-        Me.grpPAC.Padding = New System.Windows.Forms.Padding(2)
-        Me.grpPAC.Size = New System.Drawing.Size(263, 284)
+        Me.grpPAC.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.grpPAC.Size = New System.Drawing.Size(351, 350)
         Me.grpPAC.TabIndex = 49
         Me.grpPAC.TabStop = False
         Me.grpPAC.Text = "PAC"
         '
         'picMeka1
         '
-        Me.picMeka1.Location = New System.Drawing.Point(179, 210)
-        Me.picMeka1.Margin = New System.Windows.Forms.Padding(2)
+        Me.picMeka1.Location = New System.Drawing.Point(239, 258)
+        Me.picMeka1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picMeka1.Name = "picMeka1"
         Me.picMeka1.Size = New System.Drawing.Size(36, 31)
         Me.picMeka1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -3488,8 +3671,8 @@ Partial Class coolBlue
         '
         'picMeka3
         '
-        Me.picMeka3.Location = New System.Drawing.Point(179, 148)
-        Me.picMeka3.Margin = New System.Windows.Forms.Padding(2)
+        Me.picMeka3.Location = New System.Drawing.Point(239, 182)
+        Me.picMeka3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picMeka3.Name = "picMeka3"
         Me.picMeka3.Size = New System.Drawing.Size(36, 31)
         Me.picMeka3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -3498,8 +3681,8 @@ Partial Class coolBlue
         '
         'picMeka4
         '
-        Me.picMeka4.Location = New System.Drawing.Point(179, 84)
-        Me.picMeka4.Margin = New System.Windows.Forms.Padding(2)
+        Me.picMeka4.Location = New System.Drawing.Point(239, 103)
+        Me.picMeka4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picMeka4.Name = "picMeka4"
         Me.picMeka4.Size = New System.Drawing.Size(36, 31)
         Me.picMeka4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -3508,8 +3691,8 @@ Partial Class coolBlue
         '
         'picMeka2
         '
-        Me.picMeka2.Location = New System.Drawing.Point(179, 28)
-        Me.picMeka2.Margin = New System.Windows.Forms.Padding(2)
+        Me.picMeka2.Location = New System.Drawing.Point(239, 34)
+        Me.picMeka2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picMeka2.Name = "picMeka2"
         Me.picMeka2.Size = New System.Drawing.Size(36, 31)
         Me.picMeka2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -3520,10 +3703,9 @@ Partial Class coolBlue
         '
         Me.lblsulmeka1.AutoSize = True
         Me.lblsulmeka1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblsulmeka1.Location = New System.Drawing.Point(8, 230)
-        Me.lblsulmeka1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblsulmeka1.Location = New System.Drawing.Point(11, 283)
         Me.lblsulmeka1.Name = "lblsulmeka1"
-        Me.lblsulmeka1.Size = New System.Drawing.Size(120, 13)
+        Me.lblsulmeka1.Size = New System.Drawing.Size(158, 19)
         Me.lblsulmeka1.TabIndex = 71
         Me.lblsulmeka1.Text = "SULAIBIYA MEKA-3 PAC"
         '
@@ -3531,10 +3713,9 @@ Partial Class coolBlue
         '
         Me.lblsulmeka3.AutoSize = True
         Me.lblsulmeka3.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblsulmeka3.Location = New System.Drawing.Point(8, 171)
-        Me.lblsulmeka3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblsulmeka3.Location = New System.Drawing.Point(11, 210)
         Me.lblsulmeka3.Name = "lblsulmeka3"
-        Me.lblsulmeka3.Size = New System.Drawing.Size(120, 13)
+        Me.lblsulmeka3.Size = New System.Drawing.Size(158, 19)
         Me.lblsulmeka3.TabIndex = 70
         Me.lblsulmeka3.Text = "SULAIBIYA MEKA-1 PAC"
         '
@@ -3542,10 +3723,9 @@ Partial Class coolBlue
         '
         Me.lblmeka4.AutoSize = True
         Me.lblmeka4.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblmeka4.Location = New System.Drawing.Point(8, 112)
-        Me.lblmeka4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblmeka4.Location = New System.Drawing.Point(11, 138)
         Me.lblmeka4.Name = "lblmeka4"
-        Me.lblmeka4.Size = New System.Drawing.Size(157, 13)
+        Me.lblmeka4.Size = New System.Drawing.Size(203, 19)
         Me.lblmeka4.TabIndex = 67
         Me.lblmeka4.Text = "MEENA ABDULLA MEKA-4 PAC"
         '
@@ -3553,10 +3733,9 @@ Partial Class coolBlue
         '
         Me.lblmeka2.AutoSize = True
         Me.lblmeka2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblmeka2.Location = New System.Drawing.Point(8, 50)
-        Me.lblmeka2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblmeka2.Location = New System.Drawing.Point(11, 62)
         Me.lblmeka2.Name = "lblmeka2"
-        Me.lblmeka2.Size = New System.Drawing.Size(157, 13)
+        Me.lblmeka2.Size = New System.Drawing.Size(203, 19)
         Me.lblmeka2.TabIndex = 66
         Me.lblmeka2.Text = "MEENA ABDULLA MEKA-2 PAC"
         '
@@ -3565,31 +3744,29 @@ Partial Class coolBlue
         Me.txtMeena.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtMeena.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMeena.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtMeena.Location = New System.Drawing.Point(421, 289)
-        Me.txtMeena.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtMeena.Location = New System.Drawing.Point(561, 356)
+        Me.txtMeena.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMeena.Name = "txtMeena"
         Me.txtMeena.ReadOnly = True
-        Me.txtMeena.Size = New System.Drawing.Size(96, 23)
+        Me.txtMeena.Size = New System.Drawing.Size(127, 27)
         Me.txtMeena.TabIndex = 48
         Me.txtMeena.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblMeena
         '
         Me.lblMeena.AutoSize = True
-        Me.lblMeena.Location = New System.Drawing.Point(292, 295)
-        Me.lblMeena.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblMeena.Location = New System.Drawing.Point(389, 363)
         Me.lblMeena.Name = "lblMeena"
-        Me.lblMeena.Size = New System.Drawing.Size(100, 13)
+        Me.lblMeena.Size = New System.Drawing.Size(127, 17)
         Me.lblMeena.TabIndex = 47
         Me.lblMeena.Text = "MEENA ABDULLA "
         '
         'lblTkf9
         '
         Me.lblTkf9.AutoSize = True
-        Me.lblTkf9.Location = New System.Drawing.Point(556, 288)
-        Me.lblTkf9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf9.Location = New System.Drawing.Point(741, 354)
         Me.lblTkf9.Name = "lblTkf9"
-        Me.lblTkf9.Size = New System.Drawing.Size(63, 13)
+        Me.lblTkf9.Size = New System.Drawing.Size(79, 17)
         Me.lblTkf9.TabIndex = 44
         Me.lblTkf9.Tag = ""
         Me.lblTkf9.Text = "IBF HENKE"
@@ -3599,21 +3776,20 @@ Partial Class coolBlue
         Me.txtTkf9.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf9.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf9.Location = New System.Drawing.Point(638, 284)
-        Me.txtTkf9.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf9.Location = New System.Drawing.Point(851, 350)
+        Me.txtTkf9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf9.Name = "txtTkf9"
         Me.txtTkf9.ReadOnly = True
-        Me.txtTkf9.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf9.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf9.TabIndex = 43
         Me.txtTkf9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblTkf8
         '
         Me.lblTkf8.AutoSize = True
-        Me.lblTkf8.Location = New System.Drawing.Point(556, 258)
-        Me.lblTkf8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf8.Location = New System.Drawing.Point(741, 318)
         Me.lblTkf8.Name = "lblTkf8"
-        Me.lblTkf8.Size = New System.Drawing.Size(43, 13)
+        Me.lblTkf8.Size = New System.Drawing.Size(55, 17)
         Me.lblTkf8.TabIndex = 42
         Me.lblTkf8.Tag = ""
         Me.lblTkf8.Text = "TKF C1"
@@ -3621,10 +3797,9 @@ Partial Class coolBlue
         'lblTkf7
         '
         Me.lblTkf7.AutoSize = True
-        Me.lblTkf7.Location = New System.Drawing.Point(556, 228)
-        Me.lblTkf7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf7.Location = New System.Drawing.Point(741, 281)
         Me.lblTkf7.Name = "lblTkf7"
-        Me.lblTkf7.Size = New System.Drawing.Size(43, 13)
+        Me.lblTkf7.Size = New System.Drawing.Size(55, 17)
         Me.lblTkf7.TabIndex = 41
         Me.lblTkf7.Tag = ""
         Me.lblTkf7.Text = "TKF B2"
@@ -3632,10 +3807,9 @@ Partial Class coolBlue
         'lblTkf6
         '
         Me.lblTkf6.AutoSize = True
-        Me.lblTkf6.Location = New System.Drawing.Point(556, 197)
-        Me.lblTkf6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf6.Location = New System.Drawing.Point(741, 242)
         Me.lblTkf6.Name = "lblTkf6"
-        Me.lblTkf6.Size = New System.Drawing.Size(43, 13)
+        Me.lblTkf6.Size = New System.Drawing.Size(55, 17)
         Me.lblTkf6.TabIndex = 40
         Me.lblTkf6.Tag = ""
         Me.lblTkf6.Text = "TKF B1"
@@ -3643,10 +3817,9 @@ Partial Class coolBlue
         'lblTkf5
         '
         Me.lblTkf5.AutoSize = True
-        Me.lblTkf5.Location = New System.Drawing.Point(556, 164)
-        Me.lblTkf5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf5.Location = New System.Drawing.Point(741, 202)
         Me.lblTkf5.Name = "lblTkf5"
-        Me.lblTkf5.Size = New System.Drawing.Size(43, 13)
+        Me.lblTkf5.Size = New System.Drawing.Size(55, 17)
         Me.lblTkf5.TabIndex = 39
         Me.lblTkf5.Tag = ""
         Me.lblTkf5.Text = "TKF A2"
@@ -3654,10 +3827,9 @@ Partial Class coolBlue
         'lblTkf4
         '
         Me.lblTkf4.AutoSize = True
-        Me.lblTkf4.Location = New System.Drawing.Point(556, 134)
-        Me.lblTkf4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf4.Location = New System.Drawing.Point(741, 165)
         Me.lblTkf4.Name = "lblTkf4"
-        Me.lblTkf4.Size = New System.Drawing.Size(43, 13)
+        Me.lblTkf4.Size = New System.Drawing.Size(55, 17)
         Me.lblTkf4.TabIndex = 38
         Me.lblTkf4.Tag = ""
         Me.lblTkf4.Text = "TKF A1"
@@ -3665,10 +3837,9 @@ Partial Class coolBlue
         'lblTkf3
         '
         Me.lblTkf3.AutoSize = True
-        Me.lblTkf3.Location = New System.Drawing.Point(556, 101)
-        Me.lblTkf3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf3.Location = New System.Drawing.Point(741, 124)
         Me.lblTkf3.Name = "lblTkf3"
-        Me.lblTkf3.Size = New System.Drawing.Size(56, 13)
+        Me.lblTkf3.Size = New System.Drawing.Size(70, 17)
         Me.lblTkf3.TabIndex = 37
         Me.lblTkf3.Tag = ""
         Me.lblTkf3.Text = "IBF MASA"
@@ -3676,10 +3847,9 @@ Partial Class coolBlue
         'lblTkf2
         '
         Me.lblTkf2.AutoSize = True
-        Me.lblTkf2.Location = New System.Drawing.Point(556, 69)
-        Me.lblTkf2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf2.Location = New System.Drawing.Point(741, 85)
         Me.lblTkf2.Name = "lblTkf2"
-        Me.lblTkf2.Size = New System.Drawing.Size(27, 13)
+        Me.lblTkf2.Size = New System.Drawing.Size(34, 17)
         Me.lblTkf2.TabIndex = 36
         Me.lblTkf2.Tag = ""
         Me.lblTkf2.Text = "CPF"
@@ -3687,10 +3857,9 @@ Partial Class coolBlue
         'lblTkf1
         '
         Me.lblTkf1.AutoSize = True
-        Me.lblTkf1.Location = New System.Drawing.Point(556, 37)
-        Me.lblTkf1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTkf1.Location = New System.Drawing.Point(741, 46)
         Me.lblTkf1.Name = "lblTkf1"
-        Me.lblTkf1.Size = New System.Drawing.Size(81, 13)
+        Me.lblTkf1.Size = New System.Drawing.Size(101, 17)
         Me.lblTkf1.TabIndex = 35
         Me.lblTkf1.Tag = ""
         Me.lblTkf1.Text = "IRMS SERVER"
@@ -3700,11 +3869,11 @@ Partial Class coolBlue
         Me.txtTkf8.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf8.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf8.Location = New System.Drawing.Point(638, 254)
-        Me.txtTkf8.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf8.Location = New System.Drawing.Point(851, 313)
+        Me.txtTkf8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf8.Name = "txtTkf8"
         Me.txtTkf8.ReadOnly = True
-        Me.txtTkf8.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf8.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf8.TabIndex = 32
         Me.txtTkf8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3713,11 +3882,11 @@ Partial Class coolBlue
         Me.txtTkf7.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf7.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf7.Location = New System.Drawing.Point(638, 223)
-        Me.txtTkf7.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf7.Location = New System.Drawing.Point(851, 274)
+        Me.txtTkf7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf7.Name = "txtTkf7"
         Me.txtTkf7.ReadOnly = True
-        Me.txtTkf7.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf7.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf7.TabIndex = 31
         Me.txtTkf7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3726,11 +3895,11 @@ Partial Class coolBlue
         Me.txtTkf6.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf6.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf6.Location = New System.Drawing.Point(638, 192)
-        Me.txtTkf6.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf6.Location = New System.Drawing.Point(851, 236)
+        Me.txtTkf6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf6.Name = "txtTkf6"
         Me.txtTkf6.ReadOnly = True
-        Me.txtTkf6.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf6.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf6.TabIndex = 30
         Me.txtTkf6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3739,11 +3908,11 @@ Partial Class coolBlue
         Me.txtTkf5.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf5.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf5.Location = New System.Drawing.Point(638, 159)
-        Me.txtTkf5.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf5.Location = New System.Drawing.Point(851, 196)
+        Me.txtTkf5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf5.Name = "txtTkf5"
         Me.txtTkf5.ReadOnly = True
-        Me.txtTkf5.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf5.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf5.TabIndex = 29
         Me.txtTkf5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3752,11 +3921,11 @@ Partial Class coolBlue
         Me.txtTkf4.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf4.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf4.Location = New System.Drawing.Point(638, 129)
-        Me.txtTkf4.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf4.Location = New System.Drawing.Point(851, 159)
+        Me.txtTkf4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf4.Name = "txtTkf4"
         Me.txtTkf4.ReadOnly = True
-        Me.txtTkf4.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf4.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf4.TabIndex = 28
         Me.txtTkf4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3765,11 +3934,11 @@ Partial Class coolBlue
         Me.txtTkf3.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf3.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf3.Location = New System.Drawing.Point(638, 96)
-        Me.txtTkf3.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf3.Location = New System.Drawing.Point(851, 118)
+        Me.txtTkf3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf3.Name = "txtTkf3"
         Me.txtTkf3.ReadOnly = True
-        Me.txtTkf3.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf3.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf3.TabIndex = 27
         Me.txtTkf3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3778,11 +3947,11 @@ Partial Class coolBlue
         Me.txtTkf2.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf2.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf2.Location = New System.Drawing.Point(638, 64)
-        Me.txtTkf2.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf2.Location = New System.Drawing.Point(851, 79)
+        Me.txtTkf2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf2.Name = "txtTkf2"
         Me.txtTkf2.ReadOnly = True
-        Me.txtTkf2.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf2.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf2.TabIndex = 26
         Me.txtTkf2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3791,11 +3960,11 @@ Partial Class coolBlue
         Me.txtTkf1.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTkf1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTkf1.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTkf1.Location = New System.Drawing.Point(638, 32)
-        Me.txtTkf1.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTkf1.Location = New System.Drawing.Point(851, 39)
+        Me.txtTkf1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTkf1.Name = "txtTkf1"
         Me.txtTkf1.ReadOnly = True
-        Me.txtTkf1.Size = New System.Drawing.Size(96, 23)
+        Me.txtTkf1.Size = New System.Drawing.Size(127, 27)
         Me.txtTkf1.TabIndex = 25
         Me.txtTkf1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3804,21 +3973,20 @@ Partial Class coolBlue
         Me.txtRms.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtRms.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRms.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtRms.Location = New System.Drawing.Point(421, 256)
-        Me.txtRms.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtRms.Location = New System.Drawing.Point(561, 315)
+        Me.txtRms.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtRms.Name = "txtRms"
         Me.txtRms.ReadOnly = True
-        Me.txtRms.Size = New System.Drawing.Size(96, 23)
+        Me.txtRms.Size = New System.Drawing.Size(127, 27)
         Me.txtRms.TabIndex = 24
         Me.txtRms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblRms
         '
         Me.lblRms.AutoSize = True
-        Me.lblRms.Location = New System.Drawing.Point(292, 262)
-        Me.lblRms.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRms.Location = New System.Drawing.Point(389, 322)
         Me.lblRms.Name = "lblRms"
-        Me.lblRms.Size = New System.Drawing.Size(75, 13)
+        Me.lblRms.Size = New System.Drawing.Size(93, 17)
         Me.lblRms.TabIndex = 23
         Me.lblRms.Text = "MIZZAN RMS"
         '
@@ -3827,11 +3995,11 @@ Partial Class coolBlue
         Me.txtTransport.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtTransport.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTransport.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtTransport.Location = New System.Drawing.Point(421, 225)
-        Me.txtTransport.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTransport.Location = New System.Drawing.Point(561, 277)
+        Me.txtTransport.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTransport.Name = "txtTransport"
         Me.txtTransport.ReadOnly = True
-        Me.txtTransport.Size = New System.Drawing.Size(96, 23)
+        Me.txtTransport.Size = New System.Drawing.Size(127, 27)
         Me.txtTransport.TabIndex = 22
         Me.txtTransport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3840,11 +4008,11 @@ Partial Class coolBlue
         Me.txtDiesel.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtDiesel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDiesel.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtDiesel.Location = New System.Drawing.Point(421, 194)
-        Me.txtDiesel.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtDiesel.Location = New System.Drawing.Point(561, 239)
+        Me.txtDiesel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDiesel.Name = "txtDiesel"
         Me.txtDiesel.ReadOnly = True
-        Me.txtDiesel.Size = New System.Drawing.Size(96, 23)
+        Me.txtDiesel.Size = New System.Drawing.Size(127, 27)
         Me.txtDiesel.TabIndex = 21
         Me.txtDiesel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3853,11 +4021,11 @@ Partial Class coolBlue
         Me.txtNVR2.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtNVR2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNVR2.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtNVR2.Location = New System.Drawing.Point(421, 162)
-        Me.txtNVR2.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNVR2.Location = New System.Drawing.Point(561, 199)
+        Me.txtNVR2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNVR2.Name = "txtNVR2"
         Me.txtNVR2.ReadOnly = True
-        Me.txtNVR2.Size = New System.Drawing.Size(96, 23)
+        Me.txtNVR2.Size = New System.Drawing.Size(127, 27)
         Me.txtNVR2.TabIndex = 20
         Me.txtNVR2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3866,11 +4034,11 @@ Partial Class coolBlue
         Me.txtNVR1.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtNVR1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNVR1.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtNVR1.Location = New System.Drawing.Point(421, 132)
-        Me.txtNVR1.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNVR1.Location = New System.Drawing.Point(561, 162)
+        Me.txtNVR1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNVR1.Name = "txtNVR1"
         Me.txtNVR1.ReadOnly = True
-        Me.txtNVR1.Size = New System.Drawing.Size(96, 23)
+        Me.txtNVR1.Size = New System.Drawing.Size(127, 27)
         Me.txtNVR1.TabIndex = 19
         Me.txtNVR1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3879,11 +4047,11 @@ Partial Class coolBlue
         Me.txtSynologyNAS.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtSynologyNAS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSynologyNAS.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtSynologyNAS.Location = New System.Drawing.Point(421, 98)
-        Me.txtSynologyNAS.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtSynologyNAS.Location = New System.Drawing.Point(561, 121)
+        Me.txtSynologyNAS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtSynologyNAS.Name = "txtSynologyNAS"
         Me.txtSynologyNAS.ReadOnly = True
-        Me.txtSynologyNAS.Size = New System.Drawing.Size(96, 23)
+        Me.txtSynologyNAS.Size = New System.Drawing.Size(127, 27)
         Me.txtSynologyNAS.TabIndex = 18
         Me.txtSynologyNAS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3892,11 +4060,11 @@ Partial Class coolBlue
         Me.txtSynologyRac.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtSynologyRac.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSynologyRac.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtSynologyRac.Location = New System.Drawing.Point(421, 67)
-        Me.txtSynologyRac.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtSynologyRac.Location = New System.Drawing.Point(561, 82)
+        Me.txtSynologyRac.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtSynologyRac.Name = "txtSynologyRac"
         Me.txtSynologyRac.ReadOnly = True
-        Me.txtSynologyRac.Size = New System.Drawing.Size(96, 23)
+        Me.txtSynologyRac.Size = New System.Drawing.Size(127, 27)
         Me.txtSynologyRac.TabIndex = 17
         Me.txtSynologyRac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -3905,81 +4073,74 @@ Partial Class coolBlue
         Me.txtServer.BackColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtServer.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtServer.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtServer.Location = New System.Drawing.Point(421, 34)
-        Me.txtServer.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtServer.Location = New System.Drawing.Point(561, 42)
+        Me.txtServer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtServer.Name = "txtServer"
         Me.txtServer.ReadOnly = True
-        Me.txtServer.Size = New System.Drawing.Size(96, 23)
+        Me.txtServer.Size = New System.Drawing.Size(127, 27)
         Me.txtServer.TabIndex = 16
         Me.txtServer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblTransport
         '
         Me.lblTransport.AutoSize = True
-        Me.lblTransport.Location = New System.Drawing.Point(292, 230)
-        Me.lblTransport.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTransport.Location = New System.Drawing.Point(389, 283)
         Me.lblTransport.Name = "lblTransport"
-        Me.lblTransport.Size = New System.Drawing.Size(124, 13)
+        Me.lblTransport.Size = New System.Drawing.Size(158, 17)
         Me.lblTransport.TabIndex = 15
         Me.lblTransport.Text = "TRANSPORT DEPART."
         '
         'lblDiesel
         '
         Me.lblDiesel.AutoSize = True
-        Me.lblDiesel.Location = New System.Drawing.Point(292, 199)
-        Me.lblDiesel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblDiesel.Location = New System.Drawing.Point(389, 245)
         Me.lblDiesel.Name = "lblDiesel"
-        Me.lblDiesel.Size = New System.Drawing.Size(95, 13)
+        Me.lblDiesel.Size = New System.Drawing.Size(120, 17)
         Me.lblDiesel.TabIndex = 14
         Me.lblDiesel.Text = "DIESEL STATION"
         '
         'lblNVR1
         '
         Me.lblNVR1.AutoSize = True
-        Me.lblNVR1.Location = New System.Drawing.Point(292, 136)
-        Me.lblNVR1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblNVR1.Location = New System.Drawing.Point(389, 167)
         Me.lblNVR1.Name = "lblNVR1"
-        Me.lblNVR1.Size = New System.Drawing.Size(96, 13)
+        Me.lblNVR1.Size = New System.Drawing.Size(120, 17)
         Me.lblNVR1.TabIndex = 13
         Me.lblNVR1.Text = "HIKVISION NVR 1"
         '
         'lblSynologyNAS
         '
         Me.lblSynologyNAS.AutoSize = True
-        Me.lblSynologyNAS.Location = New System.Drawing.Point(292, 103)
-        Me.lblSynologyNAS.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSynologyNAS.Location = New System.Drawing.Point(389, 127)
         Me.lblSynologyNAS.Name = "lblSynologyNAS"
-        Me.lblSynologyNAS.Size = New System.Drawing.Size(91, 13)
+        Me.lblSynologyNAS.Size = New System.Drawing.Size(118, 17)
         Me.lblSynologyNAS.TabIndex = 12
         Me.lblSynologyNAS.Text = "SYNOLOGY NAS"
         '
         'lblNVR2
         '
         Me.lblNVR2.AutoSize = True
-        Me.lblNVR2.Location = New System.Drawing.Point(292, 167)
-        Me.lblNVR2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblNVR2.Location = New System.Drawing.Point(389, 206)
         Me.lblNVR2.Name = "lblNVR2"
-        Me.lblNVR2.Size = New System.Drawing.Size(96, 13)
+        Me.lblNVR2.Size = New System.Drawing.Size(120, 17)
         Me.lblNVR2.TabIndex = 11
         Me.lblNVR2.Text = "HIKVISION NVR 2"
         '
         'lblSynologyRac
         '
         Me.lblSynologyRac.AutoSize = True
-        Me.lblSynologyRac.Location = New System.Drawing.Point(292, 74)
-        Me.lblSynologyRac.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSynologyRac.Location = New System.Drawing.Point(389, 91)
         Me.lblSynologyRac.Name = "lblSynologyRac"
-        Me.lblSynologyRac.Size = New System.Drawing.Size(98, 13)
+        Me.lblSynologyRac.Size = New System.Drawing.Size(127, 17)
         Me.lblSynologyRac.TabIndex = 10
         Me.lblSynologyRac.Text = "SYNOLOGY RACK"
         '
         'lblServer
         '
         Me.lblServer.AutoSize = True
-        Me.lblServer.Location = New System.Drawing.Point(292, 40)
-        Me.lblServer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblServer.Location = New System.Drawing.Point(389, 49)
         Me.lblServer.Name = "lblServer"
-        Me.lblServer.Size = New System.Drawing.Size(113, 13)
+        Me.lblServer.Size = New System.Drawing.Size(144, 17)
         Me.lblServer.TabIndex = 9
         Me.lblServer.Tag = ""
         Me.lblServer.Text = "GEOVISION SERVER"
@@ -3988,10 +4149,10 @@ Partial Class coolBlue
         '
         Me.btnmekaping.BackColor = System.Drawing.Color.SeaGreen
         Me.btnmekaping.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmekaping.Location = New System.Drawing.Point(328, 337)
-        Me.btnmekaping.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnmekaping.Location = New System.Drawing.Point(437, 415)
+        Me.btnmekaping.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmekaping.Name = "btnmekaping"
-        Me.btnmekaping.Size = New System.Drawing.Size(88, 38)
+        Me.btnmekaping.Size = New System.Drawing.Size(117, 47)
         Me.btnmekaping.TabIndex = 2
         Me.btnmekaping.Text = "Check"
         Me.btnmekaping.UseVisualStyleBackColor = False
@@ -3999,8 +4160,8 @@ Partial Class coolBlue
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(160, 141)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox3.Location = New System.Drawing.Point(213, 174)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4012,28 +4173,28 @@ Partial Class coolBlue
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Snow
-        Me.Label1.Location = New System.Drawing.Point(194, 149)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(259, 183)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 19)
+        Me.Label1.Size = New System.Drawing.Size(90, 23)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "IP Address"
         '
         'txtIp
         '
-        Me.txtIp.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txtIp.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.txtIp.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIp.ForeColor = System.Drawing.Color.LawnGreen
-        Me.txtIp.Location = New System.Drawing.Point(271, 145)
-        Me.txtIp.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIp.Location = New System.Drawing.Point(361, 178)
+        Me.txtIp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtIp.Multiline = True
         Me.txtIp.Name = "txtIp"
         Me.txtIp.ReadOnly = True
-        Me.txtIp.Size = New System.Drawing.Size(119, 27)
+        Me.txtIp.Size = New System.Drawing.Size(157, 32)
         Me.txtIp.TabIndex = 13
         '
         'pnlHik2
         '
+        Me.pnlHik2.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.pnlHik2.Controls.Add(Me.PictureBox5)
         Me.pnlHik2.Controls.Add(Me.Label3)
         Me.pnlHik2.Controls.Add(Me.PictureBox6)
@@ -4043,7 +4204,7 @@ Partial Class coolBlue
         Me.pnlHik2.Controls.Add(Me.PictureBox9)
         Me.pnlHik2.Controls.Add(Me.PictureBox10)
         Me.pnlHik2.Controls.Add(Me.PictureBox11)
-        Me.pnlHik2.Controls.Add(Me.picHik34)
+        Me.pnlHik2.Controls.Add(Me.picHikv25)
         Me.pnlHik2.Controls.Add(Me.picHikv24)
         Me.pnlHik2.Controls.Add(Me.picHikv23)
         Me.pnlHik2.Controls.Add(Me.picHikv22)
@@ -4070,7 +4231,7 @@ Partial Class coolBlue
         Me.pnlHik2.Controls.Add(Me.picHikv1)
         Me.pnlHik2.Controls.Add(Me.Label5)
         Me.pnlHik2.Controls.Add(Me.Label6)
-        Me.pnlHik2.Controls.Add(Me.lblHik34)
+        Me.pnlHik2.Controls.Add(Me.lblHik25)
         Me.pnlHik2.Controls.Add(Me.Label8)
         Me.pnlHik2.Controls.Add(Me.Label9)
         Me.pnlHik2.Controls.Add(Me.lblHik23)
@@ -4099,16 +4260,16 @@ Partial Class coolBlue
         Me.pnlHik2.Controls.Add(Me.lblHik3)
         Me.pnlHik2.Controls.Add(Me.lblHik2)
         Me.pnlHik2.Controls.Add(Me.lblHik1)
-        Me.pnlHik2.Location = New System.Drawing.Point(9, 236)
-        Me.pnlHik2.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlHik2.Location = New System.Drawing.Point(12, 290)
+        Me.pnlHik2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlHik2.Name = "pnlHik2"
-        Me.pnlHik2.Size = New System.Drawing.Size(780, 396)
+        Me.pnlHik2.Size = New System.Drawing.Size(1040, 487)
         Me.pnlHik2.TabIndex = 126
         '
         'PictureBox5
         '
-        Me.PictureBox5.Location = New System.Drawing.Point(551, 224)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox5.Location = New System.Drawing.Point(735, 276)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4120,16 +4281,15 @@ Partial Class coolBlue
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(584, 223)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(779, 274)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(0, 21)
+        Me.Label3.Size = New System.Drawing.Size(0, 28)
         Me.Label3.TabIndex = 189
         '
         'PictureBox6
         '
-        Me.PictureBox6.Location = New System.Drawing.Point(551, 194)
-        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox6.Location = New System.Drawing.Point(735, 239)
+        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4141,16 +4301,15 @@ Partial Class coolBlue
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(584, 193)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(779, 238)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(0, 21)
+        Me.Label4.Size = New System.Drawing.Size(0, 28)
         Me.Label4.TabIndex = 187
         '
         'PictureBox7
         '
-        Me.PictureBox7.Location = New System.Drawing.Point(551, 136)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox7.Location = New System.Drawing.Point(735, 167)
+        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4159,8 +4318,8 @@ Partial Class coolBlue
         '
         'PictureBox8
         '
-        Me.PictureBox8.Location = New System.Drawing.Point(551, 165)
-        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox8.Location = New System.Drawing.Point(735, 203)
+        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4169,8 +4328,8 @@ Partial Class coolBlue
         '
         'PictureBox9
         '
-        Me.PictureBox9.Location = New System.Drawing.Point(551, 107)
-        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox9.Location = New System.Drawing.Point(735, 132)
+        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4179,8 +4338,8 @@ Partial Class coolBlue
         '
         'PictureBox10
         '
-        Me.PictureBox10.Location = New System.Drawing.Point(551, 80)
-        Me.PictureBox10.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox10.Location = New System.Drawing.Point(735, 98)
+        Me.PictureBox10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4189,28 +4348,28 @@ Partial Class coolBlue
         '
         'PictureBox11
         '
-        Me.PictureBox11.Location = New System.Drawing.Point(551, 52)
-        Me.PictureBox11.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox11.Location = New System.Drawing.Point(735, 64)
+        Me.PictureBox11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox11.TabIndex = 182
         Me.PictureBox11.TabStop = False
         '
-        'picHik34
+        'picHikv25
         '
-        Me.picHik34.Location = New System.Drawing.Point(551, 23)
-        Me.picHik34.Margin = New System.Windows.Forms.Padding(2)
-        Me.picHik34.Name = "picHik34"
-        Me.picHik34.Size = New System.Drawing.Size(33, 29)
-        Me.picHik34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.picHik34.TabIndex = 181
-        Me.picHik34.TabStop = False
+        Me.picHikv25.Location = New System.Drawing.Point(735, 28)
+        Me.picHikv25.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picHikv25.Name = "picHikv25"
+        Me.picHikv25.Size = New System.Drawing.Size(33, 29)
+        Me.picHikv25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picHikv25.TabIndex = 181
+        Me.picHikv25.TabStop = False
         '
         'picHikv24
         '
-        Me.picHikv24.Location = New System.Drawing.Point(301, 342)
-        Me.picHikv24.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv24.Location = New System.Drawing.Point(401, 421)
+        Me.picHikv24.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv24.Name = "picHikv24"
         Me.picHikv24.Size = New System.Drawing.Size(33, 29)
         Me.picHikv24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4219,8 +4378,8 @@ Partial Class coolBlue
         '
         'picHikv23
         '
-        Me.picHikv23.Location = New System.Drawing.Point(301, 314)
-        Me.picHikv23.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv23.Location = New System.Drawing.Point(401, 386)
+        Me.picHikv23.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv23.Name = "picHikv23"
         Me.picHikv23.Size = New System.Drawing.Size(33, 29)
         Me.picHikv23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4229,8 +4388,8 @@ Partial Class coolBlue
         '
         'picHikv22
         '
-        Me.picHikv22.Location = New System.Drawing.Point(301, 285)
-        Me.picHikv22.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv22.Location = New System.Drawing.Point(401, 351)
+        Me.picHikv22.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv22.Name = "picHikv22"
         Me.picHikv22.Size = New System.Drawing.Size(33, 29)
         Me.picHikv22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4239,8 +4398,8 @@ Partial Class coolBlue
         '
         'picHikv21
         '
-        Me.picHikv21.Location = New System.Drawing.Point(301, 257)
-        Me.picHikv21.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv21.Location = New System.Drawing.Point(401, 316)
+        Me.picHikv21.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv21.Name = "picHikv21"
         Me.picHikv21.Size = New System.Drawing.Size(33, 29)
         Me.picHikv21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4249,8 +4408,8 @@ Partial Class coolBlue
         '
         'picHikv20
         '
-        Me.picHikv20.Location = New System.Drawing.Point(301, 228)
-        Me.picHikv20.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv20.Location = New System.Drawing.Point(401, 281)
+        Me.picHikv20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv20.Name = "picHikv20"
         Me.picHikv20.Size = New System.Drawing.Size(33, 29)
         Me.picHikv20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4259,8 +4418,8 @@ Partial Class coolBlue
         '
         'picHikv19
         '
-        Me.picHikv19.Location = New System.Drawing.Point(301, 199)
-        Me.picHikv19.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv19.Location = New System.Drawing.Point(401, 245)
+        Me.picHikv19.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv19.Name = "picHikv19"
         Me.picHikv19.Size = New System.Drawing.Size(33, 29)
         Me.picHikv19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4269,8 +4428,8 @@ Partial Class coolBlue
         '
         'picHikv18
         '
-        Me.picHikv18.Location = New System.Drawing.Point(301, 170)
-        Me.picHikv18.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv18.Location = New System.Drawing.Point(401, 209)
+        Me.picHikv18.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv18.Name = "picHikv18"
         Me.picHikv18.Size = New System.Drawing.Size(33, 29)
         Me.picHikv18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4279,8 +4438,8 @@ Partial Class coolBlue
         '
         'picHikv17
         '
-        Me.picHikv17.Location = New System.Drawing.Point(301, 141)
-        Me.picHikv17.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv17.Location = New System.Drawing.Point(401, 174)
+        Me.picHikv17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv17.Name = "picHikv17"
         Me.picHikv17.Size = New System.Drawing.Size(33, 29)
         Me.picHikv17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4289,8 +4448,8 @@ Partial Class coolBlue
         '
         'picHikv16
         '
-        Me.picHikv16.Location = New System.Drawing.Point(301, 110)
-        Me.picHikv16.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv16.Location = New System.Drawing.Point(401, 135)
+        Me.picHikv16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv16.Name = "picHikv16"
         Me.picHikv16.Size = New System.Drawing.Size(33, 29)
         Me.picHikv16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4299,8 +4458,8 @@ Partial Class coolBlue
         '
         'picHikv15
         '
-        Me.picHikv15.Location = New System.Drawing.Point(301, 82)
-        Me.picHikv15.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv15.Location = New System.Drawing.Point(401, 101)
+        Me.picHikv15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv15.Name = "picHikv15"
         Me.picHikv15.Size = New System.Drawing.Size(33, 29)
         Me.picHikv15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4309,8 +4468,8 @@ Partial Class coolBlue
         '
         'picHikv14
         '
-        Me.picHikv14.Location = New System.Drawing.Point(301, 54)
-        Me.picHikv14.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv14.Location = New System.Drawing.Point(401, 66)
+        Me.picHikv14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv14.Name = "picHikv14"
         Me.picHikv14.Size = New System.Drawing.Size(33, 29)
         Me.picHikv14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4319,8 +4478,8 @@ Partial Class coolBlue
         '
         'picHikv13
         '
-        Me.picHikv13.Location = New System.Drawing.Point(301, 26)
-        Me.picHikv13.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv13.Location = New System.Drawing.Point(401, 32)
+        Me.picHikv13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv13.Name = "picHikv13"
         Me.picHikv13.Size = New System.Drawing.Size(33, 29)
         Me.picHikv13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4329,8 +4488,8 @@ Partial Class coolBlue
         '
         'picHikv12
         '
-        Me.picHikv12.Location = New System.Drawing.Point(34, 339)
-        Me.picHikv12.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv12.Location = New System.Drawing.Point(45, 417)
+        Me.picHikv12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv12.Name = "picHikv12"
         Me.picHikv12.Size = New System.Drawing.Size(33, 29)
         Me.picHikv12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4339,8 +4498,8 @@ Partial Class coolBlue
         '
         'picHikv11
         '
-        Me.picHikv11.Location = New System.Drawing.Point(34, 310)
-        Me.picHikv11.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv11.Location = New System.Drawing.Point(45, 382)
+        Me.picHikv11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv11.Name = "picHikv11"
         Me.picHikv11.Size = New System.Drawing.Size(33, 29)
         Me.picHikv11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4349,8 +4508,8 @@ Partial Class coolBlue
         '
         'picHikv10
         '
-        Me.picHikv10.Location = New System.Drawing.Point(34, 282)
-        Me.picHikv10.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv10.Location = New System.Drawing.Point(45, 347)
+        Me.picHikv10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv10.Name = "picHikv10"
         Me.picHikv10.Size = New System.Drawing.Size(33, 29)
         Me.picHikv10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4359,8 +4518,8 @@ Partial Class coolBlue
         '
         'picHikv9
         '
-        Me.picHikv9.Location = New System.Drawing.Point(34, 254)
-        Me.picHikv9.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv9.Location = New System.Drawing.Point(45, 313)
+        Me.picHikv9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv9.Name = "picHikv9"
         Me.picHikv9.Size = New System.Drawing.Size(33, 29)
         Me.picHikv9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4369,8 +4528,8 @@ Partial Class coolBlue
         '
         'picHikv8
         '
-        Me.picHikv8.Location = New System.Drawing.Point(34, 224)
-        Me.picHikv8.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv8.Location = New System.Drawing.Point(45, 276)
+        Me.picHikv8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv8.Name = "picHikv8"
         Me.picHikv8.Size = New System.Drawing.Size(33, 29)
         Me.picHikv8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4379,8 +4538,8 @@ Partial Class coolBlue
         '
         'picHikv7
         '
-        Me.picHikv7.Location = New System.Drawing.Point(34, 197)
-        Me.picHikv7.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv7.Location = New System.Drawing.Point(45, 242)
+        Me.picHikv7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv7.Name = "picHikv7"
         Me.picHikv7.Size = New System.Drawing.Size(33, 29)
         Me.picHikv7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4389,8 +4548,8 @@ Partial Class coolBlue
         '
         'picHikv6
         '
-        Me.picHikv6.Location = New System.Drawing.Point(34, 169)
-        Me.picHikv6.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv6.Location = New System.Drawing.Point(45, 208)
+        Me.picHikv6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv6.Name = "picHikv6"
         Me.picHikv6.Size = New System.Drawing.Size(33, 29)
         Me.picHikv6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4399,8 +4558,8 @@ Partial Class coolBlue
         '
         'picHikv5
         '
-        Me.picHikv5.Location = New System.Drawing.Point(34, 140)
-        Me.picHikv5.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv5.Location = New System.Drawing.Point(45, 172)
+        Me.picHikv5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv5.Name = "picHikv5"
         Me.picHikv5.Size = New System.Drawing.Size(33, 29)
         Me.picHikv5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4409,8 +4568,8 @@ Partial Class coolBlue
         '
         'picHikv4
         '
-        Me.picHikv4.Location = New System.Drawing.Point(34, 111)
-        Me.picHikv4.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv4.Location = New System.Drawing.Point(45, 137)
+        Me.picHikv4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv4.Name = "picHikv4"
         Me.picHikv4.Size = New System.Drawing.Size(33, 29)
         Me.picHikv4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4419,8 +4578,8 @@ Partial Class coolBlue
         '
         'picHikv3
         '
-        Me.picHikv3.Location = New System.Drawing.Point(34, 83)
-        Me.picHikv3.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv3.Location = New System.Drawing.Point(45, 102)
+        Me.picHikv3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv3.Name = "picHikv3"
         Me.picHikv3.Size = New System.Drawing.Size(33, 29)
         Me.picHikv3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4429,8 +4588,8 @@ Partial Class coolBlue
         '
         'picHikv2
         '
-        Me.picHikv2.Location = New System.Drawing.Point(34, 54)
-        Me.picHikv2.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv2.Location = New System.Drawing.Point(45, 66)
+        Me.picHikv2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv2.Name = "picHikv2"
         Me.picHikv2.Size = New System.Drawing.Size(33, 29)
         Me.picHikv2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4439,8 +4598,8 @@ Partial Class coolBlue
         '
         'picHikv1
         '
-        Me.picHikv1.Location = New System.Drawing.Point(34, 26)
-        Me.picHikv1.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHikv1.Location = New System.Drawing.Point(45, 32)
+        Me.picHikv1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picHikv1.Name = "picHikv1"
         Me.picHikv1.Size = New System.Drawing.Size(33, 29)
         Me.picHikv1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4452,10 +4611,9 @@ Partial Class coolBlue
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(584, 163)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(779, 201)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(0, 21)
+        Me.Label5.Size = New System.Drawing.Size(0, 28)
         Me.Label5.TabIndex = 156
         '
         'Label6
@@ -4463,32 +4621,29 @@ Partial Class coolBlue
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(584, 136)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(779, 167)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(0, 21)
+        Me.Label6.Size = New System.Drawing.Size(0, 28)
         Me.Label6.TabIndex = 155
         '
-        'lblHik34
+        'lblHik25
         '
-        Me.lblHik34.AutoSize = True
-        Me.lblHik34.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHik34.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik34.Location = New System.Drawing.Point(584, 24)
-        Me.lblHik34.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblHik34.Name = "lblHik34"
-        Me.lblHik34.Size = New System.Drawing.Size(0, 21)
-        Me.lblHik34.TabIndex = 154
+        Me.lblHik25.AutoSize = True
+        Me.lblHik25.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHik25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblHik25.Location = New System.Drawing.Point(784, 30)
+        Me.lblHik25.Name = "lblHik25"
+        Me.lblHik25.Size = New System.Drawing.Size(0, 28)
+        Me.lblHik25.TabIndex = 154
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(584, 53)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(779, 65)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(0, 21)
+        Me.Label8.Size = New System.Drawing.Size(0, 28)
         Me.Label8.TabIndex = 153
         '
         'Label9
@@ -4496,10 +4651,9 @@ Partial Class coolBlue
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(584, 107)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(779, 132)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(0, 21)
+        Me.Label9.Size = New System.Drawing.Size(0, 28)
         Me.Label9.TabIndex = 152
         '
         'lblHik23
@@ -4507,10 +4661,9 @@ Partial Class coolBlue
         Me.lblHik23.AutoSize = True
         Me.lblHik23.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik23.Location = New System.Drawing.Point(340, 315)
-        Me.lblHik23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik23.Location = New System.Drawing.Point(453, 388)
         Me.lblHik23.Name = "lblHik23"
-        Me.lblHik23.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik23.Size = New System.Drawing.Size(0, 28)
         Me.lblHik23.TabIndex = 151
         '
         'Label11
@@ -4518,10 +4671,9 @@ Partial Class coolBlue
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(584, 80)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Location = New System.Drawing.Point(779, 98)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(0, 21)
+        Me.Label11.Size = New System.Drawing.Size(0, 28)
         Me.Label11.TabIndex = 150
         '
         'lblHik24
@@ -4529,10 +4681,9 @@ Partial Class coolBlue
         Me.lblHik24.AutoSize = True
         Me.lblHik24.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik24.Location = New System.Drawing.Point(340, 344)
-        Me.lblHik24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik24.Location = New System.Drawing.Point(453, 423)
         Me.lblHik24.Name = "lblHik24"
-        Me.lblHik24.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik24.Size = New System.Drawing.Size(0, 28)
         Me.lblHik24.TabIndex = 149
         '
         'lblHik20
@@ -4540,10 +4691,9 @@ Partial Class coolBlue
         Me.lblHik20.AutoSize = True
         Me.lblHik20.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik20.Location = New System.Drawing.Point(340, 228)
-        Me.lblHik20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik20.Location = New System.Drawing.Point(453, 281)
         Me.lblHik20.Name = "lblHik20"
-        Me.lblHik20.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik20.Size = New System.Drawing.Size(0, 28)
         Me.lblHik20.TabIndex = 148
         '
         'lblHik22
@@ -4551,10 +4701,9 @@ Partial Class coolBlue
         Me.lblHik22.AutoSize = True
         Me.lblHik22.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik22.Location = New System.Drawing.Point(340, 286)
-        Me.lblHik22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik22.Location = New System.Drawing.Point(453, 352)
         Me.lblHik22.Name = "lblHik22"
-        Me.lblHik22.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik22.Size = New System.Drawing.Size(0, 28)
         Me.lblHik22.TabIndex = 147
         '
         'lblHik21
@@ -4562,10 +4711,9 @@ Partial Class coolBlue
         Me.lblHik21.AutoSize = True
         Me.lblHik21.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik21.Location = New System.Drawing.Point(340, 257)
-        Me.lblHik21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik21.Location = New System.Drawing.Point(453, 316)
         Me.lblHik21.Name = "lblHik21"
-        Me.lblHik21.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik21.Size = New System.Drawing.Size(0, 28)
         Me.lblHik21.TabIndex = 146
         '
         'lblHik19
@@ -4573,10 +4721,9 @@ Partial Class coolBlue
         Me.lblHik19.AutoSize = True
         Me.lblHik19.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik19.Location = New System.Drawing.Point(340, 198)
-        Me.lblHik19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik19.Location = New System.Drawing.Point(453, 244)
         Me.lblHik19.Name = "lblHik19"
-        Me.lblHik19.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik19.Size = New System.Drawing.Size(0, 28)
         Me.lblHik19.TabIndex = 145
         '
         'lblHik18
@@ -4584,10 +4731,9 @@ Partial Class coolBlue
         Me.lblHik18.AutoSize = True
         Me.lblHik18.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik18.Location = New System.Drawing.Point(340, 169)
-        Me.lblHik18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik18.Location = New System.Drawing.Point(453, 208)
         Me.lblHik18.Name = "lblHik18"
-        Me.lblHik18.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik18.Size = New System.Drawing.Size(0, 28)
         Me.lblHik18.TabIndex = 144
         '
         'lblHik17
@@ -4595,10 +4741,9 @@ Partial Class coolBlue
         Me.lblHik17.AutoSize = True
         Me.lblHik17.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik17.Location = New System.Drawing.Point(340, 140)
-        Me.lblHik17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik17.Location = New System.Drawing.Point(453, 172)
         Me.lblHik17.Name = "lblHik17"
-        Me.lblHik17.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik17.Size = New System.Drawing.Size(0, 28)
         Me.lblHik17.TabIndex = 143
         '
         'lblHik16
@@ -4606,10 +4751,9 @@ Partial Class coolBlue
         Me.lblHik16.AutoSize = True
         Me.lblHik16.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik16.Location = New System.Drawing.Point(340, 110)
-        Me.lblHik16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik16.Location = New System.Drawing.Point(453, 135)
         Me.lblHik16.Name = "lblHik16"
-        Me.lblHik16.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik16.Size = New System.Drawing.Size(0, 28)
         Me.lblHik16.TabIndex = 142
         '
         'lblHik15
@@ -4617,10 +4761,9 @@ Partial Class coolBlue
         Me.lblHik15.AutoSize = True
         Me.lblHik15.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik15.Location = New System.Drawing.Point(340, 81)
-        Me.lblHik15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik15.Location = New System.Drawing.Point(453, 100)
         Me.lblHik15.Name = "lblHik15"
-        Me.lblHik15.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik15.Size = New System.Drawing.Size(0, 28)
         Me.lblHik15.TabIndex = 141
         '
         'lblHik14
@@ -4628,10 +4771,9 @@ Partial Class coolBlue
         Me.lblHik14.AutoSize = True
         Me.lblHik14.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik14.Location = New System.Drawing.Point(340, 52)
-        Me.lblHik14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik14.Location = New System.Drawing.Point(453, 64)
         Me.lblHik14.Name = "lblHik14"
-        Me.lblHik14.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik14.Size = New System.Drawing.Size(0, 28)
         Me.lblHik14.TabIndex = 140
         '
         'lblHik13
@@ -4639,10 +4781,9 @@ Partial Class coolBlue
         Me.lblHik13.AutoSize = True
         Me.lblHik13.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik13.Location = New System.Drawing.Point(340, 23)
-        Me.lblHik13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik13.Location = New System.Drawing.Point(453, 28)
         Me.lblHik13.Name = "lblHik13"
-        Me.lblHik13.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik13.Size = New System.Drawing.Size(0, 28)
         Me.lblHik13.TabIndex = 139
         '
         'lblHik12
@@ -4650,10 +4791,9 @@ Partial Class coolBlue
         Me.lblHik12.AutoSize = True
         Me.lblHik12.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik12.Location = New System.Drawing.Point(67, 344)
-        Me.lblHik12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik12.Location = New System.Drawing.Point(89, 423)
         Me.lblHik12.Name = "lblHik12"
-        Me.lblHik12.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik12.Size = New System.Drawing.Size(0, 28)
         Me.lblHik12.TabIndex = 138
         '
         'lblHik11
@@ -4661,10 +4801,9 @@ Partial Class coolBlue
         Me.lblHik11.AutoSize = True
         Me.lblHik11.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik11.Location = New System.Drawing.Point(67, 315)
-        Me.lblHik11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik11.Location = New System.Drawing.Point(89, 388)
         Me.lblHik11.Name = "lblHik11"
-        Me.lblHik11.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik11.Size = New System.Drawing.Size(0, 28)
         Me.lblHik11.TabIndex = 137
         '
         'lblHik10
@@ -4672,10 +4811,9 @@ Partial Class coolBlue
         Me.lblHik10.AutoSize = True
         Me.lblHik10.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik10.Location = New System.Drawing.Point(67, 286)
-        Me.lblHik10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik10.Location = New System.Drawing.Point(89, 352)
         Me.lblHik10.Name = "lblHik10"
-        Me.lblHik10.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik10.Size = New System.Drawing.Size(0, 28)
         Me.lblHik10.TabIndex = 135
         '
         'lblHik9
@@ -4683,10 +4821,9 @@ Partial Class coolBlue
         Me.lblHik9.AutoSize = True
         Me.lblHik9.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik9.Location = New System.Drawing.Point(67, 257)
-        Me.lblHik9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik9.Location = New System.Drawing.Point(89, 316)
         Me.lblHik9.Name = "lblHik9"
-        Me.lblHik9.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik9.Size = New System.Drawing.Size(0, 28)
         Me.lblHik9.TabIndex = 134
         '
         'lblHik8
@@ -4694,10 +4831,9 @@ Partial Class coolBlue
         Me.lblHik8.AutoSize = True
         Me.lblHik8.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik8.Location = New System.Drawing.Point(67, 228)
-        Me.lblHik8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik8.Location = New System.Drawing.Point(89, 281)
         Me.lblHik8.Name = "lblHik8"
-        Me.lblHik8.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik8.Size = New System.Drawing.Size(0, 28)
         Me.lblHik8.TabIndex = 133
         '
         'lblHik7
@@ -4705,10 +4841,9 @@ Partial Class coolBlue
         Me.lblHik7.AutoSize = True
         Me.lblHik7.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik7.Location = New System.Drawing.Point(67, 198)
-        Me.lblHik7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik7.Location = New System.Drawing.Point(89, 244)
         Me.lblHik7.Name = "lblHik7"
-        Me.lblHik7.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik7.Size = New System.Drawing.Size(0, 28)
         Me.lblHik7.TabIndex = 132
         '
         'lblHik6
@@ -4716,10 +4851,9 @@ Partial Class coolBlue
         Me.lblHik6.AutoSize = True
         Me.lblHik6.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik6.Location = New System.Drawing.Point(67, 169)
-        Me.lblHik6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik6.Location = New System.Drawing.Point(89, 208)
         Me.lblHik6.Name = "lblHik6"
-        Me.lblHik6.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik6.Size = New System.Drawing.Size(0, 28)
         Me.lblHik6.TabIndex = 131
         '
         'lblHik5
@@ -4727,10 +4861,9 @@ Partial Class coolBlue
         Me.lblHik5.AutoSize = True
         Me.lblHik5.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik5.Location = New System.Drawing.Point(67, 140)
-        Me.lblHik5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik5.Location = New System.Drawing.Point(89, 172)
         Me.lblHik5.Name = "lblHik5"
-        Me.lblHik5.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik5.Size = New System.Drawing.Size(0, 28)
         Me.lblHik5.TabIndex = 130
         '
         'lblHik4
@@ -4738,10 +4871,9 @@ Partial Class coolBlue
         Me.lblHik4.AutoSize = True
         Me.lblHik4.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik4.Location = New System.Drawing.Point(67, 110)
-        Me.lblHik4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik4.Location = New System.Drawing.Point(89, 135)
         Me.lblHik4.Name = "lblHik4"
-        Me.lblHik4.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik4.Size = New System.Drawing.Size(0, 28)
         Me.lblHik4.TabIndex = 129
         '
         'lblHik3
@@ -4749,10 +4881,9 @@ Partial Class coolBlue
         Me.lblHik3.AutoSize = True
         Me.lblHik3.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik3.Location = New System.Drawing.Point(67, 81)
-        Me.lblHik3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik3.Location = New System.Drawing.Point(89, 100)
         Me.lblHik3.Name = "lblHik3"
-        Me.lblHik3.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik3.Size = New System.Drawing.Size(0, 28)
         Me.lblHik3.TabIndex = 128
         '
         'lblHik2
@@ -4760,10 +4891,9 @@ Partial Class coolBlue
         Me.lblHik2.AutoSize = True
         Me.lblHik2.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHik2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblHik2.Location = New System.Drawing.Point(67, 52)
-        Me.lblHik2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHik2.Location = New System.Drawing.Point(89, 64)
         Me.lblHik2.Name = "lblHik2"
-        Me.lblHik2.Size = New System.Drawing.Size(0, 21)
+        Me.lblHik2.Size = New System.Drawing.Size(0, 28)
         Me.lblHik2.TabIndex = 127
         '
         'pingTimer
@@ -4773,8 +4903,8 @@ Partial Class coolBlue
         'picLogo
         '
         Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
-        Me.picLogo.Location = New System.Drawing.Point(30, 77)
-        Me.picLogo.Margin = New System.Windows.Forms.Padding(2)
+        Me.picLogo.Location = New System.Drawing.Point(40, 95)
+        Me.picLogo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(104, 67)
         Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4784,8 +4914,8 @@ Partial Class coolBlue
         'picSetting
         '
         Me.picSetting.Image = Global.CoolBlueColor.My.Resources.Resources._409_tool_lineal__4_
-        Me.picSetting.Location = New System.Drawing.Point(38, 84)
-        Me.picSetting.Margin = New System.Windows.Forms.Padding(2)
+        Me.picSetting.Location = New System.Drawing.Point(51, 103)
+        Me.picSetting.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picSetting.Name = "picSetting"
         Me.picSetting.Size = New System.Drawing.Size(50, 50)
         Me.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -4794,7 +4924,7 @@ Partial Class coolBlue
         '
         'pnlBackup
         '
-        Me.pnlBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.pnlBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.pnlBackup.Controls.Add(Me.btnTransave)
         Me.pnlBackup.Controls.Add(Me.btnTans)
         Me.pnlBackup.Controls.Add(Me.lblTranBackup)
@@ -4812,20 +4942,20 @@ Partial Class coolBlue
         Me.pnlBackup.Controls.Add(Me.txtBackup2)
         Me.pnlBackup.Controls.Add(Me.txtBackup1)
         Me.pnlBackup.ForeColor = System.Drawing.Color.Transparent
-        Me.pnlBackup.Location = New System.Drawing.Point(11, 234)
-        Me.pnlBackup.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnlBackup.Location = New System.Drawing.Point(15, 288)
+        Me.pnlBackup.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlBackup.Name = "pnlBackup"
-        Me.pnlBackup.Size = New System.Drawing.Size(780, 396)
+        Me.pnlBackup.Size = New System.Drawing.Size(1040, 487)
         Me.pnlBackup.TabIndex = 126
         '
         'btnTransave
         '
         Me.btnTransave.BackColor = System.Drawing.Color.ForestGreen
         Me.btnTransave.ForeColor = System.Drawing.Color.Ivory
-        Me.btnTransave.Location = New System.Drawing.Point(565, 176)
-        Me.btnTransave.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnTransave.Location = New System.Drawing.Point(753, 217)
+        Me.btnTransave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTransave.Name = "btnTransave"
-        Me.btnTransave.Size = New System.Drawing.Size(57, 28)
+        Me.btnTransave.Size = New System.Drawing.Size(76, 34)
         Me.btnTransave.TabIndex = 87
         Me.btnTransave.Text = "Save"
         Me.btnTransave.UseVisualStyleBackColor = False
@@ -4834,10 +4964,10 @@ Partial Class coolBlue
         '
         Me.btnTans.BackColor = System.Drawing.Color.ForestGreen
         Me.btnTans.ForeColor = System.Drawing.Color.Ivory
-        Me.btnTans.Location = New System.Drawing.Point(481, 177)
-        Me.btnTans.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnTans.Location = New System.Drawing.Point(641, 218)
+        Me.btnTans.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTans.Name = "btnTans"
-        Me.btnTans.Size = New System.Drawing.Size(57, 28)
+        Me.btnTans.Size = New System.Drawing.Size(76, 34)
         Me.btnTans.TabIndex = 86
         Me.btnTans.Text = "Edit"
         Me.btnTans.UseVisualStyleBackColor = False
@@ -4846,10 +4976,9 @@ Partial Class coolBlue
         '
         Me.lblTranBackup.AutoSize = True
         Me.lblTranBackup.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranBackup.Location = New System.Drawing.Point(31, 185)
-        Me.lblTranBackup.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTranBackup.Location = New System.Drawing.Point(41, 228)
         Me.lblTranBackup.Name = "lblTranBackup"
-        Me.lblTranBackup.Size = New System.Drawing.Size(114, 19)
+        Me.lblTranBackup.Size = New System.Drawing.Size(138, 23)
         Me.lblTranBackup.TabIndex = 85
         Me.lblTranBackup.Text = "Transport Backup"
         '
@@ -4857,10 +4986,10 @@ Partial Class coolBlue
         '
         Me.btnQcsave.BackColor = System.Drawing.Color.ForestGreen
         Me.btnQcsave.ForeColor = System.Drawing.Color.Ivory
-        Me.btnQcsave.Location = New System.Drawing.Point(565, 130)
-        Me.btnQcsave.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnQcsave.Location = New System.Drawing.Point(753, 160)
+        Me.btnQcsave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnQcsave.Name = "btnQcsave"
-        Me.btnQcsave.Size = New System.Drawing.Size(57, 28)
+        Me.btnQcsave.Size = New System.Drawing.Size(76, 34)
         Me.btnQcsave.TabIndex = 83
         Me.btnQcsave.Text = "Save"
         Me.btnQcsave.UseVisualStyleBackColor = False
@@ -4869,10 +4998,10 @@ Partial Class coolBlue
         '
         Me.btnQcedit.BackColor = System.Drawing.Color.ForestGreen
         Me.btnQcedit.ForeColor = System.Drawing.Color.Ivory
-        Me.btnQcedit.Location = New System.Drawing.Point(481, 131)
-        Me.btnQcedit.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnQcedit.Location = New System.Drawing.Point(641, 161)
+        Me.btnQcedit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnQcedit.Name = "btnQcedit"
-        Me.btnQcedit.Size = New System.Drawing.Size(57, 28)
+        Me.btnQcedit.Size = New System.Drawing.Size(76, 34)
         Me.btnQcedit.TabIndex = 82
         Me.btnQcedit.Text = "Edit"
         Me.btnQcedit.UseVisualStyleBackColor = False
@@ -4881,10 +5010,9 @@ Partial Class coolBlue
         '
         Me.lblQC.AutoSize = True
         Me.lblQC.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQC.Location = New System.Drawing.Point(31, 139)
-        Me.lblQC.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblQC.Location = New System.Drawing.Point(41, 171)
         Me.lblQC.Name = "lblQC"
-        Me.lblQC.Size = New System.Drawing.Size(103, 19)
+        Me.lblQC.Size = New System.Drawing.Size(123, 23)
         Me.lblQC.TabIndex = 81
         Me.lblQC.Text = "QA-QC Backup"
         '
@@ -4892,10 +5020,10 @@ Partial Class coolBlue
         '
         Me.Button3.BackColor = System.Drawing.Color.ForestGreen
         Me.Button3.ForeColor = System.Drawing.Color.Ivory
-        Me.Button3.Location = New System.Drawing.Point(565, 79)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button3.Location = New System.Drawing.Point(753, 97)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(57, 28)
+        Me.Button3.Size = New System.Drawing.Size(76, 34)
         Me.Button3.TabIndex = 79
         Me.Button3.Text = "Save"
         Me.Button3.UseVisualStyleBackColor = False
@@ -4904,10 +5032,10 @@ Partial Class coolBlue
         '
         Me.Button4.BackColor = System.Drawing.Color.ForestGreen
         Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(565, 29)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button4.Location = New System.Drawing.Point(753, 36)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(57, 26)
+        Me.Button4.Size = New System.Drawing.Size(76, 32)
         Me.Button4.TabIndex = 78
         Me.Button4.Text = "Save"
         Me.Button4.UseVisualStyleBackColor = False
@@ -4916,10 +5044,10 @@ Partial Class coolBlue
         '
         Me.Button2.BackColor = System.Drawing.Color.ForestGreen
         Me.Button2.ForeColor = System.Drawing.Color.Ivory
-        Me.Button2.Location = New System.Drawing.Point(481, 80)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Location = New System.Drawing.Point(641, 98)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(57, 28)
+        Me.Button2.Size = New System.Drawing.Size(76, 34)
         Me.Button2.TabIndex = 77
         Me.Button2.Text = "Edit"
         Me.Button2.UseVisualStyleBackColor = False
@@ -4928,10 +5056,10 @@ Partial Class coolBlue
         '
         Me.Button1.BackColor = System.Drawing.Color.ForestGreen
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(481, 29)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Location = New System.Drawing.Point(641, 36)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(57, 26)
+        Me.Button1.Size = New System.Drawing.Size(76, 32)
         Me.Button1.TabIndex = 76
         Me.Button1.Text = "Edit"
         Me.Button1.UseVisualStyleBackColor = False
@@ -4940,10 +5068,9 @@ Partial Class coolBlue
         '
         Me.lblRMSbackup.AutoSize = True
         Me.lblRMSbackup.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRMSbackup.Location = New System.Drawing.Point(31, 88)
-        Me.lblRMSbackup.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRMSbackup.Location = New System.Drawing.Point(41, 108)
         Me.lblRMSbackup.Name = "lblRMSbackup"
-        Me.lblRMSbackup.Size = New System.Drawing.Size(84, 19)
+        Me.lblRMSbackup.Size = New System.Drawing.Size(102, 23)
         Me.lblRMSbackup.TabIndex = 75
         Me.lblRMSbackup.Text = "RMS Backup"
         '
@@ -4951,10 +5078,9 @@ Partial Class coolBlue
         '
         Me.lblDieselbackup.AutoSize = True
         Me.lblDieselbackup.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDieselbackup.Location = New System.Drawing.Point(31, 38)
-        Me.lblDieselbackup.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblDieselbackup.Location = New System.Drawing.Point(41, 47)
         Me.lblDieselbackup.Name = "lblDieselbackup"
-        Me.lblDieselbackup.Size = New System.Drawing.Size(93, 19)
+        Me.lblDieselbackup.Size = New System.Drawing.Size(113, 23)
         Me.lblDieselbackup.TabIndex = 74
         Me.lblDieselbackup.Text = "Diesel Backup"
         '
@@ -4962,10 +5088,10 @@ Partial Class coolBlue
         '
         Me.txtBackup2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtBackup2.Enabled = False
-        Me.txtBackup2.Location = New System.Drawing.Point(142, 86)
-        Me.txtBackup2.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBackup2.Location = New System.Drawing.Point(189, 106)
+        Me.txtBackup2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBackup2.Name = "txtBackup2"
-        Me.txtBackup2.Size = New System.Drawing.Size(320, 20)
+        Me.txtBackup2.Size = New System.Drawing.Size(425, 22)
         Me.txtBackup2.TabIndex = 73
         Me.txtBackup2.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited2
         '
@@ -4973,38 +5099,335 @@ Partial Class coolBlue
         '
         Me.txtBackup1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.CoolBlueColor.My.MySettings.Default, "txtbackupedited", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtBackup1.Enabled = False
-        Me.txtBackup1.Location = New System.Drawing.Point(142, 36)
-        Me.txtBackup1.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBackup1.Location = New System.Drawing.Point(189, 44)
+        Me.txtBackup1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBackup1.Name = "txtBackup1"
-        Me.txtBackup1.Size = New System.Drawing.Size(320, 20)
+        Me.txtBackup1.Size = New System.Drawing.Size(425, 22)
         Me.txtBackup1.TabIndex = 72
         Me.txtBackup1.Text = Global.CoolBlueColor.My.MySettings.Default.txtbackupedited
         '
         'proBar
         '
-        Me.proBar.Location = New System.Drawing.Point(17, 176)
-        Me.proBar.Margin = New System.Windows.Forms.Padding(2)
+        Me.proBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.proBar.Location = New System.Drawing.Point(23, 217)
+        Me.proBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.proBar.Name = "proBar"
-        Me.proBar.Size = New System.Drawing.Size(772, 8)
+        Me.proBar.Size = New System.Drawing.Size(1029, 10)
         Me.proBar.TabIndex = 9
+        '
+        'pnlStore
+        '
+        Me.pnlStore.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.pnlStore.Controls.Add(Me.Panel1)
+        Me.pnlStore.Controls.Add(Me.lblSearch)
+        Me.pnlStore.Controls.Add(Me.PictureBox12)
+        Me.pnlStore.Controls.Add(Me.txtDiscreption)
+        Me.pnlStore.Controls.Add(Me.lblDiscreption)
+        Me.pnlStore.Controls.Add(Me.txtFilepath)
+        Me.pnlStore.Controls.Add(Me.lblFilelocation)
+        Me.pnlStore.Controls.Add(Me.txtFilename)
+        Me.pnlStore.Controls.Add(Me.lblFilename)
+        Me.pnlStore.Controls.Add(Me.txtSubject)
+        Me.pnlStore.Controls.Add(Me.lblSubject)
+        Me.pnlStore.Controls.Add(Me.txtSearchBox)
+        Me.pnlStore.Controls.Add(Me.DataGridView1)
+        Me.pnlStore.ForeColor = System.Drawing.Color.Transparent
+        Me.pnlStore.Location = New System.Drawing.Point(12, 76)
+        Me.pnlStore.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlStore.Name = "pnlStore"
+        Me.pnlStore.Size = New System.Drawing.Size(1045, 699)
+        Me.pnlStore.TabIndex = 126
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.picUser)
+        Me.Panel1.Controls.Add(Me.btnCancel)
+        Me.Panel1.Controls.Add(Me.PictureBox13)
+        Me.Panel1.Controls.Add(Me.btnOpen)
+        Me.Panel1.Controls.Add(Me.btnDelete)
+        Me.Panel1.Controls.Add(Me.btnUpdate)
+        Me.Panel1.Controls.Add(Me.btnSave)
+        Me.Panel1.Location = New System.Drawing.Point(11, 195)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1022, 79)
+        Me.Panel1.TabIndex = 10
+        '
+        'picUser
+        '
+        Me.picUser.Image = CType(resources.GetObject("picUser.Image"), System.Drawing.Image)
+        Me.picUser.Location = New System.Drawing.Point(981, 25)
+        Me.picUser.Name = "picUser"
+        Me.picUser.Size = New System.Drawing.Size(32, 32)
+        Me.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picUser.TabIndex = 6
+        Me.picUser.TabStop = False
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!)
+        Me.btnCancel.ForeColor = System.Drawing.Color.Snow
+        Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
+        Me.btnCancel.Location = New System.Drawing.Point(14, 15)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(137, 51)
+        Me.btnCancel.TabIndex = 29
+        Me.btnCancel.Text = "  Cancel"
+        Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), System.Drawing.Image)
+        Me.PictureBox13.Location = New System.Drawing.Point(779, 24)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox13.TabIndex = 30
+        Me.PictureBox13.TabStop = False
+        '
+        'btnOpen
+        '
+        Me.btnOpen.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOpen.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!)
+        Me.btnOpen.ForeColor = System.Drawing.Color.Snow
+        Me.btnOpen.Image = CType(resources.GetObject("btnOpen.Image"), System.Drawing.Image)
+        Me.btnOpen.Location = New System.Drawing.Point(164, 14)
+        Me.btnOpen.Name = "btnOpen"
+        Me.btnOpen.Size = New System.Drawing.Size(126, 51)
+        Me.btnOpen.TabIndex = 26
+        Me.btnOpen.Text = "  Open"
+        Me.btnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnOpen.UseVisualStyleBackColor = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!)
+        Me.btnDelete.ForeColor = System.Drawing.Color.Snow
+        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
+        Me.btnDelete.Location = New System.Drawing.Point(619, 14)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(141, 51)
+        Me.btnDelete.TabIndex = 28
+        Me.btnDelete.Text = "  Delete"
+        Me.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!)
+        Me.btnUpdate.ForeColor = System.Drawing.Color.Snow
+        Me.btnUpdate.Image = CType(resources.GetObject("btnUpdate.Image"), System.Drawing.Image)
+        Me.btnUpdate.Location = New System.Drawing.Point(460, 14)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(146, 51)
+        Me.btnUpdate.TabIndex = 31
+        Me.btnUpdate.Text = "  Update"
+        Me.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnUpdate.UseVisualStyleBackColor = False
+        '
+        'btnSave
+        '
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semilight", 10.8!)
+        Me.btnSave.ForeColor = System.Drawing.Color.Snow
+        Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
+        Me.btnSave.Location = New System.Drawing.Point(302, 14)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(145, 51)
+        Me.btnSave.TabIndex = 27
+        Me.btnSave.Text = "  Save"
+        Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSave.UseVisualStyleBackColor = False
+        '
+        'lblSearch
+        '
+        Me.lblSearch.AutoSize = True
+        Me.lblSearch.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSearch.Location = New System.Drawing.Point(543, 59)
+        Me.lblSearch.Name = "lblSearch"
+        Me.lblSearch.Size = New System.Drawing.Size(74, 23)
+        Me.lblSearch.TabIndex = 25
+        Me.lblSearch.Text = "SEARCH"
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
+        Me.PictureBox12.Location = New System.Drawing.Point(501, 50)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox12.TabIndex = 24
+        Me.PictureBox12.TabStop = False
+        '
+        'txtDiscreption
+        '
+        Me.txtDiscreption.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDiscreption.Location = New System.Drawing.Point(123, 103)
+        Me.txtDiscreption.Multiline = True
+        Me.txtDiscreption.Name = "txtDiscreption"
+        Me.txtDiscreption.Size = New System.Drawing.Size(345, 42)
+        Me.txtDiscreption.TabIndex = 19
+        '
+        'lblDiscreption
+        '
+        Me.lblDiscreption.AutoSize = True
+        Me.lblDiscreption.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiscreption.Location = New System.Drawing.Point(11, 106)
+        Me.lblDiscreption.Name = "lblDiscreption"
+        Me.lblDiscreption.Size = New System.Drawing.Size(87, 20)
+        Me.lblDiscreption.TabIndex = 22
+        Me.lblDiscreption.Text = "Discreption"
+        '
+        'txtFilepath
+        '
+        Me.txtFilepath.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFilepath.Location = New System.Drawing.Point(123, 158)
+        Me.txtFilepath.Name = "txtFilepath"
+        Me.txtFilepath.Size = New System.Drawing.Size(345, 27)
+        Me.txtFilepath.TabIndex = 20
+        '
+        'lblFilelocation
+        '
+        Me.lblFilelocation.AutoSize = True
+        Me.lblFilelocation.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFilelocation.Location = New System.Drawing.Point(11, 161)
+        Me.lblFilelocation.Name = "lblFilelocation"
+        Me.lblFilelocation.Size = New System.Drawing.Size(95, 20)
+        Me.lblFilelocation.TabIndex = 21
+        Me.lblFilelocation.Text = "File Location"
+        '
+        'txtFilename
+        '
+        Me.txtFilename.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFilename.Location = New System.Drawing.Point(123, 20)
+        Me.txtFilename.Name = "txtFilename"
+        Me.txtFilename.Size = New System.Drawing.Size(345, 27)
+        Me.txtFilename.TabIndex = 15
+        '
+        'lblFilename
+        '
+        Me.lblFilename.AutoSize = True
+        Me.lblFilename.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFilename.Location = New System.Drawing.Point(11, 20)
+        Me.lblFilename.Name = "lblFilename"
+        Me.lblFilename.Size = New System.Drawing.Size(78, 20)
+        Me.lblFilename.TabIndex = 18
+        Me.lblFilename.Text = "File Name"
+        '
+        'txtSubject
+        '
+        Me.txtSubject.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSubject.Location = New System.Drawing.Point(123, 62)
+        Me.txtSubject.Name = "txtSubject"
+        Me.txtSubject.Size = New System.Drawing.Size(345, 27)
+        Me.txtSubject.TabIndex = 17
+        '
+        'lblSubject
+        '
+        Me.lblSubject.AutoSize = True
+        Me.lblSubject.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubject.Location = New System.Drawing.Point(11, 62)
+        Me.lblSubject.Name = "lblSubject"
+        Me.lblSubject.Size = New System.Drawing.Size(59, 20)
+        Me.lblSubject.TabIndex = 16
+        Me.lblSubject.Text = "Subject"
+        '
+        'txtSearchBox
+        '
+        Me.txtSearchBox.BackColor = System.Drawing.Color.Honeydew
+        Me.txtSearchBox.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.txtSearchBox.Location = New System.Drawing.Point(634, 55)
+        Me.txtSearchBox.Name = "txtSearchBox"
+        Me.txtSearchBox.Size = New System.Drawing.Size(144, 30)
+        Me.txtSearchBox.TabIndex = 23
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.DataGridView1.Location = New System.Drawing.Point(11, 289)
+        Me.DataGridView1.Name = "DataGridView1"
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle12
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(1022, 396)
+        Me.DataGridView1.TabIndex = 33
+        '
+        'lblloginUser
+        '
+        Me.lblloginUser.AutoSize = True
+        Me.lblloginUser.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblloginUser.Location = New System.Drawing.Point(765, 10)
+        Me.lblloginUser.Name = "lblloginUser"
+        Me.lblloginUser.Size = New System.Drawing.Size(0, 20)
+        Me.lblloginUser.TabIndex = 24
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(0, 0)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 22)
+        Me.DateTimePicker1.TabIndex = 25
         '
         'coolBlue
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(801, 661)
-        Me.Controls.Add(Me.picLogo)
-        Me.Controls.Add(Me.proBar)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtIp)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1068, 814)
+        Me.Controls.Add(Me.pnlUser)
         Me.Controls.Add(Me.ssl)
-        Me.Controls.Add(Me.pnlBtnbar)
-        Me.Controls.Add(Me.lblTile)
-        Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.pnlTitlebar)
+        Me.Controls.Add(Me.lblTile)
+        Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.picSetting)
+        Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.pnlHik)
         Me.Controls.Add(Me.pnlWire)
         Me.Controls.Add(Me.pnlGeo)
@@ -5012,11 +5435,18 @@ Partial Class coolBlue
         Me.Controls.Add(Me.pnlOther)
         Me.Controls.Add(Me.pnlHik2)
         Me.Controls.Add(Me.pnlBackup)
+        Me.Controls.Add(Me.pnlBtnbar)
+        Me.Controls.Add(Me.proBar)
+        Me.Controls.Add(Me.txtIp)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.pnlStore)
         Me.ForeColor = System.Drawing.Color.OrangeRed
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "coolBlue"
+        Me.Opacity = 0.95R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CoolBlue"
         Me.pnlTitlebar.ResumeLayout(False)
@@ -5061,6 +5491,11 @@ Partial Class coolBlue
         CType(Me.picBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlUser.ResumeLayout(False)
+        Me.pnlUser.PerformLayout()
+        Me.grpBox.ResumeLayout(False)
+        Me.grpBox.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlGeo.ResumeLayout(False)
         Me.pnlGeo.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5150,7 +5585,7 @@ Partial Class coolBlue
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picHik34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHikv25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picHikv24, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picHikv23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picHikv22, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5179,6 +5614,14 @@ Partial Class coolBlue
         CType(Me.picSetting, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBackup.ResumeLayout(False)
         Me.pnlBackup.PerformLayout()
+        Me.pnlStore.ResumeLayout(False)
+        Me.pnlStore.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.picUser, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -5433,7 +5876,7 @@ Partial Class coolBlue
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
-    Friend WithEvents picHik34 As PictureBox
+    Friend WithEvents picHikv25 As PictureBox
     Friend WithEvents picHikv24 As PictureBox
     Friend WithEvents picHikv23 As PictureBox
     Friend WithEvents picHikv22 As PictureBox
@@ -5460,7 +5903,7 @@ Partial Class coolBlue
     Friend WithEvents picHikv1 As PictureBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents lblHik34 As Label
+    Friend WithEvents lblHik25 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents lblHik23 As Label
@@ -5562,4 +6005,47 @@ Partial Class coolBlue
     Friend WithEvents btnTans As Button
     Friend WithEvents lblTranBackup As Label
     Friend WithEvents txtBackup4 As TextBox
+    Friend WithEvents pnlStore As Panel
+    Friend WithEvents Button5 As Button
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents txtSearchBox As TextBox
+    Friend WithEvents txtDiscreption As TextBox
+    Friend WithEvents lblDiscreption As Label
+    Friend WithEvents txtFilepath As TextBox
+    Friend WithEvents lblFilelocation As Label
+    Friend WithEvents txtFilename As TextBox
+    Friend WithEvents lblFilename As Label
+    Friend WithEvents txtSubject As TextBox
+    Friend WithEvents lblSubject As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents btnUpdate As Button
+    Friend WithEvents PictureBox13 As PictureBox
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnSave As Button
+    Friend WithEvents btnOpen As Button
+    Friend WithEvents btnCancel As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlUser As Panel
+    Friend WithEvents grpBox As GroupBox
+    Friend WithEvents cmbPermission As ComboBox
+    Friend WithEvents lblPermission As Label
+    Friend WithEvents lblUser As Label
+    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents lblPassword As Label
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents picUser As PictureBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents toostriplblStatus As ToolStripStatusLabel
+    Friend WithEvents ToolStriplblID As ToolStripStatusLabel
+    Friend WithEvents ToolDatabaseConnect As ToolStripStatusLabel
+    Friend WithEvents Timer3 As Timer
+    Friend WithEvents btnExit As Button
+    Friend WithEvents btnClearcontrol As Button
+    Friend WithEvents btnUserEdit As Button
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnuserDelete As Button
+    Friend WithEvents lblloginUser As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

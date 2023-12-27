@@ -39,7 +39,7 @@ Partial Class About
         '
         'pnlTitleAbout
         '
-        Me.pnlTitleAbout.BackColor = System.Drawing.Color.White
+        Me.pnlTitleAbout.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.pnlTitleAbout.Controls.Add(Me.PictureBox2)
         Me.pnlTitleAbout.Controls.Add(Me.lblAbout)
         Me.pnlTitleAbout.Controls.Add(Me.btnClose)
@@ -73,6 +73,7 @@ Partial Class About
         'btnClose
         '
         Me.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Snow
+        Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.OrangeRed
@@ -142,7 +143,7 @@ Partial Class About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(81, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(487, 379)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)

@@ -44,7 +44,7 @@ Partial Class DefaultIP
         '
         'pnlTitle
         '
-        Me.pnlTitle.BackColor = System.Drawing.Color.White
+        Me.pnlTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.pnlTitle.Controls.Add(Me.PictureBox1)
         Me.pnlTitle.Controls.Add(Me.Button2)
         Me.pnlTitle.Controls.Add(Me.lblDefault)
@@ -69,6 +69,7 @@ Partial Class DefaultIP
         'Button2
         '
         Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.OrangeRed
@@ -174,7 +175,7 @@ Partial Class DefaultIP
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(122, 27)
         Me.TextBox2.TabIndex = 7
-        Me.TextBox2.Text = "192.168.0.64"
+        Me.TextBox2.Text = "192.168.1.64"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox3
@@ -234,7 +235,7 @@ Partial Class DefaultIP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(437, 358)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.Label5)
